@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('login');
+})->name('home');
+Route::get('/sceltaaccount/', function () {
+    return view('scelta');
+})->name('iscrizione');
