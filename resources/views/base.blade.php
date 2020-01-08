@@ -20,7 +20,7 @@
 <div class="container-fluid">
     <div class="row h-100">
         @include('menu')
-        <div class="col-10">
+        <div class="col-12 col-lg-10">
             @section('corpo')
                 @show
         </div>

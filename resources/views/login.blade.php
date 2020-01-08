@@ -45,7 +45,7 @@
                                         <input class="btn btn-block btn-dark" type="submit" name="submit">
                                     </div>
                                 </form>
-                                <a class="nav-link text-center text-dark" href="">Password dimenticata?</a>
+                                <a class="nav-link text-center text-dark" href="">Forgot Your Passwod?</a>
                             </div>
                             <div class="col-0 col-lg-3"></div>
                         </div>
