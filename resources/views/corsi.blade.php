@@ -2,7 +2,7 @@
 @section('corpo')
 <div class="row mt-5">
     <div class="col-12 text-center">
-        <h1 class="mt-5 p-3 border">Gestione Corsi</h1>
+        <h1 class="mt-5 p-3 border border-dark">Gestione Corsi</h1>
     </div>
     <div class="col-0 col-lg-2"></div>
     <div class="col-12 col-lg-8">
@@ -19,7 +19,7 @@
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="jumbotron mr-1 text-center" style="background-color: #13ce66; cursor: pointer" onclick="window.location.href='{{route('corso')}}'">
                         <h5>
-                            Ambientamento
+                            NUOTO
                         </h5>
                         <h6 class="mt-5">
                             Principianti
@@ -29,7 +29,7 @@
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="jumbotron ml-1 mr-1 text-center" style="background-color: #51d69a; cursor: pointer" onclick="window.location.href='{{route('corso')}}'">
                         <h5>
-                            GALLEGGIAMENTO
+                            NUOTO
                         </h5>
                         <h6 class="mt-5">
                             Intermedio
@@ -39,10 +39,10 @@
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="jumbotron ml-1 text-center" style="background-color: #51d69a; cursor: pointer" onclick="window.location.href='{{route('corso')}}'">
                         <h5>
-                            PERFEZIONAMENTO
+                            NUOTO
                         </h5>
                         <h6 class="mt-5">
-                            Avanzato
+                            Agonistico
                         </h6>
                     </div>
                 </div>
@@ -54,26 +54,26 @@
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="jumbotron mr-1 text-center" style="background-color: #f1e140; cursor: pointer" onclick="window.location.href='{{route('corso')}}'">
                         <h5>
-                            STAGISTA
+                            BODY BUILDING
                         </h5>
                         <h6 class="mt-5">
-                            Insegnanti Esterni
+                            Personal Coaching
                         </h6>
                         <h6>
-                            Worksop
+                            Sottotitolo 1
                         </h6>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="jumbotron ml-1 text-center" style="background-color: #ffba5c; cursor: pointer" onclick="window.location.href='{{route('corso')}}'">
                         <h5>
-                            FORNITORE
+                            WEIGHT LIFTING
                         </h5>
                         <h6 class="mt-5">
-                            Gas e Luce
+                            Power Lifting
                         </h6>
                         <h6>
-                            Affitto
+                            Sottotitolo 1
                         </h6>
                     </div>
                 </div>

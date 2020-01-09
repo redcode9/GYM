@@ -9,7 +9,7 @@
                 <div class="row">
 
                     <div class="col-0 col-lg-1"></div>
-                    <div class="col-12 col-lg-10 border border-dark p-5">
+                    <div class="col-12 col-lg-10 border p-5">
                         <h2>Dettagli</h2>
                             <div class="row">
                                 <div class="col-12 col-lg-6">
@@ -35,7 +35,7 @@
                     <div class="col-0 col-lg-1"></div>
 
                     <div class="col-0 col-lg-1"></div>
-                    <div class="col-12 col-lg-10 border border-dark p-5 mt-5">
+                    <div class="col-12 col-lg-10 border p-5 mt-5">
                         <h2>Assicurazione</h2>
 
                         <div class="row">
@@ -62,7 +62,7 @@
                     <div class="col-0 col-lg-1"></div>
 
                     <div class="col-0 col-lg-1"></div>
-                    <div class="col-12 col-lg-10 border border-dark p-5 mt-5">
+                    <div class="col-12 col-lg-10 border p-5 mt-5">
                         <h2>Certificato Medico</h2>
 
                         <div class="row">

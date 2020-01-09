@@ -2,7 +2,7 @@
 @section('corpo')
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="mt-5 p-3 border">Iscrizione Socio</h1>
+            <h1 class="mt-5 p-3 border border-dark ">Iscrizione Socio</h1>
         </div>
         <div class="col-12 mt-5 mb-5">
             <div class="row">
@@ -51,7 +51,7 @@
                                 <div class="form-group">
                                     <label for="sesso"><h5>Sesso</h5></label>
                                     <select class="custom-select" name="sesso" id="sesso">
-                                        <option value="0">Segli un Opzione</option>
+                                        <option value="0">Segli un'opzione</option>
                                         <option value="M">Maschio</option>
                                         <option value="F">Femmina</option>
                                     </select>

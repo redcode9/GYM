@@ -3,7 +3,7 @@
         <a class="navbar-link" href="" style="margin-bottom: 2rem"><img style="width: 100%; height: auto" src="{{asset('img/logo2.jfif')}}" alt="Logo"></a>
 
         <div class="form-group">
-            <input class="form-control text-dark" style="border: 5px solid black" type="text" name="search" id="search" placeholder="Search">
+            <input class="form-control text-dark" style="border: 5px solid black" type="text" name="search" id="search" placeholder="&#128269 Search">
         </div>
         <a class="nav-link mt-1 text-dark" style="border: 5px solid black" href="{{route('dashboard')}}">Iscrizione</a>
         <a class="nav-link mt-1 text-dark" style="border: 5px solid black" href="">Contabilità</a>
