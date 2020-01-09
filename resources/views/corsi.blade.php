@@ -54,7 +54,7 @@
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="jumbotron mr-1 text-center" style="background-color: #f1e140; cursor: pointer" onclick="window.location.href='{{route('corso')}}'">
                         <h5>
-                            STAGGISTA
+                            STAGISTA
                         </h5>
                         <h6 class="mt-5">
                             Insegnanti Esterni
