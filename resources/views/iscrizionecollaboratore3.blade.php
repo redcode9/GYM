@@ -20,20 +20,21 @@
                         <div class="row">
                             <div class="col-12 col-lg-6 mt-2">
                                 <div class="form-group">
-                                    <label for="data" class="mb-0"><h5>Data Tesseramento</h5></label>
-                                    <input type="text" class="form-control" name="data" id="data" value="">
+                                    <label for="numero" class="mb-0"><h5>Numero Tessera*</h5></label>
+                                    <input type="text" class="form-control" name="numero" id="numero" value="" required>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-6 mt-2">
+                            <div class="col-12 col-lg-6 mt-2"></div>
+                            <div class="col-12 col-lg-6 mt-3">
                                 <div class="form-group">
-                                    <label for="numero" class="mb-0"><h5>Numero Tessera</h5></label>
-                                    <input type="text" class="form-control" name="numero" id="numero" value="">
+                                    <label for="data" class="mb-0"><h5>Data Tesseramento*</h5></label>
+                                    <input type="text" class="form-control" name="data" id="data" value="" required>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6 mt-3 mb-n2">
                                 <div class="form-group">
-                                    <label for="scadenza" class="mb-0"><h5>Scadenza</h5></label>
-                                    <input type="text" class="form-control" name="scadenza" id="scadenza" value="">
+                                    <label for="scadenza" class="mb-0"><h5>Scadenza Tessera*</h5></label>
+                                    <input type="text" class="form-control" name="scadenza" id="scadenza" value="" required>
                                 </div>
                             </div>
                         </div>
