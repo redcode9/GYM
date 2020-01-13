@@ -22,23 +22,23 @@
                     <div class="row mt-2">
                         <div class="col-12 col-lg-12">
                             <div class="form-group">
-                                <label for="numero" class="mb-0"><h5>Numero</h5></label>
+                                <label for="numero" class="mb-0"><h5>Numero*</h5></label>
                                 <input type="text" pattern="[a-Z]" class="form-control" name="numero" id="numero"
-                                       value="" placeholder="es. 091AF1642">
+                                       value="" placeholder="es. 091AF1642" required>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 mt-3">
                             <div class="form-group">
-                                <label for="data1" class="mb-0"><h5>Data di Emissione</h5></label>
+                                <label for="data1" class="mb-0"><h5>Data di Emissione*</h5></label>
                                 <input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control" name="data1"
-                                       id="data1" value="">
+                                       id="data1" value="" required>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 mt-3">
                             <div class="form-group">
-                                <label for="scadenza1" class="mb-0"><h5>Data di Scadenza</h5></label>
+                                <label for="scadenza1" class="mb-0"><h5>Data di Scadenza*</h5></label>
                                 <input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control"
-                                       name="scadenza1" id="scadenza1" value="">
+                                       name="scadenza1" id="scadenza1" value="" required>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 mt-3 mb-n2">
@@ -64,16 +64,16 @@
                     <div class="row mt-2">
                         <div class="col-12 col-lg-6 mb-n2">
                             <div class="form-group">
-                                <label for="data2" class="mb-0"><h5>Data Rilascio</h5></label>
+                                <label for="data2" class="mb-0"><h5>Data Rilascio*</h5></label>
                                 <input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control" name="data2"
-                                       id="data2" value="">
+                                       id="data2" value="" required>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 mb-n2">
                             <div class="form-group">
-                                <label for="scadenza2" class="mb-0"><h5>Data Scadenza</h5></label>
+                                <label for="scadenza2" class="mb-0"><h5>Data Scadenza*</h5></label>
                                 <input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control"
-                                       name="scadenza2" id="scadenza2" value="">
+                                       name="scadenza2" id="scadenza2" value="" required>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 mt-4 mb-n2">
