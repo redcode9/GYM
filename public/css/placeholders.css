@@ -1,0 +1,7 @@
+::placeholder {
+    color: darkgrey !important;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}

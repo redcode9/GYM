@@ -36,7 +36,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
-        $this->mapPageRoutes();
+        $this->mapIscrizioniRoutes();
         $this->mapWebRoutes();
 
         //
@@ -71,10 +71,10 @@ class RouteServiceProvider extends ServiceProvider
              ->group(base_path('routes/api.php'));
     }
 
-    protected function mapPageRoutes()
+    protected function mapIscrizioniRoutes()
     {
-        Route::prefix('')
+        Route::prefix('iscrizione')
             ->namespace($this->namespace)
-            ->group(base_path('routes/pages.php'));
+            ->group(base_path('routes/iscrizioni.php'));
     }
 }
