@@ -1,4 +1,4 @@
-@extends('base')
+@extends('templates.base')
 @section('corpo')
     <div class="row">
         <div class="col-12 text-center">

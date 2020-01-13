@@ -1,4 +1,4 @@
-@extends('base')
+@extends('templates.base')
 @section('corpo')
-    @include('templateiscrizioni-terzaparte', ['title' => "ISCRIZIONE COLLABORATORE",'idTitle' => "collaboratore"])
+    @include('templates.iscrizioni-terzaparte', ['title' => "ISCRIZIONE COLLABORATORE",'idTitle' => "collaboratore"])
 @endsection

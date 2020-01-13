@@ -20,7 +20,7 @@
 <body>
 <div class="container-fluid">
     <div class="row h-100">
-        @include('menu')
+        @include('templates.menu')
         <div class="col-12 col-lg-10">
             @section('corpo')
                 @show
