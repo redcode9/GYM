@@ -23,20 +23,13 @@
             <div class="jumbotron mt-5">
                 <div class="row">
                     <div class="col-12">
-                        <h1 class="text-center">Sign In</h1>
-                    </div>
-                    <div class="col-12 mt-5">
-                        <h6 class="text-center">Loerm Ipsum</h6>
+                        <h1 class="text-center">Login</h1>
                     </div>
                     <div class="col-12">
                         <div class="row">
                             <div class="col-0 col-lg-3"></div>
                             <div class="col-12 col-lg-6">
                                 <form method="post" action="">
-                                    <div class="form-group">
-                                        <label for="username">Username</label>
-                                        <input class="form-control" type="text" id="username" name="username">
-                                    </div>
                                     <div class="form-group">
                                         <label for="password">Password</label>
                                         <input class="form-control" type="text" id="password" name="password">
@@ -45,7 +38,7 @@
                                         <input class="btn btn-block btn-dark" type="submit" name="submit">
                                     </div>
                                 </form>
-                                <a class="nav-link text-center text-dark" href="">Forgot Your Passwod?</a>
+                                <a class="nav-link text-center text-dark" href="">Password dimenticata?</a>
                             </div>
                             <div class="col-0 col-lg-3"></div>
                         </div>
