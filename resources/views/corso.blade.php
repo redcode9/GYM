@@ -6,7 +6,7 @@
     </div>
     <div class="col-0 col-lg-2"></div>
     <div class="col-12 col-lg-8 mb-5">
-        <button class="btn btn-dark float-right ml-3">Modifica</button>
+        <button class="btn btn-dark float-right ml-3">Elimina</button>
         <button class="btn btn-dark float-right mr-3 ml-3">Aggiungi</button>
         <div class="form-group float-right mr-3">
         <input class="form-control" type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtra per Nome">
@@ -25,60 +25,60 @@
                 <th>Entrata</th>
             </thead>
             <tbody>
-                <tr>
+            <tr>
                     <td>1</td>
                     <td>Joseph</td>
                     <td>Tortorella</td>
-                    <td>Insegnate</td>
+                    <td>Insegnante</td>
                     <td>0</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Alessia</td>
                     <td>Calia</td>
-                    <td>Alievo</td>
+                    <td>Allievo</td>
                     <td>10</td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Piero</td>
                     <td>Carrieri</td>
-                    <td>Alievo</td>
+                    <td>Allievo</td>
                     <td>10</td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>Antonio</td>
                     <td>Savino</td>
-                    <td>Alievo</td>
+                    <td>Allievo</td>
                     <td>10</td>
                 </tr>
                 <tr>
                     <td>1</td>
                     <td>Joseph</td>
                     <td>Tortorella</td>
-                    <td>Insegnate</td>
+                    <td>Insegnante</td>
                     <td>0</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Alessia</td>
                     <td>Calia</td>
-                    <td>Alievo</td>
+                    <td>Allievo</td>
                     <td>10</td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Piero</td>
                     <td>Carrieri</td>
-                    <td>Alievo</td>
+                    <td>Allievo</td>
                     <td>10</td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>Antonio</td>
                     <td>Savino</td>
-                    <td>Alievo</td>
+                    <td>Allievo</td>
                     <td>10</td>
                 </tr>
             </tbody>

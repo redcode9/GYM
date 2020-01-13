@@ -144,7 +144,7 @@
                 </div>
                 <div class="col-12 col-lg-12 mt-n2 ml-n2 mb-3 text-right">
                     <div class="form-group">
-                        <input type="submit" class="btn btn-dark" style="font-size: 22px" name="continua"
+                        <input type="button" class="btn btn-dark" style="font-size: 22px" name="continua"
                                id="continua" value="Continua">
                     </div>
                 </div>

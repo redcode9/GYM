@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class="jumbotron ml-1 text-center" style="background-color: #51d69a">
+                        <div class="jumbotron ml-1 text-center" style="background-color: #51d69a;cursor: pointer" onclick="window.location.href='{{url("iscrizionecollaboratore")}}'">
                             <h5>
                                 COLLABORATORE
                             </h5>
@@ -52,7 +52,7 @@
                             Insegnanti Esterni
                         </h6>
                         <h6>
-                            Worksop
+                            Workshop
                         </h6>
                     </div>
                 </div>

@@ -51,7 +51,7 @@
                                 <div class="form-group">
                                     <label for="sesso"><h5>Sesso</h5></label>
                                     <select class="custom-select" name="sesso" id="sesso">
-                                        <option value="0">Segli un'opzione</option>
+                                        <option value="0">Scegli un'opzione</option>
                                         <option value="M">Maschio</option>
                                         <option value="F">Femmina</option>
                                     </select>
@@ -69,17 +69,50 @@
                                     <input type="text" class="form-control" name="data" id="data" value="">
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-12">
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-dark" name="invia" id="invia" value="Invia">
-                                </div>
-                            </div>
                         </div>
                     </form>
                 </div>
-                <div class="col-0 col-lg-1"></div>
-            </div>
+                <div class="col-12 mt-5 mb-5">
+                    <div class="row">
+                        <div class="col-0 col-lg-1"></div>
 
+                        <div class="col-12 col-lg-10 border p-5">
+                            <h2>Dettagli</h2>
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="cf"><h5>Codice Fiscale</h5></label>
+                                        <input type="text" class="form-control" name="cf" id="cf" value="">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="tel"><h5>Cellulare</h5></label>
+                                        <input type="text" class="form-control" name="tel" id="tel" value="">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="email"><h5>Email</h5></label>
+                                        <input type="text" class="form-control" name="email" id="email" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-5"></div>
+                <div class="col-12 col-lg-5"></div>
+                <div class="col-12 col-lg-2">
+                    <div class="form-group">
+                        <a href="{{route('iscrizione2')}}"><input type="submit" class="btn btn-dark" name="avanti1"
+                                                                  id="avanti1" value="Avanti"></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

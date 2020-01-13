@@ -9,32 +9,6 @@
                 <div class="row">
 
                     <div class="col-0 col-lg-1"></div>
-                    <div class="col-12 col-lg-10 border p-5">
-                        <h2>Dettagli</h2>
-                            <div class="row">
-                                <div class="col-12 col-lg-6">
-                                    <div class="form-group">
-                                        <label for="cf"><h5>Codice Fiscale</h5></label>
-                                        <input type="text" class="form-control" name="cf" id="cf" value="">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <div class="form-group">
-                                        <label for="tel"><h5>Cellulare</h5></label>
-                                        <input type="text" class="form-control" name="tel" id="tel" value="">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <div class="form-group">
-                                        <label for="email"><h5>Email</h5></label>
-                                        <input type="text" class="form-control" name="email" id="email" value="">
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="col-0 col-lg-1"></div>
-
-                    <div class="col-0 col-lg-1"></div>
                     <div class="col-12 col-lg-10 border p-5 mt-5">
                         <h2>Assicurazione</h2>
 
@@ -78,14 +52,26 @@
                                     <input type="text" class="form-control" name="scadenza2" id="scadenza2" value="">
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="form-group">
-                                   <input type="submit" class="btn btn-dark" name="salva" id="salva" value="Salva">
-                                </div>
+                            <div class="col-12 col-lg-6"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="row col-12 mt-4">
+                        <div class="col-12 col-lg-4">
+                            <div class="form-group text-center">
+                                <a href="{{route('iscrizione')}}"><input type="button" class="btn btn-dark" name="indietro1"
+                                                                         id="indietro1" value="Indietro"></a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4"></div>
+                        <div class="col-12 col-lg-4">
+                            <div class="form-group text-center">
+                                <a href="{{route('iscrizione3')}}"><input type="button" class="btn btn-dark" name="avanti2"
+                                                                          id="avanti2" value="Avanti"></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-0 col-lg-1"></div>
                 </div>
             </form>
         </div>
