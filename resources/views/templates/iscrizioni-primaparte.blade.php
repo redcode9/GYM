@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <label for="cognome" class="mb-0"><h5>Cognome*</h5></label>
                                 <input type="text" pattern="[a-Z]" class="form-control" name="cognome" id="cognome"
-                                       value="" placeholder="es. Rossi"required>
+                                       value="" placeholder="es. Rossi" required>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 mt-3">
@@ -45,7 +45,9 @@
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 mt-4"></div>
-                        <div class="col-12 col-lg-12 mt-2"><hr></div>
+                        <div class="col-12 col-lg-12 mt-2">
+                            <hr>
+                        </div>
                         <div class="col-12 col-lg-12 mt-3">
                             <div class="form-group">
                                 <label for="indirizzo" class="mb-0"><h5>Indirizzo*</h5></label>
@@ -107,26 +109,27 @@
                                     <label for="cf" class="mb-0"><h5>Codice Fiscale*</h5></label>
                                     <input type="text"
                                            pattern="^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$"
-                                           class="form-control" name="cf" id="cf" value="" placeholder="es. DPLNGL39B21A678U" required>
+                                           class="form-control" name="cf" id="cf" value=""
+                                           placeholder="es. DPLNGL39B21A678U" required>
                                 </div>
                             </div>
 
                             @if ( $idTitle === "stagista")
-                            <div class="col-12 col-lg-6">
-                                <div class="form-group">
-                                    <label for="ruolo" class="mb-0"><h5>Partita IVA*</h5></label>
-                                    <input type="text" pattern="[a-Z]" class="form-control" name="piva" id="piva"
-                                           value="" placeholder="es. IT08973230967" required>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="ruolo" class="mb-0"><h5>Partita IVA*</h5></label>
+                                        <input type="text" pattern="[a-Z]" class="form-control" name="piva" id="piva"
+                                               value="" placeholder="es. IT08973230967" required>
+                                    </div>
                                 </div>
-                            </div>
                             @elseif ($idTitle === "collaboratore")
-                            <div class="col-12 col-lg-6">
-                                <div class="form-group">
-                                    <label for="ruolo" class="mb-0"><h5>Ruolo specifico</h5></label>
-                                    <input type="text" pattern="[a-Z]" class="form-control" name="ruolo" id="ruolo"
-                                           value="" placeholder="es. Manutentore">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="ruolo" class="mb-0"><h5>Ruolo specifico</h5></label>
+                                        <input type="text" pattern="[a-Z]" class="form-control" name="ruolo" id="ruolo"
+                                               value="" placeholder="es. Manutentore">
+                                    </div>
                                 </div>
-                            </div>
                             @else
                                 <div class="col-12 col-lg-6"></div>
                             @endif
@@ -142,7 +145,8 @@
                                 <div class="form-group">
                                     <label for="email" class="mb-0"><h5>E-mail</h5></label>
                                     <input type="email" pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}$"
-                                           class="form-control" name="email" id="email" value="" placeholder="es. mario.rossi@gmail.com">
+                                           class="form-control" name="email" id="email" value=""
+                                           placeholder="es. mario.rossi@gmail.com">
                                 </div>
                             </div>
                         </div>
@@ -151,7 +155,7 @@
             </div>
             <div class="col-12 col-lg-12 mt-n3 ml-n2 text-right">
                 <div class="form-group">
-                    <input type="submit" class="btn btn-dark" style="font-size: 22px" name="continua"
+                    <input type="submit" href="" class="btn btn-dark" style="font-size: 22px" name="continua"
                            id="continua" value="Continua">
                 </div>
             </div>

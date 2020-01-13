@@ -6,6 +6,26 @@ use Illuminate\Http\Request;
 
 class IscrizioniController extends Controller
 {
+    public function scelta()
+    {
+        return view('scelta');
+    }
+
+    public function socio()
+    {
+        return view('iscrizionesocio');
+    }
+
+    public function socio2()
+    {
+        return view('iscrizionesocio2');
+    }
+
+    public function socio3()
+    {
+        return view('iscrizionesocio3');
+    }
+
     public function collaboratore()
     {
         return view('iscrizionecollaboratore');

@@ -12,30 +12,35 @@
         </h2>
     </div>
 
-    <div class="col-12 col-lg-12 mt-3"></div>
-    <div class="col-2 col-lg-1 ml-n5"></div>
-    <h4 class="mt-n1 ml-n2 mr-1">TESSERAMENTO</h4>&nbsp;
-    <div class="row mb-n2">
-        <div class="clearfix"></div>
-        <div class="col-sm-12">
-            <label class="label-switch switch-primary">
-                <input type="checkbox" class="switch switch-bootstrap flagTesseramento" onchange="toggleTesseramento()"
-                       name="flagTesseramento" id="flagTesseramento" value="">
-                <span class="lable"></span></label>
+    @if ($idTitle === "collaboratore")
+        <div class="col-12 col-lg-12 mt-3"></div>
+        <div class="col-2 col-lg-1 ml-n5"></div>
+        <h4 class="mt-n1 ml-n2 mr-1">TESSERAMENTO</h4>&nbsp;
+        <div class="row mb-n2">
+            <div class="clearfix"></div>
+            <div class="col-sm-12">
+                <label class="label-switch switch-primary">
+                    <input type="checkbox" class="switch switch-bootstrap flagTesseramento"
+                           onchange="toggleTesseramento()"
+                           name="flagTesseramento" id="flagTesseramento" value="" checked>
+                    <span class="lable"></span></label>
+            </div>
         </div>
-    </div>
 
-    <div class="col-12 col-lg-12" style="margin-top:33%"></div>
-    <div class="col-12 col-lg-12 mt-3 ml-n4">
-        <div class="form-group">
-            <input type="submit" class="btn btn-dark ml-5 mt-5" style="font-size: 22px; cursor: pointer;"
-                   name="indietro"
-                   id="indietro" value="Indietro">
-            <input type="submit" class="btn btn-dark mt-5 float-right" style="font-size: 22px; cursor: pointer;"
-                   name="continua"
-                   id="continua" value="Continua Senza Tesseramento">
+        <div class="col-12 col-lg-12" style="margin-top:33%"></div>
+        <div class="col-12 col-lg-12 mt-3 ml-n4">
+            <div class="form-group">
+                <input type="submit" class="btn btn-dark ml-5 mt-5" style="font-size: 22px; cursor: pointer;"
+                       name="indietro"
+                       id="indietro" value="Indietro">
+                <input type="submit" class="btn btn-dark mt-5 float-right" style="font-size: 22px; cursor: pointer;"
+                       name="continua"
+                       id="continua" value="Continua Senza Tesseramento">
+            </div>
         </div>
-    </div>
+    @else
+        <div style="margin-top: 43%"></div>
+    @endif
 
     <div class="col-12 col-lg-12" style="margin-top:-36%!important">
         <form id="FormTesseramento" action="" method="post">
