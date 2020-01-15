@@ -11,24 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-})->name('home');
-Route::get('/sceltaaccount/', function () {
+Route::any('/', "LoginController@Accedi")->name('login');
+
+Route::get('/iscrizioni/', function () {
     return view('scelta');
-})->name('dashboard');
-Route::get('/iscrizione/', function () {
-    return view('iscrizionesocio');
-})->name('iscrizione');
-Route::get('/iscrizione2/', function () {
-    return view('iscrizionesocio2');
-})->name('iscrizione2');
-Route::get('/iscrizione3/', function () {
-    return view('iscrizionesocio3');
-})->name('iscrizione3');
-Route::get('/corsi/', function () {
-    return view('corsi');
-})->name('corsi');
-Route::get('/corso/', function () {
-    return view('corso');
-})->name('corso');
+})->name('iscrizioni');
+
+Route::prefix('iscrizione')->middleware('auth')->group(function () {
+    Route::get('scelta', 'IscrizioniController@scelta')->name('scelta');
+    Route::any('socio', 'IscrizioneSocioController@registrazione')->name('socio');
+    Route::any('socio2/{id}/', 'IscrizioneSocioController@registrazione2')->name('socio2');
+    Route::any('socio3/{id}/', 'IscrizioneSocioController@registrazione3')->name('socio3');
+    Route::any('tiposocio/{id}/','IscrizioneSocioController@tiposocio')->name('tiposocio');
+    Route::any('collaboratore', 'IscrizioneCollaboratoreController@registrazione')->name('collaboratore');
+    Route::any('collaboratore-2', 'IscrizioniController@collaboratore2')->name('collaboratore2');
+    Route::any('collaboratore-3', 'IscrizioniController@collaboratore3')->name('collaboratore3');
+    Route::get('stagista', 'IscrizioniController@stagista')->name('stagista');
+    Route::get('stagista-2', 'IscrizioniController@stagista2')->name('stagista2');
+});
+
+Route::get('/segretaria/',function (){
+    return view('segretaria_contabilità');
+});
+Route::get('/corsi/', "CorsiController@carica")->name('corsi');
+Route::get('/corso/{id}', "CorsiController@caricaCorso")->name('corso');
+
+

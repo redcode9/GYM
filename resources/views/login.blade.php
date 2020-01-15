@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
     <!-- jQuery library -->
@@ -20,32 +21,40 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-            <div class="jumbotron mt-5">
+            <div class="jumbotron mt-5" style="background-color: #ebf8ff">
                 <div class="row">
                     <div class="col-12">
-                        <h1 class="text-center">Sign In</h1>
+                        <h1 class="text-center">Login</h1>
                     </div>
-                    <div class="col-12 mt-5">
-                        <h6 class="text-center">Loerm Ipsum</h6>
-                    </div>
-                    <div class="col-12">
+                    <div class="col-12 mt-4">
+                        @if($errore!="")
+                            {{$errore}}
+                        @endif
                         <div class="row">
                             <div class="col-0 col-lg-3"></div>
                             <div class="col-12 col-lg-6">
-                                <form method="post" action="">
-                                    <div class="form-group">
-                                        <label for="username">Username</label>
-                                        <input class="form-control" type="text" id="username" name="username">
+                                <form method="post" action="{{route("login")}}">
+                                    <div class="input-group form-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" style="background-color: #b6e7ff"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        <input type="text" name="username" class="form-control" placeholder="Username">
+
                                     </div>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" style="background-color: #b6e7ff"><i class="fas fa-key icon"></i></span>
+                                        </div>
+                                        <input type="Password" name="password" class="form-control" placeholder="Password"/>
+                                    </div><br />
                                     <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input class="form-control" type="text" id="password" name="password">
+                                        <input class="btn btn-block btn-dark" type="submit" name="submit" value="Accedi">
                                     </div>
-                                    <div class="form-group">
-                                        <input class="btn btn-block btn-dark" type="submit" name="submit">
-                                    </div>
+                                    @csrf
+
                                 </form>
-                                <a class="nav-link text-center text-dark" href="">Forgot Your Passwod?</a>
+                                <a class="nav-link text-center text-dark" href="">Password dimenticata?</a>
                             </div>
                             <div class="col-0 col-lg-3"></div>
                         </div>

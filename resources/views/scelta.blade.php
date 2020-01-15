@@ -1,17 +1,17 @@
-@extends('base')
+@extends('templates.base')
 @section('corpo')
 <div class="row">
     <div class="col-12 text-center">
-        <h1 class="mt-5 p-3 border">Gestione Iscrizioni</h1>
+        <h1 class="mt-5 p-3 border-top border-bottom border-dark">Nuovo Utente</h1>
     </div>
     <div class="col-12">
-        <div class="row">
+        <div class="row mt-4">
             <div class="col-12 col-xl-6">
                 <div class="col-12 mt-3 ml-3" style="font-size: 1.3em;">PRIVATO</div>
                 <div class="jumbotron" style="margin-top: -15px;background-color: #cdf5de">
                 <div class="row">
                     <div class="col-6">
-                        <div class="jumbotron mr-1 text-center" style="background-color: #13ce66;cursor: pointer" onclick="window.location.href='{{url("iscrizione")}}'">
+                        <div class="jumbotron mr-1 text-center" style="background-color: #13ce66;cursor: pointer" onclick="window.location.href='{{route("socio")}}'">
                             <h5>
                                 SOCIO
                             </h5>
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class="jumbotron ml-1 text-center" style="background-color: #51d69a">
+                        <div class="jumbotron ml-1 text-center" style="background-color: #51d69a;cursor: pointer" onclick="window.location.href='{{route("collaboratore")}}'">
                             <h5>
                                 COLLABORATORE
                             </h5>
@@ -52,7 +52,7 @@
                             Insegnanti Esterni
                         </h6>
                         <h6>
-                            Worksop
+                            Workshop
                         </h6>
                     </div>
                 </div>
