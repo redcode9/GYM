@@ -37,6 +37,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
         $this->mapWebRoutes();
+        $this->mapgestioneUtentiRoutes(); //Aggiunta da Sendray
 
         //
     }
@@ -68,5 +69,12 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    protected function mapgestioneUtentiRoutes() //Aggiunto da Sendray
+    {
+        Route::prefix('utenti')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/gestioneUtenti.php'));
     }
 }

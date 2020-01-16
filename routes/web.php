@@ -37,3 +37,15 @@ Route::get('/corsi/', "CorsiController@carica")->name('corsi');
 Route::get('/corso/{id}', "CorsiController@caricaCorso")->name('corso');
 
 
+
+Route::get('/utenti/', function () {   //view Gestione Utenti
+    return view('GestioneUtenti');
+})->name('GestioneUtenti');
+
+Route::get('/utenti/VisualizzaTutti/', function () {   //view VisualizzaTutti in Gestione Utenti
+    return view('VisualizzaTutti');
+})->name('VisualizzaTutti');
+
+Route::get('/HomeAdmin/', function () {   //view HomeAdmin
+    return view('HomeAdmin');
+})->name('HomeAdmin');

@@ -1,0 +1,17 @@
+.under_category{
+    opacity: 0.6;
+}
+
+.jumbotron_no_pad{
+    padding-bottom:0;
+    padding-top:0;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 400px;
+    overflow: auto;
+}
+.table-wrapper-scroll-y {
+    display: block;
+}
