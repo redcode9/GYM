@@ -98,6 +98,7 @@
                            id="continua" value="Continua">
                 </div>
             </div>
+            @csrf
         </form>
     </div>
 </div>

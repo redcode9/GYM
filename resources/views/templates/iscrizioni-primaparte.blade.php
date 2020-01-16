@@ -4,7 +4,7 @@
 <body>
 <div class="row mt-4">
     <div class="col-3"></div>
-    <div class="col-6 text-center">
+    <div class="col-6 text-center ">
         <h2 style="padding: 1rem; border: 7px solid lightslategray; color: dimgray" id="{{ $idTitle }}">{{ $title }}
         </h2>
     </div>
@@ -155,10 +155,11 @@
             </div>
             <div class="col-12 col-lg-12 mt-n3 ml-n2 text-right">
                 <div class="form-group">
-                    <input type="submit" href="" class="btn btn-dark" style="font-size: 22px" name="continua"
+                    <input type="submit" class="btn btn-dark" style="font-size: 22px" name="continua"
                            id="continua" value="Continua">
                 </div>
             </div>
+            @csrf
         </form>
     </div>
 </div>

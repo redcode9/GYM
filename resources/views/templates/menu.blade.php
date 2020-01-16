@@ -12,7 +12,7 @@
                    id="search" placeholder="Search">
         </div>
 
-        <a class="nav-link mt-1 text-light btn btn-dark" href="{{route("scelta")}}"> Nuovo Utente</a>
+        <a class="nav-link mt-1 text-light btn btn-dark" href="{{route("iscrizioni")}}"> Nuovo Utente</a>
 
         <a class="nav-link mt-1 text-light btn btn-dark" href="">Contabilità</a>
 

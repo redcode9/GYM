@@ -56,7 +56,7 @@
                             <div class="form-group">
                                 <label for="numero" class="mb-0"><h5>Numero Tessera</h5></label>
                                 <input type="text" class="form-control" name="numero" id="numero" value="" readonly>
-                            </div>
+                            </div> /*Bisogna passare l'id della tessera che si sta creando in VALUE*/
                         </div>
                         <div class="col-12 col-lg-6 mt-2"></div>
                         <div class="col-12 col-lg-6 mt-3">
@@ -89,14 +89,14 @@
                             <div class="form-group">
                                 <label for="importo" class="mb-0"><h5>Importo iscrizione</h5></label>
                                 <input type="text" pattern="^\$?(([1-9](\d*|\d{0,2}(,\d{3})*))|0)(\.\d{1,2})?$"
-                                       class="form-control" name="importo" id="importo" value="" placeholder="es. 10€"
+                                       class="form-control" name="importo" id="importo" value="{{$importo}}" placeholder="es. 10€"
                                        readonly>
                             </div>
                         </div>
                         <div class="col-12 col-lg-9 mt-2">
                             <div class="form-group">
                                 <label for="descrizione" class="mb-0"><h5>Descrizione</h5></label>
-                                <input type="text" pattern="" class="form-control" name="descrizione" id="descrizione"
+                                <input type="text" class="form-control" name="descrizione" id="descrizione"
                                        value="" placeholder="es. quota annuale">
                             </div>
                         </div>
@@ -167,7 +167,27 @@
                            id="continuaTesseramento" value="Continua">
                 </div>
             </div>
+            @csrf
         </form>
     </div>
 </div>
+<script>
+    function toggleStampa(){
+        scelta = $("#tipoDocumento").val();
+        switch (scelta) {
+            case "RN":
+                $("#numeroDocumento").val({{$RN}});
+                break;
+            case "R":
+                $("#numeroDocumento").val({{$R}});
+                break;
+            case "RF":
+                $("#numeroDocumento").val({{$RF}});
+                break;
+            case "f":
+                $("#numeroDocumento").val({{$F}});
+                break;
+        }
+    }
+</script>
 </body>
