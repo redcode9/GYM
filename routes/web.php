@@ -28,6 +28,7 @@ Route::prefix('iscrizione')->middleware('auth')->group(function () {
     Route::any('collaboratore-3', 'IscrizioniController@collaboratore3')->name('collaboratore3');
     Route::get('stagista', 'IscrizioniController@stagista')->name('stagista');
     Route::get('stagista-2', 'IscrizioniController@stagista2')->name('stagista2');
+    Route::get('fornitore', 'IscrizioniController@fornitore')->name('fornitore');
 });
 
 Route::get('/segretaria/',function (){

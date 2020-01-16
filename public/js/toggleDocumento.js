@@ -14,12 +14,13 @@ function toggleDocumento() {
         } else {
             document.getElementById('stampa').disabled = true;
         }
+        document.getElementById("tipoDocumento").required = true;
         document.getElementById('flagDocumento').value = "on";
     } else if (document.getElementById('flagDocumento').value === "on") {
         document.getElementById('tipoDocumento').disabled = true;
         document.getElementById('numeroDocumento').disabled = true;
         document.getElementById('stampa').disabled = true;
-        // document.getElementById('tipoDocumento').options[document.getElementById('tipoDocumento').selectedIndex] = "0";
+        document.getElementById("tipoDocumento").required = false;
         document.getElementById('flagDocumento').value = "off";
     }
 }

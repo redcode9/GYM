@@ -52,4 +52,9 @@ class IscrizioniController extends Controller
         return view('iscrizionestagista2');
     }
 
+    public function fornitore()
+    {
+        return view('iscrizionefornitore');
+    }
+
 }

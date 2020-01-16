@@ -3,21 +3,22 @@
 </head>
 <body>
 <div class="row mt-4">
-    <div class="col-3"></div>
-    <div class="col-6 text-center ">
-        <h2 style="padding: 1rem; border: 7px solid lightslategray; color: dimgray" id="{{ $idTitle }}">{{ $title }}
-        </h2>
+
+    <div class="col-12 col-lg-12">
+        <div class="mx-4 text-center">
+        <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black" id="{{ $idTitle }}">{{ $title }}</h1>
+        </div>
     </div>
 
     <div class="col-12 col-lg-12">
         <div class="row mt-5">
             <h5 class="px-2"
-                style="margin-top: -0.75rem; margin-left: 4rem; color: dimgray; position:absolute; z-index: 2; background-color: white;">
+                style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: white; font-weight: normal; ">
                 ANAGRAFICA
             </h5></div>
         <form action="" method="post">
-            <div class="row ml-4 mr-4 mb-5">
-                <div class="col-12 col-lg-12" style="padding: 2rem; border: 2px solid lightgray;">
+            <div class="row mx-4 mb-5">
+                <div class="col-12 col-lg-12" style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
 
                     <div class="row mt-2">
                         <div class="col-12 col-lg-6">
@@ -98,11 +99,11 @@
             <div class="col-12 col-lg-12">
                 <div class="row mt-5">
                     <h5 class="px-2"
-                        style="margin-top: -0.75rem; margin-left: 4rem; color: dimgray; position:absolute; z-index: 2; background-color: white;">
+                        style="margin-top: -0.75rem; margin-left: 2rem; color: gray; position:absolute; z-index: 2; background-color: white; font-weight: normal;">
                         DETTAGLI
                     </h5></div>
-                <div class="row ml-2 mr-2 mb-5">
-                    <div class="col-12 col-lg-12" style="padding: 2rem; border: 2px solid lightgray;">
+                <div class="row mx-2 mb-5">
+                    <div class="col-12 col-lg-12" style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
                         <div class="row mt-2">
                             <div class="col-12 col-lg-6">
                                 <div class="form-group">

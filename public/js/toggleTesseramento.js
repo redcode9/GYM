@@ -15,6 +15,9 @@ function toggleTesseramento() {
         $("#indietroTesseramento").show();
         $("#continua").hide();
         $("#indietro").hide();
+        document.getElementById("emissione").required = true;
+        document.getElementById("scadenza").required = true;
+        document.getElementById("pagamento").required = true;
     } else if (document.getElementById('flagTesseramento').value === "on") {
         document.getElementById('flagTesseramento').value = "off";
         $("#FormTesseramento").hide();
@@ -22,5 +25,9 @@ function toggleTesseramento() {
         $("#indietroTesseramento").hide();
         $("#continua").show();
         $("#indietro").show();
+        document.getElementById("emissione").required = false;
+        document.getElementById("scadenza").required = false;
+        document.getElementById("pagamento").required = false;
+        document.getElementById("tipoDocumento").required = true;
     }
 }

@@ -6,10 +6,11 @@
 </head>
 <body>
 <div class="row mt-4">
-    <div class="col-3"></div>
-    <div class="col-6 text-center">
-        <h2 style="padding: 1rem; border: 7px solid lightslategray; color: dimgray" id="{{ $idTitle }}">{{ $title }}
-        </h2>
+
+    <div class="col-12 col-lg-12">
+        <div class="mx-4 text-center">
+            <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black" id="{{ $idTitle }}">{{ $title }}</h1>
+        </div>
     </div>
 
     @if ($idTitle === "collaboratore")
@@ -26,17 +27,18 @@
                     <span class="lable"></span></label>
             </div>
         </div>
-
         <div class="col-12 col-lg-12" style="margin-top:33%"></div>
         <div class="col-12 col-lg-12 mt-3 ml-n4">
+            <form action="" method="post">
             <div class="form-group">
-                <input type="submit" class="btn btn-dark ml-5 mt-5" style="font-size: 22px; cursor: pointer;"
+                <input type="submit" class="btn btn-dark ml-5 mt-5" style="font-size: 22px; cursor: pointer; position: relative; z-index: 2;"
                        name="indietro"
-                       id="indietro" value="Indietro">
-                <input type="submit" class="btn btn-dark mt-5 float-right" style="font-size: 22px; cursor: pointer;"
+                       id="indietro" value="Indietro" formnovalidate>
+                <input type="submit" class="btn btn-dark mt-5 float-right" style="font-size: 22px; cursor: pointer; position: relative; z-index: 2;"
                        name="continua"
-                       id="continua" value="Continua Senza Tesseramento">
+                       id="continua" value="Continua Senza Tesseramento" formnovalidate>
             </div>
+            </form>
         </div>
     @else
         <div style="margin-top: 43%"></div>
@@ -46,11 +48,11 @@
         <form id="FormTesseramento" action="" method="post">
             <div class="row mt-5">
                 <h5 class="px-2"
-                    style="margin-top: -0.75rem; margin-left: 4rem; color: dimgray; position:absolute; z-index: 2; background-color: white;">
+                    style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: white; font-weight: normal; ">
                     DATI TESSERA
                 </h5></div>
             <div class="row ml-4 mr-4 mb-5">
-                <div class="col-12 col-lg-12" style="padding: 2rem; border: 2px solid lightgray;">
+                <div class="col-12 col-lg-12" style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
                     <div class="row">
                         <div class="col-12 col-lg-6 mt-2">
                             <div class="form-group">
@@ -79,11 +81,11 @@
 
             <div class="row">
                 <h5 class="px-2"
-                    style="margin-top: -0.75rem; margin-left: 4rem; color: dimgray; position:absolute; z-index: 2; background-color: white;">
+                    style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: white; font-weight: normal; ">
                     DATI FISCALI
                 </h5></div>
             <div class="row ml-4 mr-4 mb-5 mt-n5">
-                <div class="col-12 col-lg-12 mt-5" style="padding: 2rem; border: 2px solid lightgray;">
+                <div class="col-12 col-lg-12 mt-5" style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
                     <div class="row">
                         <div class="col-12 col-lg-3 mt-2">
                             <div class="form-group">
@@ -161,7 +163,7 @@
                 <div class="form-group">
                     <input type="submit" class="btn btn-dark mt-4"
                            style="font-size: 22px; cursor: pointer; margin-left:2rem" name="indietroTesseramento"
-                           id="indietroTesseramento" value="Indietro">
+                           id="indietroTesseramento" value="Indietro" formnovalidate>
                     <input type="submit" class="btn btn-dark mt-4 mr-n3 float-right"
                            style="font-size: 22px; cursor: pointer;" name="continuaTesseramento"
                            id="continuaTesseramento" value="Continua">
