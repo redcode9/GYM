@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +7,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link rel="stylesheet" href="{{asset('js/sort-table.css')}}"> <!-- CSS collegato allo script per rendere ordinabili le tabelle-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('js/sort-table.css')}}">
+    <!-- CSS collegato allo script per rendere ordinabili le tabelle-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -23,11 +24,16 @@
 <body>
 <div class="container-fluid">
     <div class="row h-100">
-        @include('templates.menu')
+        @if ($menu === "on")
+            @include('templates.menu')
+        @elseif ($menu === "off")
+            <div class="col-1 col-lg-1"></div>
+        @endif
         <div class="col-12 col-lg-10">
             @section('corpo')
-                @show
+            @show
         </div>
+
     </div>
 </div>
 

@@ -1,43 +1,58 @@
-@extends('templates.base')
+@extends('templates.base', ['menu' => "on"])
 @section('corpo')
-<div class="row mt-5">
-    <div class="col-12 text-center">
-        <h1 class="mt-5 p-3 border border-dark">Gestione Corsi</h1>
-    </div>
-    <div class="col-0 col-lg-2"></div>
-    <div class="col-12 col-lg-8">
-        <button class="btn btn-dark float-right ml-3">Modifica</button>
-        <button class="btn btn-dark float-right mr-3">Aggiungi</button>
+    <div class="row mt-4">
 
-    </div>
-    <div class="col-0 col-lg-2"></div>
-    <div class="col-0 col-lg-2"></div>
-    <div class="col-12 col-lg-8">
-        @foreach($sale as $sala)
-            <div class="col-12 ml-3" style="font-size: 1.3em;">{{$sala->nome}}</div>
-            <div class="jumbotron" style="margin-top: -15px;background-color: #cdf5de">
+        <div class="col-12 col-lg-12">
+            <div class="mx-4 text-center">
+                <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black"
+                    id="fornitore">GESTIONE CORSI</h1>
+            </div>
+        </div>
+        <div class="col-12 col-lg-12 mt-4"></div>
+
+        <div class="col-0 col-lg-2"></div>
+        <div class="col-12 col-lg-8">
+            @foreach($sale as $sala)
                 @foreach($sala->disciplina as $disciplina)
-                <div class="row">
-                    @foreach($disciplina->corsi as $corso)
-                    <div class="col-12 col-md-6 col-xl-4">
-
-                        <div class="jumbotron mr-1 text-center" style="background-color: #13ce66; cursor: pointer" onclick="window.location.href='{{route('corso',["id"=>$corso->id])}}'">
-                            <h5>
-                                {{$disciplina->nome}}
-                            </h5>
-                            <h6 class="mt-5">
-                                {{$corso->nome}}
-                            </h6>
-                        </div>
-
+                    <div class="col-12 ml-n2"
+                         style="font-weight: bold; background-color: #fff; width: 18%; border-radius: 10px; text-align: center; text-transform: uppercase">
+                        <h4 style="padding-bottom: 0.1rem">
+                            {{$disciplina->nome}}
+                        </h4>
                     </div>
-                    @endforeach
-                </div>
-                @endforeach
-            </div>Gestione Corso
-        @endforeach
+                    <div class="jumbotron" style="margin-top: -2.2rem;background-color: #cdf5de">
 
+                        <div class="row">
+                            @foreach($disciplina->corsi as $corso)
+                                <div class="col-12 col-md-6 col-xl-4">
+
+                                    <div class="jumbotron mr-1 text-center mb-n1"
+                                         style="background-color: #13ce66; cursor: pointer; text-transform: uppercase"
+                                         onclick="window.location.href='{{route('corso',["id"=>$corso->id])}}'">
+                                        <h5 class="py-3">
+                                            {{$corso->nome}}
+                                        </h5>
+                                    </div>
+
+                                </div>
+                            @endforeach
+                            <div class="col-12 col-md-6 col-xl-4">
+
+                                <div class="jumbotron mr-1 text-center mb-n1"
+                                     style="border: 2px dashed #777; cursor: pointer"
+                                     onclick="window.location.href='{{route('corso',["id"=>$corso->id])}}'">
+                                    <h1 style="color: #777; margin-bottom: 0.8rem">+</h1>
+                                </div>
+
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                @endforeach
+                <div class="jumbotron mt-5" style="border: 2px dashed #777; cursor: pointer;" onclick="">
+                    <h1 class="my-n4" style="text-align: center; color: #777">+</h1>
+                </div>
+        </div>
+        <div class="col-0 col-lg-2"></div>
     </div>
-    <div class="col-0 col-lg-2"></div>
-</div>
 @endsection

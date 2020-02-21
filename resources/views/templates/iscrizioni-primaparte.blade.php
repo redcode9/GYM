@@ -6,7 +6,8 @@
 
     <div class="col-12 col-lg-12">
         <div class="mx-4 text-center">
-        <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black" id="{{ $idTitle }}">{{ $title }}</h1>
+            <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black"
+                id="{{ $idTitle }}">{{ $title }}</h1>
         </div>
     </div>
 
@@ -18,7 +19,8 @@
             </h5></div>
         <form action="" method="post">
             <div class="row mx-4 mb-5">
-                <div class="col-12 col-lg-12" style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
+                <div class="col-12 col-lg-12"
+                     style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
 
                     <div class="row mt-2">
                         <div class="col-12 col-lg-6">
@@ -103,7 +105,8 @@
                         DETTAGLI
                     </h5></div>
                 <div class="row mx-2 mb-5">
-                    <div class="col-12 col-lg-12" style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
+                    <div class="col-12 col-lg-12"
+                         style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
                         <div class="row mt-2">
                             <div class="col-12 col-lg-6">
                                 <div class="form-group">
@@ -115,12 +118,25 @@
                                 </div>
                             </div>
 
-                            @if ( $idTitle === "stagista")
+                            @if ($idTitle === "socio")
                                 <div class="col-12 col-lg-6">
-                                    <div class="form-group">
-                                        <label for="ruolo" class="mb-0"><h5>Partita IVA*</h5></label>
-                                        <input type="text" pattern="[a-Z]" class="form-control" name="piva" id="piva"
-                                               value="" placeholder="es. IT08973230967" required>
+                                    <label for="tipoSocio"><h5>Tipologia Socio*</h5></label>
+                                    <div class="row">
+                                        <div class="col-2 col-lg-2">
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" class="form-check-input" name="tipoSocio"
+                                                       id="allievo" value="option1" required>
+                                                <label for="allievo" class="form-check-label" style="font-size: 1.1rem">Allievo</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2 col-lg-2">
+                                            <div class="form-check form-check-inline ml-2">
+                                                <input type="radio" class="form-check-input" name="tipoSocio"
+                                                       id="insegnante" value="option2" required>
+                                                <label for="insegnante" class="form-check-label"
+                                                       style="font-size: 1.1rem">Insegnante</label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             @elseif ($idTitle === "collaboratore")
@@ -129,6 +145,22 @@
                                         <label for="ruolo" class="mb-0"><h5>Ruolo specifico</h5></label>
                                         <input type="text" pattern="[a-Z]" class="form-control" name="ruolo" id="ruolo"
                                                value="" placeholder="es. Manutentore">
+                                    </div>
+                                </div>
+                            @elseif ($idTitle === "segreteria")
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="ruolo" class="mb-0"><h5>Ruolo specifico</h5></label>
+                                        <input type="text" pattern="[a-Z]" class="form-control" name="ruolo" id="ruolo"
+                                               value="Collaboratore" readonly>
+                                    </div>
+                                </div>
+                            @elseif ( $idTitle === "stagista")
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="piva" class="mb-0"><h5>Partita IVA*</h5></label>
+                                        <input type="text" pattern="[a-Z]" class="form-control" name="piva" id="piva"
+                                               value="" placeholder="es. IT08973230967" required>
                                     </div>
                                 </div>
                             @else

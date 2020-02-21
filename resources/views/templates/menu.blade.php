@@ -22,7 +22,7 @@
 
 
         <a class="nav-link mt-1 text-light btn btn-dark" href="{{route('GestioneUtenti')}}">Gestione Utenti</a>
-            <!-- Per adesso sta VisualizzaTutti come route, da cambiare in SelezioneUtenti successivamente-->
+        <!-- Per adesso sta VisualizzaTutti come route, da cambiare in SelezioneUtenti successivamente-->
         <div class="mt-3 pb-1"
              style="border-bottom: #353a40 solid 2px; border-top: #353a40 solid 2px;;border-radius: 2px;">
             Account: @yield('UtenteLoggato','Admin/Segretaria')  <!-- UtenteLoggato è la variabile in cui inseriremo il nome di chi è loggato davvero, Segretaria o Admin-->

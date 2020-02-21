@@ -29,4 +29,20 @@ class CorsiController extends Controller
             "corso" => $corso,
         ]);
     }
+
+    public function creazionecorso(){
+        $sale = Sala::all();
+        return view('creazionecorso',[
+            "errore" => "",
+            "sale" => $sale
+        ]);
+    }
+
+    public function creazionedisciplina(){
+        $sale = Sala::all();
+        return view('creazionedisciplina',[
+            "errore" => "",
+            "sale" => $sale
+        ]);
+    }
 }

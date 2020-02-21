@@ -57,4 +57,14 @@ class IscrizioniController extends Controller
         return view('iscrizionefornitore');
     }
 
+    public function segreteria()
+    {
+        return view('iscrizionesegreteria');
+    }
+
+    public function asd()
+    {
+        return view('iscrizioneasd');
+    }
+
 }

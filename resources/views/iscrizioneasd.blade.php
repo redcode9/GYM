@@ -1,15 +1,11 @@
-@extends('templates.base', ['menu' => "on"])
-<head>
-    <link rel="stylesheet" type="text/css" href="{{ url('css/placeholders.css') }}">
-    <script type="text/javascript" src="{{ url('js/showAltro.js') }}"></script>
-</head>
+@extends('templates.base', ['menu' => "off"])
 @section('corpo')
     <div class="row mt-4">
 
         <div class="col-12 col-lg-12">
             <div class="mx-4 text-center">
                 <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black"
-                    id="fornitore">ISCRIZIONE FORNITORE</h1>
+                    id="fornitore">ISCRIZIONE ASSOCIAZIONE</h1>
             </div>
         </div>
 
@@ -27,62 +23,18 @@
                         <div class="row mt-2">
                             <div class="col-12 col-lg-6">
                                 <div class="form-group">
-                                    <label for="ragione" class="mb-0"><h5>Ragione Sociale*</h5></label>
-                                    <input type="text" pattern="[a-Z]" class="form-control" name="ragione" id="ragione"
-                                           value="" placeholder="es. SRL" required>
+                                    <label for="nome" class="mb-0"><h5>Nome*</h5></label>
+                                    <input type="text" pattern="[a-Z]" class="form-control" name="nome" id="nome"
+                                           value="" placeholder="es. GYM" required>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="form-group">
-                                    <label for="azienda" class="mb-0"><h5>Nome Azienda</h5></label>
-                                    <input type="text" pattern="[a-Z]" class="form-control" name="azienda" id="azienda"
-                                           value="" placeholder="">
+                                    <label for="iban" class="mb-0"><h5>IBAN*</h5></label>
+                                    <input type="text" pattern="[a-Z]" class="form-control" name="iban" id="iban"
+                                           value="" placeholder="es. IT60X0542811101000000123456" required>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-6 mt-3">
-                                <div class="form-group">
-                                    <label for="tipologia" class="mb-0"><h5>Tipologia*</h5></label>
-                                    <select class="custom-select" name="tipologia" id="tipologia" onchange="showAltro()"
-                                            required>
-                                        <option value="" disabled selected hidden>Scegli un'opzione</option>
-                                        <option value="Ge">Generico</option>
-                                        <option value="Af">Affitto</option>
-                                        <option value="En">Energia</option>
-                                        <option value="Ga">Gas</option>
-                                        <option value="Ac">Acqua</option>
-                                        <option value="Co">Consumi</option>
-                                        <option value="Ab">Abbigliamento</option>
-                                        <option value="Pu">Pubblicità</option>
-                                        <option value="Ca">Cancelleria</option>
-                                        <option value="At">Assistenza</option>
-                                        <option value="Cm">Commercialista</option>
-                                        <option value="As">Assicurazione</option>
-                                        <option value="Pl">Pulizie</option>
-                                        <option value="Al">Altro</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6 mt-3">
-                                <div class="form-group" id="divAltro" style="display: none; margin-top:1.5rem;">
-                                    <label for="altro"></label>
-                                    <input type="text" pattern="[a-Z]" class="form-control" name="altro" id="altro"
-                                           value="" placeholder="Specificare Tipologia*" required>
-                                </div>
-                            </div>
-                            {{--                            <div class="col-12 col-lg-6 mt-3">--}}
-                            {{--                                <div class="form-group">--}}
-                            {{--                                    <label for="nome" class="mb-0"><h5>Nome Titolare*</h5></label>--}}
-                            {{--                                    <input type="text" pattern="[a-Z]" class="form-control" name="nome" id="nome"--}}
-                            {{--                                           value="" placeholder="es. Mario" required>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
-                            {{--                            <div class="col-12 col-lg-6 mt-3">--}}
-                            {{--                                <div class="form-group">--}}
-                            {{--                                    <label for="cognome" class="mb-0"><h5>Cognome Titolare*</h5></label>--}}
-                            {{--                                    <input type="text" pattern="[a-Z]" class="form-control" name="cognome" id="cognome"--}}
-                            {{--                                           value="" placeholder="es. Rossi" required>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
                             <div class="col-12 col-lg-12 mt-2">
                                 <hr>
                             </div>
@@ -129,15 +81,6 @@
                         <div class="col-12 col-lg-12"
                              style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
                             <div class="row mt-2">
-                                {{--                                <div class="col-12 col-lg-6">--}}
-                                {{--                                    <div class="form-group">--}}
-                                {{--                                        <label for="cf" class="mb-0"><h5>Codice Fiscale*</h5></label>--}}
-                                {{--                                        <input type="text"--}}
-                                {{--                                               pattern="^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$"--}}
-                                {{--                                               class="form-control" name="cf" id="cf" value=""--}}
-                                {{--                                               placeholder="es. DPLNGL39B21A678U" required>--}}
-                                {{--                                    </div>--}}
-                                {{--                                </div>--}}
                                 <div class="col-12 col-lg-6">
                                     <div class="form-group">
                                         <label for="piva" class="mb-0"><h5>Partita IVA*</h5></label>

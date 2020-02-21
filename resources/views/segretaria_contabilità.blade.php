@@ -1,4 +1,4 @@
-@extends('templates.base')
+@extends('templates.base', ['menu' => "on"])
 @section('corpo')
     <div class="row mt-5">
         <div class="col-12 text-center">
@@ -32,7 +32,7 @@
         </span>
             </div>
 
-            <h4> </h4>
-            </div>
+            <h4></h4>
+        </div>
     </div>
-        @endsection
+@endsection
