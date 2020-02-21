@@ -55,7 +55,7 @@
                                         <input class="btn btn-block btn-dark" type="submit" name="submit" value="Accedi">
                                     </div>
                                     <div class="form-group">
-                                        <input class="btn btn-block btn-dark" type="button" name="button" value="Registra ASD">
+                                        <a class="nav-link mt-1 text-light btn btn-dark" href="{{route('asd')}}">Registra ASD</a>
                                     </div>
                                     @csrf
 
