@@ -202,7 +202,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-lg-12 mt-n3 ml-n2 text-right">
+                    <div class="col-12 col-lg-12 mt-5 ml-3 text-right">
                         <div class="form-group">
                             <input type="submit" href="" class="btn btn-dark" style="font-size: 22px" name="termina"
                                    id="termina" value="Termina">
