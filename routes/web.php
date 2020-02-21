@@ -57,3 +57,6 @@ Route::get('/utenti/VisualizzaTutti/', function () {   //view VisualizzaTutti in
 Route::get('/HomeAdmin/', function () {   //view HomeAdmin
     return view('HomeAdmin');
 })->name('HomeAdmin');
+
+
+Route::get('logout', 'LoginController@logout')->name('logout');

@@ -3,7 +3,7 @@
     <nav class="nav flex-column navbar_spacing text-center">
         <a class="navbar-link" href="{{route('scelta')}}" style="margin-bottom: 0.5rem">
             <img
-                style="width: 100%; height: auto" src="{{asset('img/logo2.png')}}" alt="Logo"></a>
+                style="width: 100%; height: auto" src="{{asset('img/logo_gym3.png')}}" alt="Logo"></a>
 
 
         <a class="nav-link mb-4 text-light btn btn-dark" href="{{route('HomeAdmin')}}">Dashboard</a> <!-- Momentaneo-->
@@ -30,7 +30,7 @@
 
         <div class="nav-link text-light">
             <a class="nav-link mt-1 text-light btn btn-dark" href="#">Modifica dati ASD</a>
-            <a class="nav-link mt-1 text-dark btn btn-light" href="#">Logout</a>
+            <a class="nav-link mt-1 text-dark btn btn-light" href="{{route('logout')}}">Logout</a>
         </div>
     </nav>
 </div>
