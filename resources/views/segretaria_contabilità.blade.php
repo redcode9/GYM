@@ -1,38 +1,55 @@
 @extends('templates.base', ['menu' => "on"])
 @section('corpo')
-    <div class="row mt-5">
-        <div class="col-12 text-center">
-            <h1 class="mt-5 p-3 border border-dark">Contabilità</h1>
-        </div>
-        <div class="col-0 col-lg-2"></div>
-        <div class="col-12 col-lg-8">
-            <div><select>
-                    <option value="Categoria 1">Categoria 1</option>
-                    <option value="Categoria 2">Categoria 2</option>
-                    <option value="Categoria 3">Categoria 3</option>
-                    <option value="Categoria 4">Categoria 4</option>
-                </select>
-                <select>
-                    <option value="Giorno">Giorno</option>
-                    <option value="Settimana">Settimana</option>
-                    <option value="Mese">Mese</option>
-                    <option value="Anno">Anno</option>
-                </select>
-                <select>
-                    <option value="Entrate">Entrate</option>
-                    <option value="Uscite">Uscite</option>
-                </select></div>
+    <div class="row mt-4">
 
-            <h4>Ricerca tramite Nome</h4>
-            <div class="form-group input-group">
-                <input type="text" class="form-control">
-                <span class="input-group-btn">
-          <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-search"></i>
-          </button>
-        </span>
+        <div class="col-12 col-lg-12">
+            <div class="mx-4 text-center">
+                <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black">Contabilità</h1>
             </div>
+        </div>
 
-            <h4></h4>
+        <div class="container container-fluid mt-5"> <!-- Margine superiore modificabile se 5 è troppo-->
+            <div class="jumbotron_no_pad jumbotron-fluid">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Ricerca tramite nome</h3>
+                        <div class="form-group">
+                            <input class="form-control text-dark" style="border: 2px solid #353a40" type="text"
+                                   name="search"
+                                   id="search_table" placeholder="Search">
+                        </div>
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                            <table class="table table-hover table-bordered table-striped js-sort-table ">
+                                <thead class="thead-dark">
+                                <!--js-sort-asc: ascending sort
+                                    js-sort-desc: descending sort
+                                    js-sort-0: zero-based number of the sorted column
+                                    js-sort-string: sort by string
+                                    js-sort-date: sort by date
+                                    js-sort-number: sort by number
+                                    js-sort-last: sort by the last word
+                                    js-sort-input: sort by the input value
+                                -->
+                                <tr>
+                                    <th scope="col" style="cursor: pointer" class="js-sort-date">Data</th>
+                                    <th scope="col" style="cursor: pointer" class="js-sort-number">Entrata</th>
+                                    <th scope="col" style="cursor: pointer" class="js-sort-number">Uscita</th>
+                                    <th scope="col" style="cursor: pointer">Nome</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Piero</td>
+                                    <td>Carrieri</td>
+                                    <td>Si</td>
+                                    <td>Pulitore</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

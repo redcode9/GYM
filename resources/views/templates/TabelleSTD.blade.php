@@ -4,7 +4,7 @@
 
         <div class="col-12 col-lg-12">
             <div class="mx-4 text-center">
-                <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black">{{$title_upper_view}}</h1>
+                <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black">{{$title_upper_view ?? ''}}</h1>
             </div>
         </div>
 

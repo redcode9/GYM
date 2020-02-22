@@ -15,7 +15,7 @@
 
         <a class="nav-link mt-1 text-light btn btn-dark" href="{{route("iscrizioni")}}"> Nuovo Utente</a>
 
-        <a class="nav-link mt-1 text-light btn btn-dark" href="">Contabilità</a>
+        <a class="nav-link mt-1 text-light btn btn-dark" href="{{route("segretaria_contabilità")}}">Contabilità</a>
 
 
         <a class="nav-link mt-1 text-light btn btn-dark" href="{{route('corsi')}}">Gestione Corsi</a>

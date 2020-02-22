@@ -40,7 +40,7 @@ Route::prefix('creazione')->middleware('auth')->group(function () {
 
 Route::get('/segretaria/',function (){
     return view('segretaria_contabilità');
-});
+})->name('segretaria_contabilità');
 Route::get('/corsi/', "CorsiController@carica")->name('corsi');
 Route::get('/corso/{id}', "CorsiController@caricaCorso")->name('corso');
 
