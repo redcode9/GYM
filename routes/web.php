@@ -30,9 +30,8 @@ Route::prefix('iscrizione')->middleware('auth')->group(function () {
     Route::get('stagista-2', 'IscrizioniController@stagista2')->name('stagista2');
     Route::get('fornitore', 'IscrizioniController@fornitore')->name('fornitore');
     Route::get('segreteria', 'IscrizioniController@segreteria')->name('segreteria');
-    Route::get('associazione', 'IscrizioniController@asd')->name('asd');
 });
-
+Route::get('iscrizione/associazione', 'IscrizioniController@asd')->name('asd');
 Route::prefix('creazione')->middleware('auth')->group(function () {
     Route::get('corso', 'CorsiController@creazionecorso')->name('creazionecorso');
     Route::get('disciplina', 'CorsiController@creazionedisciplina')->name('creazionedisciplina');
