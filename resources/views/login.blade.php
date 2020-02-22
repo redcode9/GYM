@@ -32,7 +32,9 @@
                     </div>
                     <div class="col-12 mt-4">
                         @if($errore!="")
-                            {{$errore}}
+                            <div class="alert alert-danger" style="text-align: center">
+                                <strong>Attenzione!</strong> Username e/o password non esistenti. Riprova.
+                            </div>
                         @endif
                         <div class="row">
                             <div class="col-0 col-lg-3"></div>
@@ -42,7 +44,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" style="background-color: #ffac14"><i class="fas fa-user"></i></span>
                                         </div>
-                                        <input type="text" name="username" class="form-control" placeholder="Username">
+                                        <input type="text" name="username" class="form-control" placeholder="Username" required>
 
                                     </div>
 
@@ -50,7 +52,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" style="background-color: #ffac14"><i class="fas fa-key icon"></i></span>
                                         </div>
-                                        <input type="Password" name="password" class="form-control" placeholder="Password"/>
+                                        <input type="Password" name="password" class="form-control" placeholder="Password" required/>
                                     </div><br />
                                     <div class="form-group mt-3">
                                         <input class="btn btn-block btn-dark" type="submit" name="submit" value="Accedi">
