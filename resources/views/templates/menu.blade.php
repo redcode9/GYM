@@ -3,7 +3,7 @@
     <nav class="nav flex-column navbar_spacing text-center">
         <a class="navbar-link" href="{{route('scelta')}}" style="margin-bottom: 0.5rem">
             <img
-                style="width: 100%; height: auto" src="{{asset('img/logo_gym3.png')}}" alt="Logo"></a>
+                style="width: 100%; height: auto; margin-left: -1.5rem" src="{{asset('img/logo_gym3.png')}}" alt="Logo"></a>
 
 
         <a class="nav-link mb-4 text-light btn btn-dark" href="{{route('HomeAdmin')}}">Dashboard</a> <!-- Momentaneo-->

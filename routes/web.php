@@ -13,7 +13,7 @@
 
 Route::any('/', "LoginController@Accedi")->name('login');
 
-Route::get('/iscrizioni/', function () {
+Route::get('/iscrizione/', function () {
     return view('scelta');
 })->name('iscrizioni');
 
@@ -29,9 +29,8 @@ Route::prefix('iscrizione')->middleware('auth')->group(function () {
     Route::get('stagista', 'IscrizioniController@stagista')->name('stagista');
     Route::get('stagista-2', 'IscrizioniController@stagista2')->name('stagista2');
     Route::get('fornitore', 'IscrizioniController@fornitore')->name('fornitore');
-    Route::get('segreteria', 'IscrizioniController@segreteria')->name('segreteria');
 });
-Route::get('iscrizione/associazione', 'IscrizioniController@asd')->name('asd');
+
 Route::prefix('creazione')->middleware('auth')->group(function () {
     Route::get('corso', 'CorsiController@creazionecorso')->name('creazionecorso');
     Route::get('disciplina', 'CorsiController@creazionedisciplina')->name('creazionedisciplina');
@@ -43,7 +42,17 @@ Route::get('/segretaria/',function (){
 Route::get('/corsi/', "CorsiController@carica")->name('corsi');
 Route::get('/corso/{id}', "CorsiController@caricaCorso")->name('corso');
 
+Route::get('/admin/', function () {   //view RegistrazioneAdmin
+    return view('registrazioneadmin');
+})->name('admin');
 
+Route::get('/associazione/', function () {   //view RegistrazioneASD
+    return view('registrazioneasd');
+})->name('asd');
+
+Route::get('/segreteria/', function () {   //view RegistrazioneSegreteria
+    return view('registrazionesegreteria');
+})->name('segreteria');
 
 Route::get('/utenti/', function () {   //view Gestione Utenti
     return view('GestioneUtenti');

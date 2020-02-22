@@ -22,12 +22,13 @@
         <div class="col-3"></div>
         <div class="col-6">
             <div>
-                <p style="text-align: center"><img style="width: 30%;" src="{{asset('img/logo_gym3.png')}}" alt="Logo">
-                </p></div>
+                <p style="text-align: center"><img style="width: 30%;margin-left:-1.5rem" src="{{asset('img/logo_gym3.png')}}" alt="Logo">
+                </p>
+            </div>
             <div class="jumbotron pb-3 pt-3" style="background-color: #fae8c6">
                 <div class="row">
                     <div class="col-12">
-                        <h1 class="text-center">Login</h1>
+                        <h2 class="text-center mb-3">Login</h2>
                     </div>
                     <div class="col-12 mt-4">
                         @if($errore!="")
@@ -51,7 +52,7 @@
                                         </div>
                                         <input type="Password" name="password" class="form-control" placeholder="Password"/>
                                     </div><br />
-                                    <div class="form-group" >
+                                    <div class="form-group mt-3">
                                         <input class="btn btn-block btn-dark" type="submit" name="submit" value="Accedi">
                                     </div>
                                     <div class="form-group">
@@ -60,7 +61,6 @@
                                     @csrf
 
                                 </form>
-                                <a class="nav-link text-center text-dark" href="">Password dimenticata?</a>
                             </div>
                             <div class="col-0 col-lg-3"></div>
                         </div>

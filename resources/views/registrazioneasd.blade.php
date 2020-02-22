@@ -1,11 +1,20 @@
 @extends('templates.base', ['menu' => "off"])
 @section('corpo')
-    <div class="row mt-4">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div>
+                    <p style="text-align: center"><img style="width: 37%;margin-left:-1.5rem" src="{{asset('img/logo_gym3.png')}}" alt="Logo">
+                    </p>
+                </div>
+            </div>
+        </div>
 
         <div class="col-12 col-lg-12">
             <div class="mx-4 text-center">
                 <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black"
-                    id="fornitore">ISCRIZIONE ASSOCIAZIONE</h1>
+                    id="fornitore">REGISTRAZIONE ASSOCIAZIONE</h1>
             </div>
         </div>
 
@@ -108,8 +117,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-12 mt-n3 ml-n2 text-right">
-                    <div class="form-group">
+                <div class="col-12 col-lg-12 mt-n3">
+                    <div class="form-group float-left">
+                        <input type="button" onclick="window.location.replace('{{route('login')}}')" class="btn btn-dark" style="font-size: 22px" name="annulla"
+                               id="annulla" value="Annulla">
+                    </div>
+                    <div class="form-group float-right">
                         <input type="submit" href="" class="btn btn-dark" style="font-size: 22px" name="continua"
                                id="continua" value="Continua">
                     </div>

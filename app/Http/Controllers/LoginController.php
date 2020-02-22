@@ -11,14 +11,14 @@ class LoginController extends Controller
     //
     public function Accedi(Request $request){
         if(Auth::check()){
-            return redirect()->intended('iscrizioni');
+            return redirect()->intended('iscrizione');
         } else {
             if ($request->has('username')) {
                 $credentials = $request->only('username', 'password');
                 //echo Hash::make("password");
                 if (Auth::attempt($credentials)) {
                     // Authentication passed...
-                    return redirect()->intended('iscrizioni');
+                    return redirect()->intended('iscrizione');
                 } else {
                     return view("login",[
                         "errore" => "errore"
