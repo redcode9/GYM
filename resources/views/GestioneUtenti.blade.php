@@ -9,14 +9,15 @@
             </div>
         </div>
         <div class="col-12">
-            <div class="row">
+            <div class="row mx-n1">
                 <div class="col-12 col-xl-6">
                     <div class="col-12 mt-3 ml-3" style="font-size: 1.1em;">PRIVATO</div>
-                    <div class="jumbotron" style="margin-top: -15px;background-color: #cdf5de">
+                    <div class="jumbotron"
+                         style="margin-top: -15px;background-color: #cdf5de; padding-bottom: 2rem!important;">
                         <div class="row">
                             <div class="col-6">
-                                <div class="jumbotron mr-1 text-center"
-                                     style="background-color: #13ce66;cursor: pointer"
+                                <div class="jumbotron text-center"
+                                     style="background-color: #13ce66;cursor: pointer; padding-bottom: 3.5rem!important;"
                                      onclick="window.location.href='{{route("GestioneSoci")}}'">
                                     <h5>
                                         SOCIO
@@ -32,8 +33,8 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="jumbotron ml-1 text-center"
-                                     style="background-color: #51d69a;cursor: pointer"
+                                <div class="jumbotron text-center"
+                                     style="background-color: #51d69a;cursor: pointer; padding-bottom: 3.5rem!important;"
                                      onclick="window.location.href='{{route("GestioneCollaboratori")}}'">
                                     <h5>
                                         COLLABORATORE
@@ -53,11 +54,12 @@
                 </div>
                 <div class="col-12 col-xl-6">
                     <div class="col-12 mt-3 ml-3" style="font-size: 1.1em;">PROFESSIONISTA/AZIENDA</div>
-                    <div class="jumbotron" style="margin-top: -15px;background-color: #feffd7">
+                    <div class="jumbotron"
+                         style="margin-top: -15px;background-color: #feffd7; padding-bottom: 2rem!important;">
                         <div class="row">
                             <div class="col-6">
-                                <div class="jumbotron mr-1 text-center"
-                                     style="background-color: #f1e140;cursor: pointer"
+                                <div class="jumbotron text-center"
+                                     style="background-color: #f1e140;cursor: pointer; padding-bottom: 3.5rem!important;"
                                      onclick="window.location.href='{{route("GestioneStagisti")}}'">
                                     <h5>
                                         STAGISTA
@@ -73,8 +75,8 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="jumbotron ml-1 text-center"
-                                     style="background-color: #ffba5c;cursor: pointer"
+                                <div class="jumbotron text-center"
+                                     style="background-color: #ffba5c;cursor: pointer; padding-bottom: 3.5rem!important;"
                                      onclick="window.location.href='{{route("GestioneFornitori")}}'">
                                     <h5>
                                         FORNITORE
@@ -93,9 +95,10 @@
                     </div>
                 </div>
             </div>
-            <div class="border text-center mb-5" style="margin-top: -15px;font-size: 30px ;cursor:pointer"
+            <div class="border btn-dark text-center"
+                 style="margin: -1rem 0.7rem; font-size: 30px; cursor:pointer; border-radius: .3rem;"
                  onclick="window.location.href='{{route('VisualizzaTutti')}}'">
-                Visualizza Tutti
+                VISUALIZZA TUTTI
             </div>
             <div class="col-0 col-lg-2"></div>
         </div>
