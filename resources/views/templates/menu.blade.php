@@ -5,9 +5,10 @@
 <body>
 <div class="d-none d-lg-block navcol" id="menu">
     <nav class="nav flex-column navbar_spacing text-center">
-        <a class="navbar-link my-2" href="{{route('scelta')}}" style="margin-bottom: 0.5rem">
+        <div class="navbar-link my-2" style="margin-bottom: 0.5rem">
             <img
-                style="width: 100%; height: auto; margin-left: -1.5rem" src="{{asset('img/logo_gym3.png')}}" alt="Logo"></a>
+                style="width: 100%; height: auto; margin-left: -1.5rem" src="{{asset('img/logo_gym3.png')}}" alt="Logo">
+        </div>
 
 
         <a class="nav-link my-4 btn btn-dark" href="{{route('HomeAdmin')}}">Dashboard</a> <!-- Momentaneo-->
