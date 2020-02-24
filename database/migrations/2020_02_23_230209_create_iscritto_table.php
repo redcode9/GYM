@@ -28,7 +28,7 @@ class CreateIscrittoTable extends Migration
             $table->string('ass_num',20)->nullable();
             $table->date('cert_med_rilascio')->nullable();
             $table->date('cert_med_scadenza')->nullable();
-            $table->text('note');
+            $table->text('note')->nullable();
             $table->bigInteger('gestore')->unsigned();
             $table->foreign('gestore')->on('users')->references('id')->onDelete('cascade')->onUpdate('cascade');
 
