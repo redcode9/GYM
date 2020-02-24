@@ -15,7 +15,6 @@ class CreateIscrittoTable extends Migration
     {
         Schema::create('Iscritto', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->string('cf',16);
             $table->string('cellulare',20)->nullable();
             $table->string('email',255)->nullable();

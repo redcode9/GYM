@@ -15,7 +15,6 @@ class CreateTransazioneTable extends Migration
     {
         Schema::create('Transazione', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->string('tipo',10);
             $table->float('importo');
             $table->text('note')->nullable();

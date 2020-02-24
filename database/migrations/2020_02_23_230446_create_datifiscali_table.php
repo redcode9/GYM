@@ -15,7 +15,6 @@ class CreateDatifiscaliTable extends Migration
     {
         Schema::create('Dati_fiscali', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->string('tipo_doc',20)->nullable();
             $table->string('descrizione',50)->nullable();
             $table->date('data_iscriz');

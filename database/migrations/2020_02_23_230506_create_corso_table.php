@@ -15,7 +15,6 @@ class CreateCorsoTable extends Migration
     {
         Schema::create('Corso', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->string('nome',255);
             $table->float('costo');
             $table->date('data_inizio');

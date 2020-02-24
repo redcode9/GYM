@@ -15,7 +15,6 @@ class CreateDisciplinaTable extends Migration
     {
         Schema::create('Disciplina', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->string('nome',255);
             $table->bigInteger('sala')->unsigned();
             $table->foreign('sala')->on('sala')->references('id')->onDelete('cascade')->onUpdate('cascade');

@@ -15,7 +15,6 @@ class CreateTesseraTable extends Migration
     {
         Schema::create('Tessera', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->date('data_tess');
             $table->date('scad_tess');
         });
