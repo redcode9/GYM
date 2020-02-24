@@ -58,8 +58,7 @@
 
                                     </form>
                                     <div class="form-group mt-3">
-                                        <input class="btn btn-block btn-dark" type="submit" name="submit"
-                                               value="Termina Senza Iscrizione">
+                                        <a class="btn btn-block btn-dark" name="button" href="{{route('login')}}">Termina Senza Iscrizione</a>
                                     </div>
                                 </div>
                                 <div class="col-0 col-lg-3"></div>

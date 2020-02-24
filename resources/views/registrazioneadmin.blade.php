@@ -51,11 +51,11 @@
                                                    class="form-control" placeholder="Ripeti Password" value="" required>
                                         </div>
                                         <div class="form-group mt-3">
-                                            <input class="btn btn-block btn-dark" type="submit" name="submit"
+                                            <input class="btn btn-block btn-dark" type="submit" name="submit1"
                                                    value="Iscrivi e Termina" onclick="validatePassword()">
                                         </div>
                                         <div class="form-group mt-3">
-                                            <input class="btn btn-block btn-dark" type="submit" name="submit"
+                                            <input class="btn btn-block btn-dark" type="submit" name="submit2"
                                                    value="Iscrivi e Registra Segreteria" onclick="validatePassword()">
                                         </div>
                                         @csrf

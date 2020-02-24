@@ -42,15 +42,11 @@ Route::get('/segretaria/', function () {
 Route::get('/corsi/', "CorsiController@carica")->name('corsi');
 Route::get('/corso/{id}', "CorsiController@caricaCorso")->name('corso');
 
-Route::get('/admin/', function () {   //view RegistrazioneAdmin
-    return view('registrazioneadmin');
-})->name('admin');
+Route::any('/admin/', 'RegistrazioneAsdController@registraAdmin')->name('admin');
 
 Route::any('/associazione/', 'RegistrazioneAsdController@registraAsd')->name('asd');
 
-Route::get('/segreteria/', function () {   //view RegistrazioneSegreteria
-    return view('registrazionesegreteria');
-})->name('segreteria');
+Route::any('/segreteria/', 'RegistrazioneAsdController@registraSegreteria')->name('segreteria');
 
 Route::get('/utenti/', function () {   //view Gestione Utenti
     return view('GestioneUtenti');
