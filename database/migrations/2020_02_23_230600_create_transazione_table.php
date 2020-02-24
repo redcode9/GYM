@@ -18,7 +18,7 @@ class CreateTransazioneTable extends Migration
             $table->timestamps();
             $table->string('tipo',10);
             $table->float('importo');
-            $table->text('note');
+            $table->text('note')->nullable();
             $table->bigInteger('corso')->unsigned();
             $table->bigInteger('socio')->unsigned();
             $table->foreign('corso')->on('corso')->references('id')->onDelete('cascade')->onUpdate('cascade');
