@@ -73,7 +73,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapgestioneUtentiRoutes() //Aggiunto da Sendray
     {
-        Route::prefix('utenti')
+        Route::middleware(['web', 'auth'])
             ->namespace($this->namespace)
             ->group(base_path('routes/gestioneUtenti.php'));
     }
