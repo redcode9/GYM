@@ -106,14 +106,6 @@
                                                value="" placeholder="es. 0995916485">
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-6 mt-3 mb-n2">
-                                    <div class="form-group">
-                                        <label for="email" class="mb-0"><h5>E-mail</h5></label>
-                                        <input type="email" pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}$"
-                                               class="form-control" name="email" id="email" value=""
-                                               placeholder="es. mario.rossi@gmail.com">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -125,7 +117,7 @@
                                id="annulla" value="Annulla">
                     </div>
                     <div class="form-group float-right">
-                        <input type="submit" href="" class="btn btn-dark" style="font-size: 22px" name="continua"
+                        <input type="submit" class="btn btn-dark" style="font-size: 22px" name="continua"
                                id="continua" value="Continua">
                     </div>
                 </div>
