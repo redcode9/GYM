@@ -16,7 +16,7 @@ class CreateSocioTable extends Migration
         Schema::create('Socio', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('tipo',20)->nullable();
+            $table->enum('tipo',['insegnante', 'allievo']);
             $table->tinyInteger('verbalizzato')->nullable();
             $table->tinyInteger('fondatore')->nullable();
             $table->bigInteger('iscrizione')->unsigned();

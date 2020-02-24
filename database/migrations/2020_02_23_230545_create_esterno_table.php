@@ -21,7 +21,7 @@ class CreateEsternoTable extends Migration
             $table->char('genere',1);
             $table->string('luogo_nasc',255);
             $table->date('data_nasc');
-            $table->integer('tipo');
+            $table->enum('tipo',['collaboratore', 'stagista']);
             $table->bigInteger('corso')->unsigned()->nullable();
             $table->bigInteger('tessera')->unsigned()->nullable();
             $table->bigInteger('iscrizione')->unsigned();
