@@ -20,16 +20,23 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="{{asset('js/sort-table.js')}}"></script>  <!-- Script che serve a rendere ordinabili le tabelle-->
+    <style>
+        html, body {
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row h-100">
+<div class="container-fluid" style="height:100%">
+    <div class="row" style="height:100%">
         @if ($menu === "on")
-            @include('templates.menu')
+            <div class="col-lg-2" id="side-menu" style="padding-left: 0;">
+                @include('templates.menu')
+            </div>
         @elseif ($menu === "off")
-            <div class="col-1 col-lg-1"></div>
+            <div class="col-lg-1"></div>
         @endif
-        <div class="col-12 col-lg-10">
+        <div class="col-12 col-lg-10" id="main">
             @section('corpo')
             @show
         </div>

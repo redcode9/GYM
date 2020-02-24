@@ -10,14 +10,15 @@
         </div>
 
         <div class="col-12">
-            <div class="row mt-4">
+            <div class="row mt-4 mx-n1">
                 <div class="col-12 col-xl-6">
                     <div class="col-12 mt-3 ml-3" style="font-size: 1.3em;">PRIVATO</div>
-                    <div class="jumbotron" style="margin-top: -15px;background-color: #cdf5de">
+                    <div class="jumbotron"
+                         style="margin-top: -15px;background-color: #cdf5de; padding-bottom: 2rem!important;">
                         <div class="row">
                             <div class="col-6">
-                                <div class="jumbotron mr-1 text-center"
-                                     style="background-color: #13ce66;cursor: pointer"
+                                <div class="jumbotron text-center"
+                                     style="background-color: #13ce66;cursor: pointer; padding-bottom: 3.5rem!important;"
                                      onclick="window.location.href='{{route("socio")}}'">
                                     <h5>
                                         SOCIO
@@ -31,8 +32,8 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="jumbotron ml-1 text-center"
-                                     style="background-color: #51d69a;cursor: pointer"
+                                <div class="jumbotron text-center"
+                                     style="background-color: #51d69a;cursor: pointer; padding-bottom: 3.5rem!important;"
                                      onclick="window.location.href='{{route("collaboratore")}}'">
                                     <h5>
                                         COLLABORATORE
@@ -50,10 +51,13 @@
                 </div>
                 <div class="col-12 col-xl-6">
                     <div class="col-12 mt-3 ml-3" style="font-size: 1.3em;">PROFESSIONISTA/AZIENDA</div>
-                    <div class="jumbotron" style="margin-top: -15px;background-color: #feffd7">
+                    <div class="jumbotron"
+                         style="margin-top: -15px;background-color: #feffd7; padding-bottom: 2rem!important;">
                         <div class="row">
                             <div class="col-6">
-                                <div class="jumbotron mr-1 text-center" style="background-color: #f1e140">
+                                <div class="jumbotron text-center"
+                                     style="background-color: #f1e140; padding-bottom: 3.5rem!important;"
+                                     onclick="window.location.href='{{route("stagista")}}'">
                                     <h5>
                                         STAGISTA
                                     </h5>
@@ -66,7 +70,9 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="jumbotron ml-1 text-center" style="background-color: #ffba5c">
+                                <div class="jumbotron text-center"
+                                     style="background-color: #ffba5c; padding-bottom: 3.5rem!important;"
+                                     onclick="window.location.href='{{route("fornitore")}}'">
                                     <h5>
                                         FORNITORE
                                     </h5>

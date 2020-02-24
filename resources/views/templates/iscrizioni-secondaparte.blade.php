@@ -7,7 +7,8 @@
 
     <div class="col-12 col-lg-12">
         <div class="mx-4 text-center">
-            <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black" id="{{ $idTitle }}">{{ $title }}</h1>
+            <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black"
+                id="{{ $idTitle }}">{{ $title }}</h1>
         </div>
     </div>
 
@@ -19,7 +20,8 @@
             </h5></div>
         <form action="" method="post">
             <div class="row ml-4 mr-4 mb-5 mt-n5">
-                <div class="col-12 col-lg-12 mt-5" style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
+                <div class="col-12 col-lg-12 mt-5"
+                     style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
                     <div class="row mt-2">
                         <div class="col-12 col-lg-12">
                             <div class="form-group">
@@ -61,7 +63,8 @@
                     CERTIFICATO MEDICO
                 </h5></div>
             <div class="row ml-4 mr-4 mb-5 mt-n5">
-                <div class="col-12 col-lg-12 mt-5" style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
+                <div class="col-12 col-lg-12 mt-5"
+                     style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
                     <div class="row mt-2">
                         <div class="col-12 col-lg-6 mb-n2">
                             <div class="form-group">

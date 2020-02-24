@@ -5,7 +5,8 @@
             <div class="col-3"></div>
             <div class="col-6">
                 <div>
-                    <p style="text-align: center"><img style="width: 37%;margin-left:-1.5rem" src="{{asset('img/logo_gym3.png')}}" alt="Logo">
+                    <p style="text-align: center"><img style="width: 221px;margin-left:-0.5rem"
+                                                       src="{{asset('img/logo_gym3.png')}}" alt="Logo">
                     </p>
                 </div>
             </div>
@@ -119,7 +120,8 @@
                 </div>
                 <div class="col-12 col-lg-12 mt-n3">
                     <div class="form-group float-left">
-                        <input type="button" onclick="window.location.replace('{{route('login')}}')" class="btn btn-dark" style="font-size: 22px" name="annulla"
+                        <input type="button" onclick="window.location.replace('{{route('login')}}')"
+                               class="btn btn-dark" style="font-size: 22px" name="annulla"
                                id="annulla" value="Annulla">
                     </div>
                     <div class="form-group float-right">

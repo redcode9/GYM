@@ -18,7 +18,7 @@ class LoginController extends Controller
                 //echo Hash::make("password");
                 if (Auth::attempt($credentials)) {
                     // Authentication passed...
-                    return redirect()->intended('iscrizione');
+                    return redirect()->intended('HomeAdmin');
                 } else {
                     return view("login",[
                         "errore" => "errore"
