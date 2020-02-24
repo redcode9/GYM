@@ -26,7 +26,7 @@
             <a class="nav-link btn btn-dark" href="{{route('GestioneUtenti')}}">Utenti</a>
         </div>
         </button>
-        <footer>
+        <footer class="col-lg-12 col-12 px-3">
             <div class="pb-1"
                  style="border-bottom: #353a40 solid 2px; border-top: #353a40 solid 2px;border-radius: 2px;">
                 Account: @yield('UtenteLoggato','Admin/Segreteria')  <!-- UtenteLoggato è la variabile in cui inseriremo il nome di chi è loggato davvero, Segretaria o Admin-->

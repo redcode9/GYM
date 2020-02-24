@@ -22,7 +22,7 @@ Route::prefix('iscrizione')->middleware('auth')->group(function () {
     Route::any('socio', 'IscrizioneSocioController@registrazione')->name('socio');
     Route::any('socio2/{id}/', 'IscrizioneSocioController@registrazione2')->name('socio2');
     Route::any('socio3/{id}/', 'IscrizioneSocioController@registrazione3')->name('socio3');
-    Route::any('tiposocio/{id}/','IscrizioneSocioController@tiposocio')->name('tiposocio');
+    Route::any('tiposocio/{id}/', 'IscrizioneSocioController@tiposocio')->name('tiposocio');
     Route::any('collaboratore', 'IscrizioneCollaboratoreController@registrazione')->name('collaboratore');
     Route::any('collaboratore-2', 'IscrizioniController@collaboratore2')->name('collaboratore2');
     Route::any('collaboratore-3', 'IscrizioniController@collaboratore3')->name('collaboratore3');
@@ -36,7 +36,7 @@ Route::prefix('creazione')->middleware('auth')->group(function () {
     Route::get('disciplina', 'CorsiController@creazionedisciplina')->name('creazionedisciplina');
 });
 
-Route::get('/segretaria/',function (){
+Route::get('/segretaria/', function () {
     return view('segretaria_contabilità');
 })->name('segretaria_contabilità');
 Route::get('/corsi/', "CorsiController@carica")->name('corsi');
