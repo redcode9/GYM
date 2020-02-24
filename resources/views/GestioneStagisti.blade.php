@@ -1,6 +1,29 @@
-@component('templates.TabelleSTD',['SearchBox' => "ON"])  <!-- Cambiare in OFF se la searchbox non serve in questa tabella-->
-<!-- ciao-->
+@component('templates.entityTables',['SearchBox' => "OFF"])
+    @slot('title_upper_view','GESTIONE UTENTI')
+    @slot('title_upper_table','Gestione Collaboratori')
 
-@slot('title_upper_view','GESTIONE UTENTI')
-@slot('title_upper_table','Gestione Stagisti')   <!-- Se si vuole inserire un dato interattivo, seguire il seguente form-->
+    @slot('table_header')
+        <th scope="col" class="text-right" style="cursor: pointer">Modifica</th>
+        <th scope="col" style="cursor: pointer">Elimina</th>
+        <th scope="col" style="cursor: pointer">Nome</th>
+        <th scope="col" style="cursor: pointer">Cognome</th>
+        <th scope="col" style="cursor: pointer">Socio</th>
+        <th scope="col" style="cursor: pointer">Ruolo</th>
+    @endslot
+    @slot('table_content')
+        @foreach($stagisti as $stagista)
+            <tr>
+                <td class="text-right">
+                    <input type="image" src="{{asset('img/matita.png')}}" width="25" height="25">
+                </td>
+                <td>
+                    <input type="image" src="{{asset('img/cestino.png')}}" width="25" height="25">
+                </td>
+                <td>{{ $stagista->nome }}</td>
+                <td>{{ $stagista->cognome }}</td>
+                <td>Si</td>
+                <td>{{ $stagista->tipo }}</td>
+            </tr>
+        @endforeach
+    @endslot
 @endcomponent

@@ -27,5 +27,6 @@ class ViewServiceProvider extends ServiceProvider
         // Using class based composers...
         View::composer('GestioneSoci', 'App\Http\ViewComposers\SociComposer');
         View::composer('GestioneCollaboratori', 'App\Http\ViewComposers\CollabComposer');
+        View::composer('GestioneStagisti', 'App\Http\ViewComposers\StagComposer');
     }
 }
