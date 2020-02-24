@@ -15,16 +15,14 @@ class CreateAssociazioneTable extends Migration
     {
         Schema::create('Associazione', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->string('nome',255);
             $table->string('citta',255);
             $table->string('provincia',3);
             $table->string('indirizzo',255);
             $table->string('cap',10);
-            $table->string('telefono',20);
+            $table->string('telefono',20)->nullable();
             $table->string('iban',27);
             $table->integer('p_iva');
-            $table->float('importo');
         });
     }
 

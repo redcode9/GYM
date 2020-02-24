@@ -46,9 +46,7 @@ Route::get('/admin/', function () {   //view RegistrazioneAdmin
     return view('registrazioneadmin');
 })->name('admin');
 
-Route::get('/associazione/', function () {   //view RegistrazioneASD
-    return view('registrazioneasd');
-})->name('asd');
+Route::any('/associazione/', 'RegistrazioneAsdController@registraAsd')->name('asd');
 
 Route::get('/segreteria/', function () {   //view RegistrazioneSegreteria
     return view('registrazionesegreteria');
