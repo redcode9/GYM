@@ -108,7 +108,9 @@ class IscrizioneSocioController extends Controller
         } else {
             $dati = DatiFiscali::where("tipo_doc","F")->count();
             $ass = Associazione::all()->first();
-            $imp = $ass->importo;
+            //$imp = $ass->importo;
+            //for test
+            $imp = 20;
             $fattura = DatiFiscali::where("tipo_doc","F")->count()+1;
             $ricevutaN = DatiFiscali::where("tipo_doc","RN")->count()+1;
             $ricevuta = DatiFiscali::where("tipo_doc","R")->count()+1;

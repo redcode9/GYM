@@ -22,6 +22,6 @@ class StagComposer
      */
     public function compose(View $view)
     {
-        $view->with('stagisti', Esterno::tipo('stagista'));
+        $view->with('stagisti', Esterno::tipo('stagista')->get());
     }
 }
