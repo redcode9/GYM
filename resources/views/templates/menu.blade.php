@@ -35,8 +35,11 @@
             </div>
 
             <div style="padding: 1.5rem 0.6rem">
-                <a class="nav-link mt-1 btn btn-dark" href="#">Modifica dati ASD</a>
+                @if (Auth::user()->ruolo=='Admin')
+                <a class="nav-link mt-1 btn btn-dark" href="{{route('modificaasd')}}" id="modifica_asd">Modifica dati ASD</a>
+                @endif
                 <a class="nav-link mt-1 btn btn-light" style="color: #000;" href="{{route('logout')}}">Logout</a>
+
             </div>
         </footer>
     </nav>

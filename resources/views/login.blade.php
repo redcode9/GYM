@@ -66,8 +66,11 @@
                                                value="Accedi">
                                     </div>
                                     <div class="form-group">
+                                        <!--Se c'è già una ASD registrata, non posso registrarne altre-->
+                                        @if (\DB::table('Associazione')->count()==0)
                                         <a class="nav-link mt-1 text-light btn btn-dark" href="{{route('asd')}}">Registra
                                             ASD</a>
+                                        @endif
                                     </div>
                                     @csrf
 
