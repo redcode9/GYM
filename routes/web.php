@@ -40,13 +40,13 @@ Route::prefix('creazione')->middleware('auth')->group(function () {
 
 Route::get('modifica_asd', 'ModificaAsdController@mostraAsd')->middleware('auth')->name('mostraasd');
 Route::post('modifica_asd', 'ModificaAsdController@modificaAsd')->middleware('auth')->name('modificaasd');
-//Route::any('modifica_asd', function () {    return view('modificaAsd');})->name('modificaasd');
 
 
 
 Route::get('/segretaria/', function () {
     return view('segretaria_contabilità');
 })->name('segretaria_contabilità');
+
 Route::get('/corsi/', "CorsiController@carica")->name('corsi');
 Route::get('/corso/{id}', "CorsiController@caricaCorso")->name('corso');
 

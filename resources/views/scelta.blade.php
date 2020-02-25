@@ -56,7 +56,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="jumbotron text-center"
-                                     style="background-color: #f1e140; padding-bottom: 3.5rem!important;"
+                                     style="background-color: #f1e140;cursor: pointer; padding-bottom: 3.5rem!important;"
                                      onclick="window.location.href='{{route("stagista")}}'">
                                     <h5>
                                         STAGISTA
@@ -71,7 +71,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="jumbotron text-center"
-                                     style="background-color: #ffba5c; padding-bottom: 3.5rem!important;"
+                                     style="background-color: #ffba5c;cursor: pointer; padding-bottom: 3.5rem!important;"
                                      onclick="window.location.href='{{route("fornitore")}}'">
                                     <h5>
                                         FORNITORE
