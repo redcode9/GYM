@@ -12,4 +12,9 @@ class Iscritto extends Model
     public $incrementing = true;
     public $timestamps = false;
 
+    public function dati_gestore()
+    {
+        return $this->belongsTo(User::class, 'gestore');
+    }
+
 }

@@ -19,7 +19,7 @@ class CreateFornitoreTable extends Migration
             $table->bigInteger('iscrizione')->unsigned();
             $table->string('rag_sociale',30);
             $table->string('tipologia',20);
-            $table->integer('p_iva');
+            $table->string('p_iva', 20);
             $table->foreign('iscrizione')->on('iscritto')->references('id')->onDelete('cascade')->onUpdate('cascade');
         });
     }

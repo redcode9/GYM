@@ -1,13 +1,9 @@
 <?php
 
-
 namespace App\Http\Controllers;
-
 
 use App\Esterno;
 use App\Iscritto;
-use App\Socio;
-use App\Tessera;
 use Illuminate\Http\Request;
 
 class IscrizioneCollaboratoreController extends Controller
