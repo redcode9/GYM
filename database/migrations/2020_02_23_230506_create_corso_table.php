@@ -20,7 +20,7 @@ class CreateCorsoTable extends Migration
             $table->date('data_inizio');
             $table->date('data_fine')->nullable();
             $table->bigInteger('disciplina')->unsigned();
-            $table->bigInteger('insegnante')->unsigned();
+            $table->bigInteger('insegnante')->unsigned()->nullable();
             $table->foreign('disciplina')->on('disciplina')->references('id')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('insegnante')->on('socio')->references('id')->onDelete('cascade')->onUpdate('cascade');
         });
