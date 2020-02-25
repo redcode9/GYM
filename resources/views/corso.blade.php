@@ -27,9 +27,9 @@
                 <tbody>
                 <tr>
 
-                    <td>{{$corso->insegnato->dati_tessera->numero}}</td>
-                    <td>{{$corso->insegnato->nome}}</td>
-                    <td>{{$corso->insegnato->cognome}}</td>
+                    <td>{{$corso->insegnato->dati_tessera->numero ?? ""}}</td>
+                    <td>{{$corso->insegnato->nome ?? ""}}</td>
+                    <td>{{$corso->insegnato->cognome ?? ""}}</td>
                     <td>Insegnante</td>
                     <td>0</td>
                 </tr>

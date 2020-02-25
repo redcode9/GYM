@@ -25,7 +25,6 @@
             <a class="nav-link btn btn-dark dropdownline" href="{{route('corsi')}}">Corsi</a>
             <a class="nav-link btn btn-dark" href="{{route('GestioneUtenti')}}">Utenti</a>
         </div>
-        </button>
         <footer class="col-lg-12 col-12 px-3">
             <div class="pb-1"
                  style="border-bottom: #353a40 solid 2px; border-top: #353a40 solid 2px;border-radius: 2px;">

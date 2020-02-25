@@ -87,7 +87,10 @@
                                     <label for="sala" class="mb-0"><h5>Sala*</h5></label>
                                     <select class="custom-select" name="sala" id="sala"
                                             required>
-                                        <option value="" disabled selected hidden>Scegli un'opzione</option>
+                                        <option value="" disabled selected hidden>Scegli una sala</option>
+                                        @foreach($sale as $sala)
+                                            <option value="{{ $sala->id }}">{{ $sala->nome }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

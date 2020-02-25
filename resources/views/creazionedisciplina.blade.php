@@ -39,6 +39,9 @@
                                     <select class="custom-select" name="sala" id="sala"
                                             required>
                                         <option value="" disabled selected hidden>Scegli un'opzione</option>
+                                        @foreach($sale as $sala)
+                                            <option value="{{ $sala->id }}">{{ $sala->nome }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

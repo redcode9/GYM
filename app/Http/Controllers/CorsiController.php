@@ -22,7 +22,6 @@ class CorsiController extends Controller
 
     public function caricaCorso($id){
         $corso = Corso::find($id);
-        var_dump($corso->insegnato->dati_iscrizione);
 
         return view("corso",[
             "errore" => "",
