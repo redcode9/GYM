@@ -23,7 +23,6 @@
                 <div class="row mx-4 mb-5">
                     <div class="col-12 col-lg-12"
                          style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
-
                         <div class="row mt-2">
                             <div class="col-12 col-lg-6">
                                 <div class="form-group">
@@ -57,7 +56,7 @@
                                     <label for="data_fine" class="mb-0"><h5>Data di Fine Corso*</h5></label>
                                     <input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control"
                                            name="data_fine"
-                                           id="data_fine" value="" required>
+                                           id="data_fine" value="">
                                 </div>
                             </div>
                             <div class="col-7 col-lg-4 mt-3 mb-n2">
@@ -76,13 +75,16 @@
                                     <select class="custom-select" name="insegnante" id="insegnante"
                                             required>
                                         <option value="" disabled selected hidden>Scegli un insegnante</option>
+                                            @foreach($insegnanti as $ins)
+                                                <option value="{{ $ins->id }}">{{ $ins->nome . " " . $ins->cognome }}</option>
+                                            @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-12">
                                 <hr>
                             </div>
-                            <div class="col-12 col-lg-12 mt-3">
+                            {{--<div class="col-12 col-lg-12 mt-3">
                                 <div class="form-group">
                                     <label for="sala" class="mb-0"><h5>Sala*</h5></label>
                                     <select class="custom-select" name="sala" id="sala"
@@ -93,7 +95,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                            </div>
+                            </div>--}}
                         </div>
                         <div class="table-wrapper-scroll-y my-custom-scrollbar">
                             <table class="table table-hover table-bordered table-striped js-sort-table text-center">
@@ -207,7 +209,7 @@
 
                     <div class="col-12 col-lg-12 mt-5 ml-3 text-right">
                         <div class="form-group">
-                            <input type="submit" href="" class="btn btn-dark" style="font-size: 22px" name="termina"
+                            <input type="submit" class="btn btn-dark" style="font-size: 22px" name="termina"
                                    id="termina" value="Termina">
                         </div>
                     </div>

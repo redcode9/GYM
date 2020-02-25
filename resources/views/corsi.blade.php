@@ -33,14 +33,13 @@
                                             {{$corso->nome}}
                                         </h5>
                                     </div>
-
                                 </div>
                             @endforeach
                             <div class="col-12 col-md-6 col-xl-4">
 
                                 <div class="jumbotron mr-1 text-center mb-n1"
                                      style="border: 2px dashed #777; cursor: pointer"
-                                     onclick="window.location.href='{{route('corso',["id"=>$corso->id])}}'">
+                                     onclick="window.location.href='{{route('creazionecorso',["id"=>$disciplina->id])}}'">
                                     <h1 style="color: #777; margin-bottom: 0.8rem">+</h1>
                                 </div>
 
@@ -49,9 +48,11 @@
                         @endforeach
                     </div>
                 @endforeach
-                <div class="jumbotron mt-5" style="border: 2px dashed #777; cursor: pointer;" onclick="">
-                    <h1 class="my-n4" style="text-align: center; color: #777">+</h1>
-                </div>
+                @if(Auth::user()->ruolo === "admin")
+                    <div class="jumbotron mt-5" style="border: 2px dashed #777; cursor: pointer;" onclick="window.location.href='{{route('creazionedisciplina')}}'">
+                        <h1 class="my-n4" style="text-align: center; color: #777">+</h1>
+                    </div>
+                @endif
         </div>
         <div class="col-0 col-lg-2"></div>
     </div>

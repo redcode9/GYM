@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Socio extends Model
@@ -11,6 +12,16 @@ class Socio extends Model
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = false;
+
+    /**
+     * @param Builder $query
+     * @param String $tipo
+     * @return Builder
+     */
+    public function scopeTipo($query, $tipo)
+    {
+        return $query->where('tipo', '=', $tipo);
+    }
 
     public function insegna()
     {

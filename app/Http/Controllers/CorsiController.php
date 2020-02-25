@@ -31,9 +31,11 @@ class CorsiController extends Controller
 
     public function creazionecorso(){
         $sale = Sala::all();
+        $insegnanti = Socio::tipo("insegnante")->get();
         return view('creazionecorso',[
             "errore" => "",
-            "sale" => $sale
+            "sale" => $sale,
+            "insegnanti" => $insegnanti
         ]);
     }
 
@@ -43,5 +45,33 @@ class CorsiController extends Controller
             "errore" => "",
             "sale" => $sale
         ]);
+    }
+
+    public function creazionecorsoPost( $id, Request $request){
+        if (($request->has("termina"))){
+            $corso = new Corso();
+            $corso->nome = $request->post("nomeCorso");
+            $corso->data_inizio = $request->post("data_inizio");
+            $corso->data_fine = $request->post("data_fine");
+            $corso->costo = $request->post("costo");
+            if ($request->has("insegnante")){
+                $corso->insegnante = $request->post("insegnante");
+            }
+            $corso->disciplina = $id;
+            $corso->save();
+
+            return redirect()->route("corsi");
+        }
+    }
+
+    public function creazionedisciplinaPost(Request $request){
+        if (($request->has("termina"))){
+            $disciplina = new Disciplina();
+            $disciplina->nome = $request->post("nomeDisciplina");
+            $disciplina->sala = $request->post("sala");
+            $disciplina->save();
+
+            return redirect()->route("corsi");
+        }
     }
 }

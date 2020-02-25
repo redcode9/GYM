@@ -36,8 +36,10 @@ Route::prefix('iscrizione')->middleware('auth')->group(function () {
 });
 
 Route::prefix('creazione')->middleware('auth')->group(function () {
-    Route::get('corso', 'CorsiController@creazionecorso')->name('creazionecorso');
+    Route::get('corso/{id}', 'CorsiController@creazionecorso')->name('creazionecorso');
     Route::get('disciplina', 'CorsiController@creazionedisciplina')->name('creazionedisciplina');
+    Route::post('corso/{id}', 'CorsiController@creazionecorsoPost')->name('creazionecorsoPost');
+    Route::post('disciplina', 'CorsiController@creazionedisciplinaPost')->name('creazionedisciplinaPost');
 });
 
 
