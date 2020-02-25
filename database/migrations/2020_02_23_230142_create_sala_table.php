@@ -15,7 +15,6 @@ class CreateSalaTable extends Migration
     {
         Schema::create('Sala', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->string('nome',255);
         });
     }

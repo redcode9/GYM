@@ -15,7 +15,6 @@ class CreatePartecipazioneTable extends Migration
     {
         Schema::create('Partecipazione', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->bigInteger('allievo')->unsigned();
             $table->bigInteger('corso')->unsigned();
             $table->foreign('allievo')->on('socio')->references('id')->onDelete('cascade')->onUpdate('cascade');

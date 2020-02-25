@@ -15,7 +15,6 @@ class CreateEsternoTable extends Migration
     {
         Schema::create('Esterno', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->string('nome',255);
             $table->string('cognome',255);
             $table->char('genere',1);

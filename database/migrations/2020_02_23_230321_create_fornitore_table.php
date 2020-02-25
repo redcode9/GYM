@@ -15,7 +15,6 @@ class CreateFornitoreTable extends Migration
     {
         Schema::create('Fornitore', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
             $table->bigInteger('iscrizione')->unsigned();
             $table->string('rag_sociale',30);
             $table->string('tipologia',20);

@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum("ruolo", ["admin", "segretaria"]);
             $table->rememberToken();
-            $table->enum('ruolo',['Admin','Segreteria']);
         });
     }
 
