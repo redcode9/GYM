@@ -26,7 +26,7 @@ class CreateEsternoTable extends Migration
             $table->bigInteger('iscrizione')->unsigned();
             $table->integer('dati_fiscali')->nullable();
             $table->bigInteger('socio')->unsigned()->nullable();
-            $table->integer('p_iva')->nullable();
+            $table->string('p_iva', 20)->nullable();
             $table->string('altro_ruolo',20)->nullable();
             $table->foreign('corso')->on('corso')->references('id')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('tessera')->on('tessera')->references('id')->onDelete('cascade')->onUpdate('cascade');

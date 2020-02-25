@@ -4,17 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Iscritto extends Model
+class Fornitore extends Model
 {
-    //
-    protected $table = 'iscritto';
+    protected $table = 'fornitore';
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = false;
 
-    public function dati_gestore()
+    public function dati_iscrizione()
     {
-        return $this->belongsTo(User::class, 'gestore');
+        return $this->belongsTo(Iscritto::class, 'iscrizione');
     }
-
 }

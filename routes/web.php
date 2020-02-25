@@ -27,8 +27,12 @@ Route::prefix('iscrizione')->middleware('auth')->group(function () {
     Route::any('collaboratore-2', 'IscrizioniController@collaboratore2')->name('collaboratore2');
     Route::any('collaboratore-3', 'IscrizioniController@collaboratore3')->name('collaboratore3');
     Route::get('stagista', 'IscrizioniController@stagista')->name('stagista');
-    Route::get('stagista-2', 'IscrizioniController@stagista2')->name('stagista2');
+    Route::post('stagista', 'IscrizioneStagController@registrazione')->name('stagistaPost');
+
+    Route::get('stagista2/{id}/', 'IscrizioniController@stagista2')->name('stagista2');
+    Route::post('stagista2/{id}/', 'IscrizioneStagController@registrazioneCont')->name('stagista2Post');
     Route::get('fornitore', 'IscrizioniController@fornitore')->name('fornitore');
+    Route::post('fornitore', 'IscrizioneFornController@registrazione')->name('fornitorePost');
 });
 
 Route::prefix('creazione')->middleware('auth')->group(function () {

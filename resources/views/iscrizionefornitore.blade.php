@@ -25,21 +25,14 @@
                          style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
 
                         <div class="row mt-2">
-                            <div class="col-12 col-lg-6">
+                            <div class="col-12 col-lg-4">
                                 <div class="form-group">
                                     <label for="ragione" class="mb-0"><h5>Ragione Sociale*</h5></label>
                                     <input type="text" pattern="[a-Z]" class="form-control" name="ragione" id="ragione"
                                            value="" placeholder="es. SRL" required>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="form-group">
-                                    <label for="azienda" class="mb-0"><h5>Nome Azienda</h5></label>
-                                    <input type="text" pattern="[a-Z]" class="form-control" name="azienda" id="azienda"
-                                           value="" placeholder="">
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6 mt-3">
+                            <div class="col-12 col-lg-4">
                                 <div class="form-group">
                                     <label for="tipologia" class="mb-0"><h5>Tipologia*</h5></label>
                                     <select class="custom-select" name="tipologia" id="tipologia" onchange="showAltro()"
@@ -62,7 +55,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-6 mt-3">
+                            <div class="col-12 col-lg-4">
                                 <div class="form-group" id="divAltro" style="display: none; margin-top:1.5rem;">
                                     <label for="altro"></label>
                                     <input type="text" pattern="[a-Z]" class="form-control" name="altro" id="altro"
@@ -145,7 +138,15 @@
                                                value="" placeholder="es. IT08973230967" required>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-6"></div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="cf" class="mb-0"><h5>Codice Fiscale*</h5></label>
+                                        <input type="text"
+                                               pattern="^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$"
+                                               class="form-control" name="cf" id="cf" value=""
+                                               placeholder="es. DPLNGL39B21A678U" required>
+                                    </div>
+                                </div>
                                 <div class="col-12 col-lg-6 mt-3 mb-n2">
                                     <div class="form-group">
                                         <label for="tel" class="mb-0"><h5>Telefono / Cellulare</h5></label>
