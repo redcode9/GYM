@@ -7,7 +7,8 @@
     <nav class="nav flex-column navbar_spacing text-center">
         <div class="navbar-link my-2" style="margin-bottom: 0.5rem">
             <img
-                style="width: 100%; height: auto; margin-left: -1.5rem" src="{{asset('img/logo_gym3.png')}}" alt="Logo">
+                    style="width: 100%; height: auto; margin-left: -1.5rem" src="{{asset('img/logo_gym3.png')}}"
+                    alt="Logo">
         </div>
 
 
@@ -36,12 +37,38 @@
 
             <div style="padding: 1.5rem 0.6rem">
                 @if (Auth::user()->ruolo=='Admin')
-                <a class="nav-link mt-1 btn btn-dark" href="{{route('modificaasd')}}" id="modifica_asd">Modifica dati ASD</a>
+                    <a class="nav-link mt-1 btn btn-dark" href="{{route('modificaasd')}}" id="modifica_asd">Modifica
+                        dati ASD</a>
                 @endif
-                <a class="nav-link mt-1 btn btn-light" style="color: #000;" href="{{route('logout')}}">Logout</a>
+                <button class="nav-link mt-1 btn btn-light" id="logoutButton" style="color: #000; width: 100%;" data-toggle="modal"
+                        data-target="#myModal">Logout</button>
+            <!--<a class="nav-link mt-1 btn btn-light" style="color: #000;" href="{{route('logout')}}">Logout</a>-->
 
             </div>
         </footer>
     </nav>
 </div>
+
+<!--Modal conferma Logout-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-center">
+        <div class="modal-dialog .modal-align-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Sei sicuro di voler uscire?</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                    <a class="btn btn-primary" href="{{route('logout')}}">Conferma</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--fine Modal-->
+
 <body>
