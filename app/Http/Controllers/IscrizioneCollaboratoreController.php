@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Esterno;
 use App\Iscritto;
+use App\Sala;
 use Illuminate\Http\Request;
 
 class IscrizioneCollaboratoreController extends Controller
@@ -24,5 +25,13 @@ class IscrizioneCollaboratoreController extends Controller
             ]);
 
         }
+    }
+
+    public function registrazione4(){
+        $sale = Sala::all();
+        return view("iscrizionecollaboratore4",[
+            "errore" => "",
+            "sale" => $sale
+        ]);
     }
 }

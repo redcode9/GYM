@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Associazione;
 use App\DatiFiscali;
 use App\Iscritto;
+use App\Sala;
 use App\Socio;
 use App\Tessera;
 use DateTime;
@@ -123,6 +124,14 @@ class IscrizioneSocioController extends Controller
                 "importo" => $imp
             ]);
         }
+    }
+
+    public function registrazione4(){
+        $sale = Sala::all();
+        return view("iscrizionesocio4",[
+            "errore" => "",
+            "sale" => $sale
+            ]);
     }
 
     public function tiposocio($id, Request $request){

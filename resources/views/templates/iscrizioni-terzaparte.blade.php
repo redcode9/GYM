@@ -193,3 +193,7 @@
     }
 </script>
 </body>
+
+<?php
+    //TODO inserire controllo esistenza corsi. Nel caso di corsi esistenti, rimandare a iscrizioni-quartaparte.blade.php, altrimenti terminare iscrizione.
+?>
