@@ -9,7 +9,8 @@
 
     <div class="col-12 col-lg-12">
         <div class="mx-4 text-center">
-            <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black" id="{{ $idTitle }}">{{ $title }}</h1>
+            <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black"
+                id="{{ $idTitle }}">{{ $title }}</h1>
         </div>
     </div>
 
@@ -30,14 +31,16 @@
         <div class="col-12 col-lg-12" style="margin-top:33%"></div>
         <div class="col-12 col-lg-12 mt-3 ml-n4">
             <form action="" method="post">
-            <div class="form-group">
-                <input type="submit" class="btn btn-dark ml-5 mt-5" style="font-size: 22px; cursor: pointer; position: relative; z-index: 2;"
-                       name="indietro"
-                       id="indietro" value="Indietro" formnovalidate>
-                <input type="submit" class="btn btn-dark mt-5 float-right" style="font-size: 22px; cursor: pointer; position: relative; z-index: 2;"
-                       name="termina"
-                       id="termina" value="Termina" formnovalidate>
-            </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-dark ml-5 mt-5"
+                           style="font-size: 22px; cursor: pointer; position: relative; z-index: 2;"
+                           name="indietro"
+                           id="indietro" value="Indietro" formnovalidate>
+                    <input type="submit" class="btn btn-dark mt-5 float-right"
+                           style="font-size: 22px; cursor: pointer; position: relative; z-index: 2;"
+                           name="termina"
+                           id="termina" value="Termina" formnovalidate>
+                </div>
             </form>
         </div>
     @else
@@ -52,13 +55,15 @@
                     DATI TESSERA
                 </h5></div>
             <div class="row ml-4 mr-4 mb-5">
-                <div class="col-12 col-lg-12" style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
+                <div class="col-12 col-lg-12"
+                     style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
                     <div class="row">
                         <div class="col-12 col-lg-6 mt-2">
                             <div class="form-group">
                                 <label for="numero" class="mb-0"><h5>Numero Tessera</h5></label>
                                 <input type="text" class="form-control" name="numero" id="numero" value="" readonly>
-                            </div> /*Bisogna passare l'id della tessera che si sta creando in VALUE*/
+                            </div>
+                            /*Bisogna passare l'id della tessera che si sta creando in VALUE*/
                         </div>
                         <div class="col-12 col-lg-6 mt-2"></div>
                         <div class="col-12 col-lg-6 mt-3">
@@ -85,13 +90,15 @@
                     DATI FISCALI
                 </h5></div>
             <div class="row ml-4 mr-4 mb-5 mt-n5">
-                <div class="col-12 col-lg-12 mt-5" style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
+                <div class="col-12 col-lg-12 mt-5"
+                     style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
                     <div class="row">
                         <div class="col-12 col-lg-3 mt-2">
                             <div class="form-group">
                                 <label for="importo" class="mb-0"><h5>Importo iscrizione</h5></label>
                                 <input type="text" pattern="^\$?(([1-9](\d*|\d{0,2}(,\d{3})*))|0)(\.\d{1,2})?$"
-                                       class="form-control" name="importo" id="importo" value="{{$importo}}" placeholder="es. 10€"
+                                       class="form-control" name="importo" id="importo" value="{{$importo}}"
+                                       placeholder="es. 10€"
                                        readonly>
                             </div>
                         </div>
@@ -134,7 +141,7 @@
                             <div class="form-group">
                                 <label for="tipoDocumento" class="mb-0"><h5>Tipo di Documento*</h5></label>
                                 <select class="custom-select" id="tipoDocumento" name="tipoDocumento"
-                                         required> <!--onchange="toggleStampa()"-->
+                                        required> <!--onchange="toggleStampa()"-->
                                     <option value="" disabled selected hidden>Scegli un'opzione</option>
                                     <option value="RN">Ricevuta numerata</option>
                                     <option value="R">Ricevuta</option>
@@ -152,8 +159,9 @@
                         </div>
                         <div class="col-12 col-lg-12 mt-3">
                             <div class="form-group">
-                                <a class="btn btn-dark" style="font-size: 22px; color: #ffffff;" name="stampa" onclick="toggleStampa()"
-                                   id="stampa" >Stampa documento fiscale</a>
+                                <a class="btn btn-dark" style="font-size: 22px; color: #ffffff;" name="stampa"
+                                   onclick="toggleStampa()"
+                                   id="stampa">Stampa documento fiscale</a>
                             </div>
                         </div>
                     </div>
@@ -174,27 +182,27 @@
     </div>
 </div>
 <script>
-    function toggleStampa(){
+    function toggleStampa() {
         scelta = $("#tipoDocumento").val();
         switch (scelta) {
             case "RN":
                 $("#numeroDocumento").val({{$RN}});
-                window.open('{{route('stampapdf', ['tipoPdf'=> 'RN'])}}',"_blank");
+                window.open('{{route('stampapdf', ['tipoPdf'=> 'RN'])}}', "_blank");
                 break;
 
             case "R":
                 $("#numeroDocumento").val({{$R}});
-                window.open('{{route('stampapdf', ['tipoPdf'=> 'R'])}}','_blank');
+                window.open('{{route('stampapdf', ['tipoPdf'=> 'R'])}}', '_blank');
                 break;
 
             case "RF":
                 $("#numeroDocumento").val({{$RF}});
-                window.open('{{route('stampapdf', ['tipoPdf'=> 'RF'])}}','_blank');
+                window.open('{{route('stampapdf', ['tipoPdf'=> 'RF'])}}', '_blank');
                 break;
 
             case "F":
                 $("#numeroDocumento").val({{$F}});
-                window.open('{{route('stampapdf', ['tipoPdf'=> 'F'])}}','_blank');
+                window.open('{{route('stampapdf', ['tipoPdf'=> 'F'])}}', '_blank');
                 break;
         }
     }
@@ -202,5 +210,5 @@
 </body>
 
 <?php
-    //TODO inserire controllo esistenza corsi. Nel caso di corsi esistenti, rimandare a iscrizioni-quartaparte.blade.php, altrimenti terminare iscrizione.
+//TODO inserire controllo esistenza corsi. Nel caso di corsi esistenti, rimandare a iscrizioni-quartaparte.blade.php, altrimenti terminare iscrizione.
 ?>
