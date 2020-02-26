@@ -72,8 +72,8 @@
                    style="font-size: 22px; cursor: pointer; margin-left:2rem" name="indietroCorso"
                    id="indietroCorso" value="Indietro" formnovalidate>
             <input type="submit" class="btn btn-dark mt-3 float-right"
-                   style="font-size: 22px; cursor: pointer;" name="continuaCorso"
-                   id="continuaCorso" value="Continua">
+                   style="font-size: 22px; cursor: pointer;" name="terminaCorso"
+                   id="terminaCorso" value="Termina Iscrizione e Stampa Modulo di Tesseramento">
         </div>
     </div>
     @csrf
@@ -89,8 +89,8 @@
                    id="indietro" value="Indietro" formnovalidate>
             <input type="submit" class="btn btn-dark mt-5 float-right"
                    style="font-size: 22px; cursor: pointer; position: relative; z-index: 2; margin-right: -0.95rem"
-                   name="continua"
-                   id="continua" value="Continua Senza Iscrizione al Corso" formnovalidate>
+                   name="termina"
+                   id="termina" value="Termina Iscrizione e Stampa Modulo di Tesseramento" formnovalidate>
         </div>
     </form>
 </div>

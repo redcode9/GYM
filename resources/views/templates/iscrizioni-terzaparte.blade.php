@@ -35,8 +35,8 @@
                        name="indietro"
                        id="indietro" value="Indietro" formnovalidate>
                 <input type="submit" class="btn btn-dark mt-5 float-right" style="font-size: 22px; cursor: pointer; position: relative; z-index: 2;"
-                       name="continua"
-                       id="continua" value="Continua Senza Tesseramento" formnovalidate>
+                       name="termina"
+                       id="termina" value="Termina" formnovalidate>
             </div>
             </form>
         </div>

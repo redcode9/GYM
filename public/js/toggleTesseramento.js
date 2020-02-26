@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function toggleTesseramento() {
     $("#FormTesseramento").show();
     $("#continuaTesseramento").show();
     $("#indietroTesseramento").show();
-    $("#continua").hide();
+    $("#termina").hide();
     $("#indietro").hide();
 });
 
@@ -13,7 +13,7 @@ function toggleTesseramento() {
         $("#FormTesseramento").show();
         $("#continuaTesseramento").show();
         $("#indietroTesseramento").show();
-        $("#continua").hide();
+        $("#termina").hide();
         $("#indietro").hide();
         document.getElementById("emissione").required = true;
         document.getElementById("scadenza").required = true;
@@ -23,7 +23,7 @@ function toggleTesseramento() {
         $("#FormTesseramento").hide();
         $("#continuaTesseramento").hide();
         $("#indietroTesseramento").hide();
-        $("#continua").show();
+        $("#termina").show();
         $("#indietro").show();
         document.getElementById("emissione").required = false;
         document.getElementById("scadenza").required = false;
