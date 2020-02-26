@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function toggleDocumento() {
     document.getElementById('tipoDocumento').disabled = true;
     document.getElementById('numeroDocumento').disabled = true;
     document.getElementById('stampa').disabled = true;
+    document.getElementById('tipoDocumento').options[document.getElementById('tipoDocumento').selectedIndex].value = "";
     document.getElementById('flagDocumento').value = "off";
 });
 
@@ -21,6 +22,7 @@ function toggleDocumento() {
         document.getElementById('numeroDocumento').disabled = true;
         document.getElementById('stampa').disabled = true;
         document.getElementById("tipoDocumento").required = false;
+        document.getElementById('tipoDocumento').options[document.getElementById('tipoDocumento').selectedIndex].value = "";
         document.getElementById('flagDocumento').value = "off";
     }
 }
