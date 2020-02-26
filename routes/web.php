@@ -35,6 +35,7 @@ Route::prefix('iscrizione')->middleware('auth')->group(function () {
     Route::post('stagista-2/{id}/', 'IscrizioneStagController@registrazioneCont')->name('stagista2Post');
     Route::get('fornitore', 'IscrizioniController@fornitore')->name('fornitore');
     Route::post('fornitore', 'IscrizioneFornController@registrazione')->name('fornitorePost');
+    Route::get('pdfiscrizione/{tipoPdf}', 'ModulisticaController@stampaPdf')->name('stampapdf');
 });
 
 Route::prefix('creazione')->middleware('auth')->group(function () {
@@ -48,6 +49,7 @@ Route::prefix('creazione')->middleware('auth')->group(function () {
 
 Route::get('modifica_asd', 'ModificaAsdController@mostraAsd')->middleware('auth')->name('mostraasd');
 Route::post('modifica_asd', 'ModificaAsdController@modificaAsd')->middleware('auth')->name('modificaasd');
+
 
 
 

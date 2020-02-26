@@ -134,7 +134,7 @@
                             <div class="form-group">
                                 <label for="tipoDocumento" class="mb-0"><h5>Tipo di Documento*</h5></label>
                                 <select class="custom-select" id="tipoDocumento" name="tipoDocumento"
-                                        onchange="toggleStampa()" required>
+                                         required> <!--onchange="toggleStampa()"-->
                                     <option value="" disabled selected hidden>Scegli un'opzione</option>
                                     <option value="RN">Ricevuta numerata</option>
                                     <option value="R">Ricevuta</option>
@@ -152,8 +152,8 @@
                         </div>
                         <div class="col-12 col-lg-12 mt-3">
                             <div class="form-group">
-                                <input type="button" class="btn btn-dark" style="font-size: 22px" name="stampa"
-                                       id="stampa" value="Stampa documento fiscale">
+                                <a class="btn btn-dark" style="font-size: 22px; color: #ffffff;" name="stampa" onclick="toggleStampa()"
+                                   id="stampa" >Stampa documento fiscale</a>
                             </div>
                         </div>
                     </div>
@@ -179,15 +179,22 @@
         switch (scelta) {
             case "RN":
                 $("#numeroDocumento").val({{$RN}});
+                window.open('{{route('stampapdf', ['tipoPdf'=> 'RN'])}}',"_blank");
                 break;
+
             case "R":
                 $("#numeroDocumento").val({{$R}});
+                window.open('{{route('stampapdf', ['tipoPdf'=> 'R'])}}','_blank');
                 break;
+
             case "RF":
                 $("#numeroDocumento").val({{$RF}});
+                window.open('{{route('stampapdf', ['tipoPdf'=> 'RF'])}}','_blank');
                 break;
-            case "f":
+
+            case "F":
                 $("#numeroDocumento").val({{$F}});
+                window.open('{{route('stampapdf', ['tipoPdf'=> 'F'])}}','_blank');
                 break;
         }
     }
