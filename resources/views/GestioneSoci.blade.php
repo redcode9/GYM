@@ -9,6 +9,7 @@
         <th scope="col" style="cursor: pointer">Cognome</th>
         <th scope="col" style="cursor: pointer">Socio</th>
         <th scope="col" style="cursor: pointer">Ruolo</th>
+        <th scope="col" style="cursor: pointer">Fondatore</th>
     @endslot
     @slot('table_content')
         @foreach($soci as $socio)
@@ -23,6 +24,7 @@
                 <td>{{ $socio->cognome }}</td>
                 <td>Si</td>
                 <td>{{ $socio->tipo }}</td>
+                <td>{{ $socio->fondatore }}</td>
             </tr>
         @endforeach
     @endslot
