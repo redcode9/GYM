@@ -15,7 +15,7 @@
     <div class="col-12 col-lg-12">
         <div class="row mt-5">
             <h5 class="px-2"
-                style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: white; font-weight: normal; ">
+                style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: #f4f7fa; font-weight: normal; ">
                 ASSICURAZIONE
             </h5></div>
         <form action="" method="post">
@@ -59,7 +59,7 @@
 
             <div class="row">
                 <h5 class="px-2"
-                    style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: white; font-weight: normal; ">
+                    style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: #f4f7fa; font-weight: normal; ">
                     CERTIFICATO MEDICO
                 </h5></div>
             <div class="row ml-4 mr-4 mb-5 mt-n5">
