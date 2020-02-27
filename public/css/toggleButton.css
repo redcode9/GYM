@@ -48,7 +48,7 @@
 
 /* CSS3 on/off switches */
 .switch + .lable {
-    margin: 0 4px;
+    margin: -2px 4px;
     min-height: 24px;
 }
 

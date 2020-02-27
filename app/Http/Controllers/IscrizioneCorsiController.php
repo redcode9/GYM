@@ -9,23 +9,13 @@ use App\Socio;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class CorsiController extends Controller
+class IscrizioneCorsiController extends Controller
 {
-    //
     public function carica(){
         $sale = Sala::all();
         return view("corsi",[
             "errore" => "",
             "sale" => $sale
-            ]);
-    }
-
-    public function caricaCorso($id){
-        $corso = Corso::find($id);
-
-        return view("corso",[
-            "errore" => "",
-            "corso" => $corso,
         ]);
     }
 
@@ -75,3 +65,4 @@ class CorsiController extends Controller
         }
     }
 }
+
