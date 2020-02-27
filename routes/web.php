@@ -22,12 +22,12 @@ Route::prefix('iscrizione')->middleware('auth')->group(function () {
     Route::any('socio', 'IscrizioneSocioController@registrazione')->name('socio');
     Route::any('socio-2/{id}/', 'IscrizioneSocioController@registrazione2')->name('socio2');
     Route::any('socio-3/{id}/', 'IscrizioneSocioController@registrazione3')->name('socio3');
-    Route::any('socio-4/', 'IscrizioneSocioController@registrazione4')->name('socio4');
+    Route::any('socio-4/{id}', 'IscrizioneSocioController@registrazione4')->name('socio4');
 //    Route::any('tiposocio/{id}/', 'IscrizioneSocioController@tiposocio')->name('tiposocio');
     Route::any('collaboratore', 'IscrizioneCollaboratoreController@registrazione')->name('collaboratore');
-    Route::any('collaboratore-2', 'IscrizioniController@collaboratore2')->name('collaboratore2');
-    Route::any('collaboratore-3', 'IscrizioniController@collaboratore3')->name('collaboratore3');
-    Route::any('collaboratore-4', 'IscrizioneCollaboratoreController@registrazione4')->name('collaboratore3');
+    Route::any('collaboratore-2/{id}/', 'IscrizioniController@collaboratore2')->name('collaboratore2');
+    Route::any('collaboratore-3/{id}/', 'IscrizioniController@collaboratore3')->name('collaboratore3');
+    Route::any('collaboratore-4/{id}', 'IscrizioneCollaboratoreController@registrazione4')->name('collaboratore4');
     Route::get('stagista', 'IscrizioniController@stagista')->name('stagista');
     Route::post('stagista', 'IscrizioneStagController@registrazione')->name('stagistaPost');
 

@@ -27,6 +27,11 @@ class IscrizioniController extends Controller
         return view('iscrizionesocio3');
     }
 
+    public function socio4()
+    {
+        return view('iscrizionesocio4');
+    }
+
     public function collaboratore()
     {
         return view('iscrizionecollaboratore');
@@ -42,7 +47,7 @@ class IscrizioniController extends Controller
         return view('iscrizionecollaboratore3');
     }
 
-    public function stagista()
+    public function stagista($id)
     {
         return view('iscrizionestagista');
     }

@@ -40,10 +40,10 @@ class IscrizioneFornController extends Controller
 
             $forn->save();
 
-            return redirect()->route("iscrizioni");
+            return redirect()->route("iscrizione");
 
         } else {
-            return view("iscrizionecollaboratore", [
+            return view("iscrizionefornitore", [
                 "errore" => ""
             ]);
 

@@ -9,6 +9,7 @@ use App\Sala;
 use App\Socio;
 use App\Tessera;
 use DateTime;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -102,7 +103,7 @@ class IscrizioneSocioController extends Controller
                 $datidiscali->data_iscriz = date("Y-m-d");
             $datidiscali->socio = $socio->id;
             $datidiscali->save();
-            return redirect()->route('tiposocio', ["id" => $id]);
+            return redirect()->route('socio4', ["id" => $id]);
 
 
         } else {
@@ -128,12 +129,20 @@ class IscrizioneSocioController extends Controller
         }
     }
 
-    public function registrazione4(){
+    public function registrazione4($id,Request $request){
+        $socio = Socio::find($id);
         $sale = Sala::all();
+        if ($request->isMethod("POST")){
+
+            return redirect()->route('scelta');
+
+        } else{
+
         return view("iscrizionesocio4",[
             "errore" => "",
             "sale" => $sale
             ]);
+            }
     }
 
     public function tiposocio($id, Request $request){
@@ -164,4 +173,4 @@ class IscrizioneSocioController extends Controller
 
 }
 
-//ciao
+
