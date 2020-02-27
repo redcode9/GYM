@@ -96,7 +96,7 @@
                 </div>
             </div>
             <div class="border btn-dark text-center"
-                 style="margin: -1rem 0.7rem; font-size: 30px; cursor:pointer; border-radius: .3rem;"
+                 style="margin: 0 0.7rem; font-size: 30px; cursor:pointer; border-radius: .3rem;"
                  onclick="window.location.href='{{route('VisualizzaTutti')}}'">
                 VISUALIZZA TUTTI
             </div>

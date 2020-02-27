@@ -4,7 +4,7 @@
 </head>
 <body>
 <div class="d-none d-lg-block navcol" id="menu">
-    <nav class="nav flex-column navbar_spacing text-center">
+    <nav id="navmenu" class="nav flex-column navbar_spacing text-center">
         <div class="navbar-link my-2" style="margin-bottom: 0.5rem">
             <img
                     style="width: 100%; height: auto; margin-left: -1.5rem" src="{{asset('img/logo_gym3.png')}}"
@@ -12,23 +12,29 @@
         </div>
 
 
-        <a class="nav-link my-4 btn btn-dark" href="{{route('HomeAdmin')}}">Dashboard</a> <!-- Momentaneo-->
+        <a class="nav-link my-4 btn btn-dark" href="{{route('HomeAdmin')}}">Dashboard</a>
 
         {{--        <div class="form-group">--}}
         {{--            <input class="form-control text-dark" style="border: 2px solid #353a40" type="text" name="search"--}}
         {{--                   id="search" placeholder="Search">--}}
         {{--        </div>--}}
 
-        <a class="nav-link mt-1 btn btn-dark" href="{{route("iscrizioni")}}">Iscrizione</a>
+        <button class="dropbtn nav-link mt-1 btn btn-dark" id="dropdownbtniscrizioni" onclick="dropdownmenuiscrizioni()">Iscrizione</button>
+        <div id="dropdowncontentiscrizioni" class="dropdown-content">
+            <a class="nav-link btn btn-dark dropdownline" href="{{route('iscrizioni')}}">Utenti</a>
+            <a class="nav-link btn btn-dark borderbottom-style" href="{{route('corsi')}}">Corsi</a>
+{{--            <a class="nav-link btn btn-dark dropdownline" href="{{route('allievoacorso')}}">Allievo a Corso</a>--}}
+{{--            <a class="nav-link btn btn-dark borderbottom-style" href="{{route('insegnanteacorso')}}">Insegnante a Corso</a>--}}
+        </div>
         <a class="nav-link mt-1 btn btn-dark" href="{{route("segretaria_contabilità")}}">Contabilità</a>
-        <button class="dropbtn nav-link mt-1 btn btn-dark" id="dropdownbtn" onclick="dropdownmenu()">Gestione</button>
-        <div id="dropdowncontent" class="dropdown-content">
-            <a class="nav-link btn btn-dark dropdownline" href="{{route('corsi')}}">Corsi</a>
-            <a class="nav-link btn btn-dark" href="{{route('GestioneUtenti')}}">Utenti</a>
+        <button class="dropbtn nav-link mt-1 btn btn-dark" id="dropdownbtngestioni" onclick="dropdownmenugestioni()">Gestione</button>
+        <div id="dropdowncontentgestioni" class="dropdown-content">
+            <a class="nav-link btn btn-dark dropdownline" href="{{route('GestioneUtenti')}}">Utenti</a>
+            <a class="nav-link btn btn-dark borderbottom-style" href="{{route('gestionecorsi')}}">Corsi</a>
         </div>
         <footer class="col-lg-12 col-12 px-3">
             <div class="pb-1"
-                 style="border-bottom: #353a40 solid 2px; border-top: #353a40 solid 2px;border-radius: 2px;">
+                 style="border-bottom: #353a40 solid 2px; border-top: #353a40 solid 2px;border-radius: 2px;color: #37474f;padding-top: 0.25rem; font-weight: bold;">
                 Account: {{Auth::user()->ruolo}}
             {{--@yield('UtenteLoggato','Admin/Segreteria')  --}}
             <!-- UtenteLoggato è la variabile in cui inseriremo il nome di chi è loggato davvero, Segretaria o Admin-->

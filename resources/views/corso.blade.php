@@ -1,19 +1,34 @@
 @extends('templates.base', ['menu' => "on"])
 @section('corpo')
-    <div class="row mt-5 mb-5">
-        <div class="col-12 text-center">
-            <h1 class="mt-5 p-3 border">Corso {{$corso->discipline->nome}} {{$corso->nome}}</h1>
+    <div class="row mt-4">
+
+        <div class="col-12 col-lg-12">
+            <div class="mx-4 text-center">
+                <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black; text-transform: uppercase">
+                    Corso {{$corso->nome}} di {{$corso->discipline->nome}} </h1>
+            </div>
         </div>
+
+        <div class="col-0 col-lg-4"></div>
+        <div class="col-12 col-lg-7 mt-3">
+            <button class="btn btn-dark float-right mt-3 ml-3">Rimuovi Insegnante</button>
+            <button class="btn btn-dark float-right mt-3 mx-3">Aggiungi Insegnante</button>
+        </div>
+        <div class="col-0 col-lg-1"></div>
+
         <div class="col-0 col-lg-2"></div>
-        <div class="col-12 col-lg-8 mb-5">
-            <button class="btn btn-dark float-right ml-3">Elimina</button>
-            <button class="btn btn-dark float-right mr-3 ml-3">Aggiungi</button>
-            <div class="form-group float-right mr-3">
+        <div class="col-12 col-lg-5 my-4 ml-3">
+            <div class="form-group">
                 <input class="form-control" type="text" id="myInput" onkeyup="myFunction()"
                        placeholder="Filtra per Nome">
             </div>
         </div>
-        <div class="col-0 col-lg-2"></div>
+        <div class="col-12 col-lg-4 my-4 ml-n3">
+            <button class="btn btn-dark float-right ml-3">Rimuovi Iscritto</button>
+            <button class="btn btn-dark float-right mr-5">Aggiungi Iscritto</button>
+        </div>
+        <div class="col-0 col-lg-1"></div>
+
         <div class="col-0 col-lg-1"></div>
         <div class="col-12 col-lg-10">
             <table class="table" id="myTable">

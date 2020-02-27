@@ -8,35 +8,49 @@
     padding: 0.5rem 1rem;
 }
 
+.add-iscrizioni-height {
+    height: 110% !important;
+}
+
+.add-gestioni-height {
+    height: 110% !important;
+}
+
+.add-both-height {
+    height: 120% !important;
+}
+
 footer {
     position: absolute !important;
     bottom: 0;
     left: 0 !important;
 }
 
-.nav-link {
+#navmenu .nav-link {
     border: none;
     color: #fff;
     padding: 0.6rem 0 !important;
 }
 
-.nav-link:hover, .nav-link:focus {
+#navmenu .nav-link:hover, #navmenu .nav-link:focus {
     background-color: #000;
     color: #fff !important;
-    font-size: 1.1rem;
+    font-size: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.active {
+.menuactive {
     background-color: #ea9700 !important;
-    color: #000 !important;
-    font-size: 1.1rem;
+    color: #37474f !important;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 /* Dropdown Button */
 .dropbtn {
     border: none;
     cursor: pointer;
+    z-index:2;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -50,20 +64,21 @@ footer {
     display: none;
     font-size: 16px;
     position: relative;
-    background-color: rgba(52, 58, 64, 0.7);
+    background-color: rgba(52, 58, 64, 0.9);
     min-width: 160px;
     z-index: 1;
     margin: 0 0.2rem;
     padding-bottom: 0.15rem;
-    border-radius: 0.25rem;
+    border-radius: 0 0 0.25rem 0.25rem;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
     text-decoration: none;
     display: block;
-    background-color: rgba(52, 58, 64, 0.7);
+    background-color: rgba(55, 71, 79, 0.5);
     border-radius: 0;
+    margin: 0;
 }
 
 .borderbottom-style {
