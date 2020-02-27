@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function toggleIscrizioneCorso() {
     document.getElementById('flagCorso').value = "on";
     $("#BodyIscrizioneCorso").show();
     $("#divSconto").show();
-    $("#continuaCorso").show();
+    $("#terminaCorso").show();
     $("#indietroCorso").show();
-    $("#continua").hide();
+    $("#termina").hide();
     $("#indietro").hide();
 });
 
@@ -13,17 +13,17 @@ function toggleIscrizioneCorso() {
         document.getElementById('flagCorso').value = "on";
         $("#BodyIscrizioneCorso").show();
         $("#divSconto").show();
-        $("#continuaCorso").show();
+        $("#terminaCorso").show();
         $("#indietroCorso").show();
-        $("#continua").hide();
+        $("#termina").hide();
         $("#indietro").hide();
     } else if (document.getElementById('flagCorso').value === "on") {
         document.getElementById('flagCorso').value = "off";
         $("#BodyIscrizioneCorso").hide();
         $("#divSconto").hide();
-        $("#continuaCorso").hide();
+        $("#terminaCorso").hide();
         $("#indietroCorso").hide();
-        $("#continua").show();
+        $("#termina").show();
         $("#indietro").show();
     }
 }
