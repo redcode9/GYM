@@ -7,6 +7,7 @@ use App\DatiFiscali;
 use App\Iscritto;
 use App\Sala;
 use App\Socio;
+use Carbon\Carbon;
 use App\Tessera;
 use DateTime;
 use Illuminate\Http\Request;
@@ -25,6 +26,15 @@ class IscrizioneSocioController extends Controller
             $socio->genere = $request->input("sesso");
             $socio->luogo_nasc = $request->input("nascita");
             $socio->data_nasc = $request->input("data");
+
+            if($request->tipoSocio == 'option1'){
+                $socio->tipo = 'allievo';
+            } elseif ($request->tipoSocio == 'option2'){
+                $socio->tipo = 'insegnante';
+            }
+
+            $socio->verbalizzato=0;
+            $socio->fondatore=0;
 
             $iscritto->indirizzo = $request->input("indirizzo");
             $iscritto->cap = $request->input("cap");
@@ -102,7 +112,9 @@ class IscrizioneSocioController extends Controller
                 $datidiscali->data_iscriz = date("Y-m-d");
             $datidiscali->socio = $socio->id;
             $datidiscali->save();
-            return redirect()->route('tiposocio', ["id" => $id]);
+            $socio->dati_fiscali = $datidiscali->id;
+            $socio->save();
+            return redirect()->route('socio4', ["id" => $id]);
 
 
         } else {
@@ -128,40 +140,75 @@ class IscrizioneSocioController extends Controller
         }
     }
 
-    public function registrazione4(){
-        $sale = Sala::all();
-        return view("iscrizionesocio4",[
-            "errore" => "",
-            "sale" => $sale
-            ]);
-    }
+    public function registrazione4($id, Request $request)
+    {
 
-    public function tiposocio($id, Request $request){
-
-        if($request->isMethod("POST")){
             $socio = Socio::find($id);
-            $socio->tipo=$request->get("scelta");
-            $socio->verbalizzato=0;
-            $socio->save();
-            $scelta = $request->get("direzione");
-            switch ($scelta){
-                case "termina":
-                    return redirect()->route("utenti",["id"=>$id]);
-                    break;
-                case "corsi":
-                    return redirect()->route("corsi",["id"=>$id]);
+            $sale = Sala::all();
+
+            $years = Carbon::parse($socio->data_nasc)->age; //calcola l'età dell'iscritto
+
+            if ($request->isMethod("POST")){
+                return redirect()->route('HomeAdmin');
+            } else {
+
+                return view("iscrizionesocio4", [
+                    "errore" => "",
+                    "sale" => $sale,
+                    "socio" => $socio,
+                    "years" => $years
+                ]);
             }
-
-
-        } else {
-
-            return view("tiposocio", [
-                "errore" => "",
-                "socio" => $id
-            ]);
-        }
     }
 
-}
+
+
+
+
+    //public function tiposocio($id, Request $request){
+//
+    //    if($request->isMethod("POST")){
+    //        $socio = Socio::find($id);
+    //        $socio->verbalizzato=0;
+    //        $socio->save();
+    //        $scelta = $request->get("direzione");
+    //        switch ($scelta){
+    //            case "termina":
+    //                return redirect()->route("utenti",["id"=>$id]);
+    //                break;
+    //            case "corsi":
+    //                return redirect()->route("corsi",["id"=>$id]);
+    //        }
+//
+//
+    //    } else {
+//
+    //        return view("tiposocio", [
+    //            "errore" => "",
+    //            "socio" => $id
+    //        ]);
+    //    }
+    //}
+
+
 
 //ciao
+
+
+        public function stampaModuloMagg()
+        {
+
+            $path = '..\resources\modulistica\moduli_maggiorenne.pdf';
+            return response()->download($path);
+
+        }
+
+        public function stampaModuloMin()
+        {
+
+            $path = '..\resources\modulistica\moduli_minorenne.pdf';
+            return response()->download($path);
+
+        }
+
+}

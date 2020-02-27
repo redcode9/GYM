@@ -70,12 +70,19 @@
     <div class="col-12 col-lg-12 mt-5 ml-n4">
         <form action="" method="post">
             <div class="form-group">
-                <input type="submit" class="btn btn-dark ml-5 mt-3"
+                <input type="button" class="btn btn-dark ml-5 mt-3"
                        style="font-size: 22px; cursor: pointer; margin-left:2rem" name="indietroCorso"
-                       id="indietroCorso" value="Indietro" formnovalidate>
+                       id="indietroCorso" value="Indietro" formnovalidate
+                       onclick="window.location.href='{{route("$nomeroute", ["$idBack"])}}';">
+
+                <input type="button" class="btn btn-dark mt-3 float-right"
+                       style="font-size: 22px; cursor: pointer; position: relative; z-index: 2; margin-left: 2.05rem;"  onclick="enableButton2();"
+                       name="modulo"
+                       id="modulo" value="Stampa modulo iscrizione" formnovalidate >
+
                 <input type="submit" class="btn btn-dark mt-3 float-right"
                        style="font-size: 22px; cursor: pointer;" name="terminaCorso"
-                       id="terminaCorso" value="Termina e Stampa Modulo di Iscrizione">
+                       id="terminaCorso1" value="Termina" disabled>
             </div>
             @csrf
         </form>
@@ -85,20 +92,34 @@
 <div class="col-12 col-lg-12 mt-n5 ml-n4">
     <form action="" method="post">
         <div class="form-group">
-            <input type="submit" class="btn btn-dark mt-5"
+            <input type="button" class="btn btn-dark mt-5"
                    style="font-size: 22px; cursor: pointer; position: relative; z-index: 2; margin-left: 2.05rem;"
-                   name="indietro"
+                   name="indietro" onclick="window.location.href='{{route("$nomeroute", ["$idBack"])}}';"
                    id="indietro" value="Indietro" formnovalidate>
+
+            <!--<input type="button" class="btn btn-dark mt-3 float-right"
+                   style="font-size: 22px; cursor: pointer; position: relative; z-index: 2; margin-left: 2.05rem;"  onclick="enableButton2();"
+                   name="modulo"
+                   id="modulo" value="Stampa modulo iscrizione" formnovalidate >-->
+
             <input type="submit" class="btn btn-dark mt-5 float-right"
                    style="font-size: 22px; cursor: pointer; position: relative; z-index: 2; margin-right: -0.95rem"
                    name="termina"
-                   id="termina" value="Termina e Stampa Modulo di Iscrizione" formnovalidate>
+                   id="termina" value="Termina" formnovalidate>
         </div>
         @csrf
     </form>
 </div>
 <div class="col-0 col-lg-2"></div>
 </div>
+
+<script>
+
+    function enableButton2() {
+        document.getElementById("terminaCorso1").disabled = false;
+    }
+
+</script>
 </body>
 
 <?php //TODO collegare questa view al database ?>

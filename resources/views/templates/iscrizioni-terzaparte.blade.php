@@ -28,14 +28,16 @@
                     <span class="lable"></span></label>
             </div>
         </div>
+
         <div class="col-12 col-lg-12" style="margin-top:33%"></div>
         <div class="col-12 col-lg-12 mt-3 ml-n4">
-            <form action="" method="post">
+            <form id="FormNoTess" action="" method="post">
+                @csrf
                 <div class="form-group">
-                    <input type="submit" class="btn btn-dark ml-5 mt-5"
+                    <input type="button" class="btn btn-dark ml-5 mt-5"
                            style="font-size: 22px; cursor: pointer; position: relative; z-index: 2;"
                            name="indietro"
-                           id="indietro" value="Indietro" formnovalidate>
+                           id="indietro" value="Indietro" onclick="window.location.href='{{route("$nomeroute", ["$idBack"])}}';" formnovalidate>
                     <input type="submit" class="btn btn-dark mt-5 float-right"
                            style="font-size: 22px; cursor: pointer; position: relative; z-index: 2;"
                            name="termina"
@@ -49,7 +51,9 @@
 
     <div class="col-12 col-lg-12" style="margin-top:-36%!important">
         <form id="FormTesseramento" action="" method="post">
+            @csrf
             <div class="row mt-5">
+
                 <h5 class="px-2"
                     style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: white; font-weight: normal; ">
                     DATI TESSERA
@@ -61,9 +65,8 @@
                         <div class="col-12 col-lg-6 mt-2">
                             <div class="form-group">
                                 <label for="numero" class="mb-0"><h5>Numero Tessera</h5></label>
-                                <input type="text" class="form-control" name="numero" id="numero" value="" readonly>
+                                <input type="text" class="form-control" name="numero" id="numero" value="{{$n_tess}}" readonly>
                             </div>
-                            /*Bisogna passare l'id della tessera che si sta creando in VALUE*/
                         </div>
                         <div class="col-12 col-lg-6 mt-2"></div>
                         <div class="col-12 col-lg-6 mt-3">
@@ -82,6 +85,29 @@
                         </div>
                     </div>
                 </div>
+                @if ($idTitle === "collaboratore")
+                <div class="col-12 col-lg-6 ml-3 mt-5 mb-3" id="socioCollab">
+                    <label for="tipoSocio"><h5>Tipologia Socio*</h5></label>
+                    <div class="row">
+                        <div class="col-2 col-lg-2">
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" name="tipoSocio"
+                                       id="allievo" value="option1">
+                                <label for="allievo" class="form-check-label" style="font-size: 1.1rem">Allievo</label>
+                            </div>
+                        </div>
+
+                        <div class="col-2 col-lg-2">
+                            <div class="form-check form-check-inline ml-2">
+                                <input type="radio" class="form-check-input" name="tipoSocio"
+                                       id="insegnante" value="option2">
+                                <label for="insegnante" class="form-check-label"
+                                       style="font-size: 1.1rem">Insegnante</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endif
             </div>
 
             <div class="row">
@@ -169,15 +195,16 @@
             </div>
             <div class="col-12 col-lg-12 mt-n5 ml-n4">
                 <div class="form-group">
-                    <input type="submit" class="btn btn-dark mt-4"
+                    <input type="button" class="btn btn-dark mt-4"
                            style="font-size: 22px; cursor: pointer; margin-left:2rem" name="indietroTesseramento"
+                           onclick="window.location.href='{{route("$nomeroute", ["$idBack"])}}';"
                            id="indietroTesseramento" value="Indietro" formnovalidate>
+
                     <input type="submit" class="btn btn-dark mt-4 mr-n3 float-right"
                            style="font-size: 22px; cursor: pointer;" name="continuaTesseramento"
                            id="continuaTesseramento" value="Continua">
                 </div>
             </div>
-            @csrf
         </form>
     </div>
 </div>
