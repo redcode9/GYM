@@ -72,7 +72,7 @@ Route::get('/utenti/VisualizzaTutti/', function () {   //view VisualizzaTutti in
 })->name('VisualizzaTutti');
 
 Route::get('/HomeAdmin/', function () {   //view HomeAdmin
-    return view('HomeAdmin');
+    return view('templates.Dashboard');
 })->name('HomeAdmin');
 
 
