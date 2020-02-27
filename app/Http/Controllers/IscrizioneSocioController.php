@@ -122,6 +122,8 @@ class IscrizioneSocioController extends Controller
             $ass = Associazione::all()->first();
             //$imp = $ass->importo;
             //for test
+            $n_tess = Tessera::max("id");
+            $n_tess += 1;
             $imp = 20;
             $fattura = DatiFiscali::where("tipo_doc","F")->count()+1;
             $ricevutaN = DatiFiscali::where("tipo_doc","RN")->count()+1;
@@ -131,6 +133,7 @@ class IscrizioneSocioController extends Controller
             return view("iscrizionesocio3", [
                 "errore" => "",
                 "socio" => $id,
+                "n_tess" => $n_tess,
                 "F"=> $fattura,
                 "RN"=> $ricevutaN,
                 "R"=> $ricevuta,
