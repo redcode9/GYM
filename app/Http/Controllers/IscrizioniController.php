@@ -47,14 +47,19 @@ class IscrizioniController extends Controller
         return view('iscrizionecollaboratore3');
     }
 
+    public function collaboratore4()
+    {
+        return view('iscrizionecollaboratore4');
+    }
+
     public function stagista()
     {
         return view('iscrizionestagista');
     }
 
-    public function stagista2()
+    public function stagista2($id)
     {
-        return view('iscrizionestagista2');
+        return view('iscrizionestagista2', ["id"=>$id]);
     }
 
     public function fornitore()

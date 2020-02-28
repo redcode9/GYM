@@ -25,13 +25,15 @@ Route::prefix('iscrizione')->middleware('auth')->group(function () {
     Route::any('socio-4/{id}', 'IscrizioneSocioController@registrazione4')->name('socio4');
 //    Route::any('tiposocio/{id}/', 'IscrizioneSocioController@tiposocio')->name('tiposocio');
     Route::any('collaboratore', 'IscrizioneCollaboratoreController@registrazione')->name('collaboratore');
-    Route::any('collaboratore-2/{id}/', 'IscrizioniController@collaboratore2')->name('collaboratore2');
-    Route::any('collaboratore-3/{id}/', 'IscrizioniController@collaboratore3')->name('collaboratore3');
-    Route::any('collaboratore-4/{id}', 'IscrizioneCollaboratoreController@registrazione4')->name('collaboratore4');
+    Route::any('collaboratore-2/{id}/', 'IscrizioneCollaboratoreController@collaboratore2')->name('collaboratore2');
+    Route::any('collaboratore-3/{id}/', 'IscrizioneCollaboratoreController@collaboratore3')->name('collaboratore3');
+    Route::any('collaboratore-4/{id}', 'IscrizioneCollaboratoreController@collaboratore4')->name('collaboratore4');
+
     Route::get('stagista', 'IscrizioniController@stagista')->name('stagista');
     Route::post('stagista', 'IscrizioneStagController@registrazione')->name('stagistaPost');
     Route::get('stagista-2/{id}/', 'IscrizioniController@stagista2')->name('stagista2');
-    Route::post('stagista-2/{id}/', 'IscrizioneStagController@registrazioneCont')->name('stagista2Post');
+    Route::post('stagista-2/{id}', 'IscrizioneStagController@registrazioneCont')->name('stagista2Post');
+
     Route::get('fornitore', 'IscrizioniController@fornitore')->name('fornitore');
     Route::post('fornitore', 'IscrizioneFornController@registrazione')->name('fornitorePost');
     Route::get('pdfiscrizione/{tipoPdf}', 'ModulisticaController@stampaPdf')->name('stampapdf');

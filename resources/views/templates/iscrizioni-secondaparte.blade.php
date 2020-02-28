@@ -94,8 +94,9 @@
             </div>
             <div class="col-12 col-lg-12 mt-n3 ml-n2 mb-3">
                 <div class="form-group">
-                    <input type="submit" class="btn btn-dark ml-3" style="font-size: 22px; cursor: pointer;"
+                    <input type="button" class="btn btn-dark ml-3" style="font-size: 22px; cursor: pointer;"
                            name="indietro"
+                           onclick="window.location.href='{{route("$nomeroute", ["$idBack"])}}';"
                            id="indietro" value="Indietro" formnovalidate>
                     <input type="submit" class="btn btn-dark float-right" style="font-size: 22px; cursor: pointer;"
                            name="continua"

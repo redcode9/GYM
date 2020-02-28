@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{{ url('css/toggleButton.css') }}">
-{{--    <link rel="stylesheet" type="text/css" href="{{ url('css/selectedItems.css') }}">--}}
+    <link rel="stylesheet" type="text/css" href="{{ url('css/selectedItems.css') }}">
     <script type="text/javascript" src="{{ url('js/toggleIscrizioneCorso.js') }}"></script>
 </head>
 <body>
@@ -29,7 +29,6 @@
     </div>
     <div class="col-11 col-lg-6"></div>
     <div id="divSconto" class="col-12 col-lg-3" style="margin-top: -0.5rem; padding-right: 6.75rem;">
-        <?php //TODO @if 2 o più corsi selezionati ?>
         <h4 class="pl-2" style="border: 2px dashed black; border-radius: 5px;font-size: 1.5rem;">Sconto del
             XX%<?php //TODO inserire sconto pacchetti ?>!</h4>
     </div>
@@ -47,15 +46,14 @@
 
                     <div class="row">
                         @foreach($disciplina->corsi as $corso)
-                            <div class="col-12 col-md-6 col-xl-4">
-
-                                <div class="jumbotron mr-1 text-center mb-n1"
-                                     style="background-color: #13ce66; cursor: pointer; text-transform: uppercase"
-                                     onclick="<?php //TODO deve essere selezionabile ciascun corso?>">
+                            <div id="checkboxes" class="col-12 col-md-6 col-xl-4">
+                                <input type="checkbox" name="group[]" id="rb{{$corso->id}}" value="{{$corso->id}}" onchange="checkedCorsi();">
+                                <label class="jumbotron mr-1 text-center mb-n1" for="rb{{$corso->id}}"
+                                     style="background-color: #13ce66; cursor: pointer; text-transform: uppercase; width: 100%;max-height: 11.8rem">
                                     <h5 class="py-3">
                                         {{$corso->nome}}
                                     </h5>
-                                </div>
+                                </label>
                             </div>
                         @endforeach
                         <div class="col-12 col-md-6 col-xl-4">
@@ -70,12 +68,19 @@
     <div class="col-12 col-lg-12 mt-4 ml-n4">
         <form action="" method="post">
             <div class="form-group">
-                <input type="submit" class="btn btn-dark ml-5 mt-3"
+                <input type="button" class="btn btn-dark ml-5 mt-3"
                        style="font-size: 22px; cursor: pointer; margin-left:2rem" name="indietroCorso"
-                       id="indietroCorso" value="Indietro" formnovalidate>
+                       id="indietroCorso" value="Indietro" formnovalidate
+                       onclick="window.location.href='{{route("$nomeroute", ["$idBack"])}}';">
+
+                <input type="button" class="btn btn-dark mt-3 float-right"
+                       style="font-size: 22px; cursor: pointer; position: relative; z-index: 2; margin-left: 2.05rem;"  onclick="enableButton2();"
+                       name="modulo"
+                       id="modulo" value="Stampa modulo iscrizione" formnovalidate >
+
                 <input type="submit" class="btn btn-dark mt-3 float-right"
                        style="font-size: 22px; cursor: pointer;" name="terminaCorso"
-                       id="terminaCorso" value="Termina e Stampa Modulo di Iscrizione">
+                       id="terminaCorso1" value="Termina" disabled>
             </div>
         @csrf
     </form>
@@ -85,20 +90,34 @@
 <div class="col-12 col-lg-12 ml-n4" id="noCorso">
     <form action="" method="post">
         <div class="form-group">
-            <input type="submit" class="btn btn-dark mt-5"
+            <input type="button" class="btn btn-dark mt-5"
                    style="font-size: 22px; cursor: pointer; position: relative; z-index: 2; margin-left: 2.05rem;"
-                   name="indietro"
+                   name="indietro" onclick="window.location.href='{{route("$nomeroute", ["$idBack"])}}';"
                    id="indietro" value="Indietro" formnovalidate>
+
+            <!--<input type="button" class="btn btn-dark mt-3 float-right"
+                   style="font-size: 22px; cursor: pointer; position: relative; z-index: 2; margin-left: 2.05rem;"  onclick="enableButton2();"
+                   name="modulo"
+                   id="modulo" value="Stampa modulo iscrizione" formnovalidate >-->
+
             <input type="submit" class="btn btn-dark mt-5 float-right"
                    style="font-size: 22px; cursor: pointer; position: relative; z-index: 2; margin-right: -0.95rem"
                    name="termina"
-                   id="termina" value="Termina e Stampa Modulo di Iscrizione" formnovalidate>
+                   id="termina" value="Termina" formnovalidate>
         </div>
         @csrf
     </form>
 </div>
 <div class="col-0 col-lg-2"></div>
 </div>
+
+<script>
+
+    function enableButton2() {
+        document.getElementById("terminaCorso1").disabled = false;
+    }
+
+</script>
 </body>
 
 <?php //TODO collegare questa view al database ?>
