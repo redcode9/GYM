@@ -60,9 +60,7 @@ Route::post('modifica_asd', 'ModificaAsdController@modificaAsd')->middleware('au
 
 
 
-Route::get('/contabilità/', function () {
-    return view('segretaria_contabilità');
-})->name('segretaria_contabilità');
+Route::get('/contabilità/', 'ContabilitaController@tabelledati')->middleware(['web','auth'])->name('segretaria_contabilità');
 
 //Route::get('/corsi/', "IscrizioneCorsiController@carica")->name('corsi');
 //Route::get('/corso/{id}', "IscrizioneCorsiController@caricaCorso")->name('corso');

@@ -15,7 +15,7 @@ class CreateTransazioneTable extends Migration
     {
         Schema::create('Transazione', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('tipo',10);
+            $table->enum('tipo',['Entrata','Uscita']);
             $table->float('importo');
             $table->text('note')->nullable();
             $table->bigInteger('corso')->unsigned();
