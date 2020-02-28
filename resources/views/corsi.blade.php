@@ -27,7 +27,7 @@
                                 <div class="col-12 col-md-6 col-xl-4">
 
                                     <div class="jumbotron mr-1 text-center mb-n1"
-                                         style="background-color: #13ce66; cursor: pointer; text-transform: uppercase; max-height: 11.8rem;">
+                                         style="background-color: #13ce66; text-transform: uppercase; max-height: 11.8rem;">
                                         <h5 class="py-3">
                                             {{$corso->nome}}
                                         </h5>
