@@ -45,6 +45,7 @@
                            style="font-size: 22px; cursor: pointer; position: relative; z-index: 2;"
                            name="indietro"
                            id="indietro" value="Indietro" onclick="window.location.href='{{route("$nomeroute", ["$idBack"])}}';" formnovalidate>
+
                     <input type="submit" class="btn btn-dark mt-5 float-right"
                            style="font-size: 22px; cursor: pointer; position: relative; z-index: 2;"
                            name="termina"
@@ -84,6 +85,7 @@
                         </div>
                     </div>
                 @endif
+
                 <h5 class="px-2"
                     style="margin-top: 5.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: #f4f7fa; font-weight: normal; ">
                     DATI TESSERA

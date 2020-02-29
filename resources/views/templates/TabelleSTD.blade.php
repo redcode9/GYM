@@ -1,6 +1,6 @@
 @extends('templates.base', ['menu' => "on"])
 @section('corpo')
-    <div class="row mt-4">
+    <div class="row mt-4" >
 
         <div class="col-12 col-lg-12">
             <div class="mx-4 text-center">
@@ -23,7 +23,7 @@
                         @endif
 
                         <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                            <table class="table table-hover table-bordered table-striped js-sort-table ">
+                            <table class="table table-hover table-bordered table-striped js-sort-table " id="dataTableUtenti">
                                 <thead class="thead-dark">
                                 <!--js-sort-asc: ascending sort
                                     js-sort-desc: descending sort

@@ -29,5 +29,6 @@ class ViewServiceProvider extends ServiceProvider
         View::composer('GestioneCollaboratori', 'App\Http\ViewComposers\CollabComposer');
         View::composer('GestioneStagisti', 'App\Http\ViewComposers\StagComposer');
         View::composer('GestioneFornitori', 'App\Http\ViewComposers\FornComposer');
+        View::composer('VisualizzaTutti', 'App\Http\ViewComposers\IscrittiComposer');
     }
 }

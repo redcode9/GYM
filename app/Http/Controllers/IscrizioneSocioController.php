@@ -114,6 +114,7 @@ class IscrizioneSocioController extends Controller
             $datifiscali->socio = $socio->id;
             $datifiscali->save();
             $socio->dati_fiscali = $datifiscali->id;
+            $socio->fondatore = 0;
             $socio->save();
             $trans = new Transazione();
             $trans->importo = $request->get("importo");
@@ -204,20 +205,13 @@ class IscrizioneSocioController extends Controller
 //ciao
 
 
-        public function stampaModuloMagg()
+        public function stampaModuloIscr()
+
         {
 
-            $path = '..\resources\modulistica\moduli_maggiorenne.pdf';
+            $path = '..\resources\modulistica\Modulo iscrizione min-magg.pdf';
             return response()->download($path);
-
         }
 
-        public function stampaModuloMin()
-        {
-
-            $path = '..\resources\modulistica\moduli_minorenne.pdf';
-            return response()->download($path);
-
-        }
 
 }

@@ -22,6 +22,7 @@ class CreateTransazioneTable extends Migration
             $table->bigInteger('socio')->unsigned();
             $table->foreign('corso')->on('corso')->references('id')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('socio')->on('socio')->references('id')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

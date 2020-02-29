@@ -115,6 +115,7 @@
 
     function enableButton2() {
         document.getElementById("terminaCorso1").disabled = false;
+        window.open('{{route('moduloIscr')}}');
     }
 
 </script>

@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\ViewComposers;
-use App\Esterno;
 use Illuminate\View\View;
+use App\Iscritto;
 
-class CollabComposer
+class IscrittiComposer
 {
     /**
      * Create a new profile composer.
@@ -22,6 +22,6 @@ class CollabComposer
      */
     public function compose(View $view)
     {
-        $view->with('esterni', Esterno::tipo('collaboratore')->get());
+        $view->with('iscritti', Iscritto::all());
     }
 }
