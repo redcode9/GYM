@@ -7,6 +7,7 @@ use App\DatiFiscali;
 use App\Iscritto;
 use App\Sala;
 use App\Socio;
+use App\Transazione;
 use Carbon\Carbon;
 use App\Tessera;
 use DateTime;
@@ -104,16 +105,21 @@ class IscrizioneSocioController extends Controller
             //dati fiscali
             //return redirect()->route();
             //echo $request->get("importo");
-            $datidiscali = new DatiFiscali;
-            $datidiscali->pagamento = $request->get("pagamento");
-            $datidiscali->descrizione = $request->get("descrizione");
+            $datifiscali = new DatiFiscali;
+            $datifiscali->pagamento = $request->get("pagamento");
+            $datifiscali->descrizione = $request->get("descrizione");
                 //$datidiscali->importo = $request->get("importo");
-                $datidiscali->tipo_doc = $request->get("tipoDocumento");
-                $datidiscali->data_iscriz = date("Y-m-d");
-            $datidiscali->socio = $socio->id;
-            $datidiscali->save();
-            $socio->dati_fiscali = $datidiscali->id;
+                $datifiscali->tipo_doc = $request->get("tipoDocumento");
+                $datifiscali->data_iscriz = date("Y-m-d");
+            $datifiscali->socio = $socio->id;
+            $datifiscali->save();
+            $socio->dati_fiscali = $datifiscali->id;
             $socio->save();
+            $trans = new Transazione();
+            $trans->importo = $request->get("importo");
+            $trans->tipo = "Entrata";
+            $trans->socio = $id;
+            $trans->save();
             return redirect()->route('socio4', ["id" => $id]);
 
 

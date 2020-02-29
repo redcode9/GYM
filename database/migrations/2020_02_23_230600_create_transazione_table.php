@@ -18,7 +18,7 @@ class CreateTransazioneTable extends Migration
             $table->enum('tipo',['Entrata','Uscita']);
             $table->float('importo');
             $table->text('note')->nullable();
-            $table->bigInteger('corso')->unsigned();
+            $table->bigInteger('corso')->unsigned()->nullable();
             $table->bigInteger('socio')->unsigned();
             $table->foreign('corso')->on('corso')->references('id')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('socio')->on('socio')->references('id')->onDelete('cascade')->onUpdate('cascade');
