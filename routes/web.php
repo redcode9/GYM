@@ -80,9 +80,10 @@ Route::get('/utenti/VisualizzaTutti/', function () {   //view VisualizzaTutti in
     return view('VisualizzaTutti');
 })->name('VisualizzaTutti');
 
-Route::get('/HomeAdmin/', function () {   //view HomeAdmin
-    return view('templates.Dashboard');
-})->name('HomeAdmin');
-
+Route::get('/HomeAdmin/', 'DashAdminController@dashaazioni')->name('HomeAdmin');//view HomeAdmin
+Route::get('/HomeAdmin/verbalizzoNO/{id}','DashAdminController@verbalizzoNO')->name('HomeAdminVRBN');//Verbalizzazione socio Negativa
+Route::get('/HomeAdmin/verbalizzoSI/{id}','DashAdminController@verbalizzoSI')->name('HomeAdminVRBS');//Verbalizzazione socio Positiva
+Route::get('/HomeAdmin/aggiornatsr/{id}','DashAdminController@aggtess')->name('HomeAdminAGTS');//aggiornamento tessera socio
+Route::get('/HomeAdmin/aggmedcertf/{id}','DashAdminController@aggmedcertf')->name('HomeAdminAGCM');//aggiornamento tessera socio
 
 Route::get('logout', 'LoginController@logout')->name('logout');

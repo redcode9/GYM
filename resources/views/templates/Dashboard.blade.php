@@ -23,6 +23,7 @@
                                 <div class="col-md-6 col-xl-4">
                                     <div class="card daily-sales">
                                         <div class="card-block">
+                                            <!--TODO FARE LA MEDIA ENTRATE E USCITE MA CAPIRE DA DOVE VENGONO PRESE -->
                                             <h6 class="mb-4">Entrate Mensili</h6>
                                             <div class="row d-flex align-items-center">
                                                 <div class="col-9">
@@ -90,75 +91,34 @@
                                             <div class="table-responsive scroll">
                                                 <table class="table table-hover">
                                                     <tbody>
-                                                    <tr class="unread">
-                                                        <td><img class="rounded-circle" style="width:40px;" src="{{asset('img/Docente.jpg')}}" alt="activity-user"></td>
-                                                        <td>
-                                                            <h6 class="mb-1">Isabella Fiorentini</h6>
-                                                            <p class="m-0">Allievo</p>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="text-muted"></i>9 Maggio 12:56</h6>
-                                                        </td>
-                                                        <td><a href="#!" class="label theme-bg2 text-white f-12">Rifiuta</a><a href="#!" class="label theme-bg text-white f-12">Verbalizza</a></td>
-                                                    </tr>
-                                                    <tr class="unread">
-                                                        <td><img class="rounded-circle" style="width:40px;" src="{{asset('img/Allievo.jpg')}}" alt="activity-user"></td>
-                                                        <td>
-                                                            <h6 class="mb-1">Isabella Fiorentini</h6>
-                                                            <p class="m-0">Allievo</p>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="text-muted"></i>9 Maggio 12:56</h6>
-                                                        </td>
-                                                        <td><a href="#!" class="label theme-bg2 text-white f-12">Rifiuta</a><a href="#!" class="label theme-bg text-white f-12">Verbalizza</a></td>
-                                                    </tr>
-                                                    <tr class="unread">
-                                                        <td><img class="rounded-circle" style="width:40px;" src="{{asset('img/Docente.jpg')}}" alt="activity-user"></td>
-                                                        <td>
-                                                            <h6 class="mb-1">Matilde Andreotti</h6>
-                                                            <p class="m-0">Allievo</p>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="text-muted">11 Maggio 10:35</h6>
-                                                        </td>
-                                                        <td><a href="#!" class="label theme-bg2 text-white f-12">Rifiuta</a><a href="#!" class="label theme-bg text-white f-12">Verbalizza</a></td>
-                                                    </tr>
-                                                    <tr class="unread">
-                                                        <td><img class="rounded-circle" style="width:40px;" src="{{asset('img/Allievo.jpg')}}" alt="activity-user"></td>
-                                                        <td>
-                                                            <h6 class="mb-1">Chiara Michelotti</h6>
-                                                            <p class="m-0">Allievo</p>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="text-muted"><!--<i class="fas fa-circle text-c-green f-10 m-r-15">--></i>7 Maggio 17:38</h6>
-                                                        </td>
-                                                        <td><a href="#!" class="label theme-bg2 text-white f-12">Rifiuta</a><a href="#!" class="label theme-bg text-white f-12">Verbalizza</a></td>
-                                                    </tr>
-                                                    <tr class="unread">
-                                                        <td><img class="rounded-circle" style="width:40px;" src="{{asset('img/Docente.jpg')}}" alt="activity-user"></td>
-                                                        <td>
-                                                            <h6 class="mb-1">Joesph Tortorella</h6>
-                                                            <p class="m-0">Insegnante</p>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="text-muted f-w-300"><!--<i class="fas fa-circle text-c-green f-10 m-r-15">--></i>19 Maggio 12:56</h6>
-                                                        </td>
-                                                        <td><a href="#!" class="label theme-bg2 text-white f-12">Rifiuta</a><a href="#!" class="label theme-bg text-white f-12">Verbalizza</a></td>
-                                                    </tr>
-                                                    <tr class="unread">
-                                                        <td><img class="rounded-circle" style="width:40px;" src="{{asset('img/Docente.jpg')}}" alt="activity-user"></td>
-                                                        <td>
-                                                            <h6 class="mb-1">Anna Sansone</h6>
-                                                            <p class="m-0">Insegnante</p>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="text-muted"><!--<i class="fas fa-circle text-c-green f-10 m-r-15">--></i>21 Giugno 12:56</h6>
-                                                        </td>
-                                                        <td>
-                                                            <a href="#!" class="label theme-bg2 text-white f-12">Rifiuta</a>
-                                                            <a href="#!" class="label theme-bg text-white f-12">Verbalizza</a>
-                                                        </td>
-                                                    </tr>
+
+                                                    @foreach($allsoci as $Socio )
+                                                        @if($Socio->verbalizzato==0)
+
+                                                        <tr class="unread">
+                                                            <td><img class="rounded-circle" style="width:40px;"
+                                                                     src="@if($Socio->tipo=='allievo') {{asset('img/Allievo.jpg')}} @else {{asset('img/Docente.jpg')}} @endif"
+                                                                     ></td>
+                                                            <td>
+
+                                                                <h6 class="mb-1">{{$Socio->nome}},{{$Socio->cognome}}</h6>
+                                                                <p class="m-0"></p>
+                                                            </td>
+                                                            <td>
+
+                                                                @foreach($datifs as $DFS)
+                                                                    @if ($Socio->dati_fiscali==$DFS->id)
+                                                                <h6 class="text-right">{{$DFS->data_iscriz}}</h6>
+                                                                    @endif
+                                                                    @endforeach
+                                                            </td>
+                                                            <td><a onclick="window.location.href='{{ (route('HomeAdminVRBN',[$Socio->id]))}}'" class="label theme-bg2 text-white f-12">Rifiuta</a><a
+                                                                    onclick="window.location.href='{{ (route('HomeAdminVRBS',[$Socio->id]))}}'" class="label theme-bg text-white f-12">Verbalizza</a>
+                                                            </td>
+                                                        </tr>
+                                                        @endif
+                                                        @endforeach
+
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -192,74 +152,39 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
+                                                @foreach($allsoci as $Socio)
+                                                    @foreach($TESS as $tessera)
+                                                    @if($Socio->tessera==$tessera->id)
+                                                    @if($tessera->scad_tess <= $oggi)
                                                     <td>
-                                                        <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:30px;" src="{{asset('img/Allievo.jpg')}}" alt="activity-user">Albert Andersen</h6>
+                                                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:30px;"
+                                                                             src="@if($Socio->tipo=='allievo') {{asset('img/Allievo.jpg')}}
+                                                                             @else {{asset('img/Docente.jpg')}} @endif"
+                                                                             alt="activity-user">{{$Socio->nome}},{{$Socio->cognome}}</h6>
                                                     </td>
                                                     <td>
-                                                        <h6 class="m-0">1746283957</h6>
+                                                        <h6 class="m-0">{{$Socio->tessera}}</h6>
+
+
                                                     </td>
                                                     <td>
-                                                        <h6 class="text-muted">11 Maggio 10:35</h6>
+
+                                                        <h6 class="n-time   ">{{$tessera->data_tess}}</h6>
                                                     </td>
                                                     <td>
-                                                        <h6 class="m-0 text-c-yellow">In scadenza</h6>
+
+                                                        <h6 class="m-0 text-c-red">Scaduta </h6>
+
+
                                                     </td>
                                                     <td class="text-right">
-                                                        <a href="#!" class="label theme-bg2 text-white f-12">Aggiorna</a>
+                                                        <a onclick="window.location.href='{{ (route('HomeAdminAGTS',[$tessera->id]))}}'" class="label theme-bg2 text-white f-12">Aggiorna</a>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:30px;" src="{{asset('img/Docente.jpg')}}" alt="activity-user">Ida Jorgensen</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="m-0">8394639365</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="text-muted">11 Maggio 10:35</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="m-0 text-c-red">Scaduto</h6>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <a href="#!" class="label theme-bg2 text-white f-12">Aggiorna</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:30px;" src="{{asset('img/Allievo.jpg')}}" alt="activity-user">Ida Jorgensen</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="m-0">7492648395</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="text-muted">11 Maggio 10:35</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="m-0 text-c-red">Scaduto</h6>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <a href="#!" class="label theme-bg2 text-white f-12">Aggiorna</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;" src="{{asset('img/Allievo.jpg')}}" alt="activity-user">Silje Larsen</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="m-0">7392648395</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="text-muted">11 Maggio 10:35</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="m-0 text-c-yellow">In scadenza</h6>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <a href="#!" class="label theme-bg2 text-white f-12">Aggiorna</a>
-                                                    </td>
-                                                </tr>
+                                                        @endif
+                                                    @endif
+                                                    @endforeach
+                                                 @endforeach
                                                 </tbody>
                                             </table>
 
@@ -276,74 +201,31 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
+                                                @foreach($allsoci as $Socio)
+                                                    @foreach($ISCR as $iscritto)
+                                                        @if($Socio->iscrizione==$iscritto->id)
+                                                            @if($iscritto->cert_med_scadenza <= $oggi)
                                                 <tr>
                                                     <td>
-                                                        <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:30px;" src="{{asset('img/Allievo.jpg')}}" alt="activity-user">Silje Larsen</h6>
+                                                        <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:30px;" src="@if($Socio->tipo=='allievo') {{asset('img/Allievo.jpg')}}
+                                                            @else {{asset('img/Docente.jpg')}} @endif" alt="activity-user">{{$Socio->nome}},{{$Socio->cognome}}</h6>
                                                     </td>
                                                     <td>
-                                                        <h6 class="text-muted">11 Maggio 10:35</h6>
+                                                        <h6 class="text-muted">{{$iscritto->cert_med_rilascio}}</h6>
                                                     </td>
                                                     <td>
-                                                        <h6 class="text-muted">11 Maggio 10:35</h6>
+                                                        <h6 class="text-muted">{{$iscritto->cert_med_scadenza}}</h6>
                                                     </td>
                                                     <td>
                                                         <h6 class="m-0 text-c-red">Scaduto</h6>
                                                     </td>
                                                     <td class="text-right">
-                                                        <a href="#!" class="label theme-bg2 text-white f-12">Aggiorna</a>
+                                                        <a  onclick="window.location.href='{{ (route('HomeAdminAGCM',[$iscritto->id]))}}'" class="label theme-bg2 text-white f-12">Aggiorna</a>
                                                     </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:30px;" src="{{asset('img/Docente.jpg')}}" alt="activity-user">Ida Jorgensen</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="text-muted">11 Maggio 10:35</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="text-muted">11 Maggio 10:35</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="m-0 text-c-yellow">In scadenza</h6>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <a href="#!" class="label theme-bg2 text-white f-12">Aggiorna</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:30px;" src="{{asset('img/Allievo.jpg')}}" alt="activity-user">Albert Andersen</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="text-muted">11 Maggio 10:35</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="text-muted">11 Maggio 10:35</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="m-0 text-c-red">Scaduto</h6>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <a href="#!" class="label theme-bg2 text-white f-12">Aggiorna</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:30px;" src="{{asset('img/Docente.jpg')}}" alt="activity-user">Ida Jorgensen</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="text-muted">11 Maggio 10:35</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="text-muted">11 Maggio 10:35</h6>
-                                                    </td>
-                                                    <td>
-                                                        <h6 class="m-0 text-c-yellow">In scadenza</h6>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        <a href="#!" class="label theme-bg2 text-white f-12">Aggiorna</a>
-                                                    </td>
-                                                </tr>
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
+                                                @endforeach
                                                 </tbody>
                                             </table>
                                         </div>

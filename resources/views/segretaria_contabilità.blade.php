@@ -59,11 +59,11 @@
             <div class="jumbotron_no_pad jumbotron-fluid">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title">Ricerca Esterno tramite nome</h3>
+                        <h3 class="card-title">Tabella Esterno tramite nome</h3>
                         <div class="form-group">
                             <input class="form-control text-dark" style="border: 2px solid #353a40" type="text"
                                    name="search"
-                                   id="search_table" placeholder="Search">
+                                   id="search_table" placeholder="Search Esterno Tramite Cognome">
                         </div>
                         <div class="table-wrapper-scroll-y my-custom-scrollbar">
                             <table class="table table-hover table-bordered table-striped js-sort-table ">
