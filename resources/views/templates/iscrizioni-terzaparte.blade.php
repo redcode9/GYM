@@ -3,6 +3,13 @@
     <link rel="stylesheet" type="text/css" href="{{ url('css/placeholders.css') }}">
     <script type="text/javascript" src="{{ url('js/toggleTesseramento.js') }}"></script>
     <script type="text/javascript" src="{{ url('js/toggleDocumento.js') }}"></script>
+    <style>
+        .inactive-link {
+            pointer-events: none;
+            cursor: default;
+            background-color: #777;
+        }
+    </style>
 </head>
 <body>
 <div class="row mt-4">
@@ -18,7 +25,7 @@
         <div class="col-12 col-lg-12 mt-3"></div>
         <div class="col-2 col-lg-1 ml-n5"></div>
         <h4 class="mt-n1 ml-n2 mr-1">TESSERAMENTO</h4>&nbsp;
-        <div class="row mb-n2">
+        <div class="row mb-2">
             <div class="clearfix"></div>
             <div class="col-sm-12">
                 <label class="label-switch switch-primary">
@@ -54,8 +61,31 @@
             @csrf
             <div class="row mt-5">
 
+                @if ($idTitle === "collaboratore")
+                    <div class="col-12 col-lg-6 ml-5 mb-4" id="socioCollab">
+                        <label for="tipoSocio"><h5>Tipologia Socio*</h5></label>
+                        <div class="row mb-3">
+                            <div class="col-2 col-lg-2">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="tipoSocio"
+                                           id="allievo" value="option1">
+                                    <label for="allievo" class="form-check-label" style="font-size: 1.1rem">Allievo</label>
+                                </div>
+                            </div>
+
+                            <div class="col-2 col-lg-2">
+                                <div class="form-check form-check-inline ml-2">
+                                    <input type="radio" class="form-check-input" name="tipoSocio"
+                                           id="insegnante" value="option2">
+                                    <label for="insegnante" class="form-check-label"
+                                           style="font-size: 1.1rem">Insegnante</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 <h5 class="px-2"
-                    style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: #f4f7fa; font-weight: normal; ">
+                    style="margin-top: 5.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: #f4f7fa; font-weight: normal; ">
                     DATI TESSERA
                 </h5></div>
             <div class="row ml-4 mr-4 mb-5">
@@ -85,29 +115,6 @@
                         </div>
                     </div>
                 </div>
-                @if ($idTitle === "collaboratore")
-                <div class="col-12 col-lg-6 ml-3 mt-5 mb-3" id="socioCollab">
-                    <label for="tipoSocio"><h5>Tipologia Socio*</h5></label>
-                    <div class="row">
-                        <div class="col-2 col-lg-2">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" name="tipoSocio"
-                                       id="allievo" value="option1">
-                                <label for="allievo" class="form-check-label" style="font-size: 1.1rem">Allievo</label>
-                            </div>
-                        </div>
-
-                        <div class="col-2 col-lg-2">
-                            <div class="form-check form-check-inline ml-2">
-                                <input type="radio" class="form-check-input" name="tipoSocio"
-                                       id="insegnante" value="option2">
-                                <label for="insegnante" class="form-check-label"
-                                       style="font-size: 1.1rem">Insegnante</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endif
             </div>
 
             <div class="row">
@@ -123,8 +130,7 @@
                             <div class="form-group">
                                 <label for="importo" class="mb-0"><h5>Importo iscrizione</h5></label>
                                 <input type="text" pattern="^\$?(([1-9](\d*|\d{0,2}(,\d{3})*))|0)(\.\d{1,2})?$"
-                                       class="form-control" name="importo" id="importo" value="{{$importo}}"
-                                       placeholder="es. 10€"
+                                       class="form-control" name="importo" id="importo" value="{{$importo}}€"
                                        readonly>
                             </div>
                         </div>
@@ -166,8 +172,8 @@
                         <div class="col-12 col-lg-6 mt-3 mb-n2">
                             <div class="form-group">
                                 <label for="tipoDocumento" class="mb-0"><h5>Tipo di Documento*</h5></label>
-                                <select class="custom-select" id="tipoDocumento" name="tipoDocumento"
-                                        required> <!--onchange="toggleStampa()"-->
+                                <select class="custom-select" id="tipoDocumento" name="tipoDocumento" onchange="toggleStampaButton()"
+                                        required>
                                     <option value="" disabled selected hidden>Scegli un'opzione</option>
                                     <option value="RN">Ricevuta numerata</option>
                                     <option value="R">Ricevuta</option>
