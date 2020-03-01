@@ -113,5 +113,22 @@ Route::get('/HomeAdmin/verbalizzoNO/{id}','DashAdminController@verbalizzoNO')->n
 Route::get('/HomeAdmin/verbalizzoSI/{id}','DashAdminController@verbalizzoSI')->name('HomeAdminVRBS');//Verbalizzazione socio Positiva
 Route::get('/HomeAdmin/aggiornatsr/{id}','DashAdminController@aggtess')->name('HomeAdminAGTS');//aggiornamento tessera socio
 Route::get('/HomeAdmin/aggmedcertf/{id}','DashAdminController@aggmedcertf')->name('HomeAdminAGCM');//aggiornamento tessera socio
+/*Route::get('/CreazioneSale/',function (){
+    return \App\Sala::all();
+}); //ci mostra per ora tutte le sale*/
+
+Route::get('/CreazioneSale','SalaController@index')->name('CreazioneSale');
+Route::get('/CreazioneSale/{id}/delete','SalaController@delete');
+Route::get('/CreazioneSale/{id}/edit','SalaController@edit');
+Route::get('/CreazioneSale/create','SalaController@create')->name('sala.create');
+Route::post('/CreazioneSale','SalaController@save')->name('sala.save');
+//Route::post('CreazioneAssociazione/create','RegistrazioneAsdController@create')->name('ASDPT2.create');
+//Route::post('/CreazioneSale/{id}','RegistrazioneAsdController@save')->name('ASDPT2.save');
+//Route::get('/CreazioneSale/{id}','RegistrazioneAsdController@store');
+
+/*Route::get('/CreazioneSale/', function () {   //view HomeAdmin
+    return view('CreazioneSale');
+})->name('CreazioneSale');*/
+
 
 Route::get('logout', 'LoginController@logout')->name('logout');
