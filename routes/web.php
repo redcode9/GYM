@@ -111,7 +111,10 @@ Route::get('/utenti/VisualizzaTutti/', 'JoinTuttiController@tabellaTuttiUtenti')
 Route::get('/HomeAdmin/', 'DashAdminController@dashaazioni')->name('HomeAdmin');//view HomeAdmin
 Route::get('/HomeAdmin/verbalizzoNO/{id}','DashAdminController@verbalizzoNO')->name('HomeAdminVRBN');//Verbalizzazione socio Negativa
 Route::get('/HomeAdmin/verbalizzoSI/{id}','DashAdminController@verbalizzoSI')->name('HomeAdminVRBS');//Verbalizzazione socio Positiva
+Route::get('/HomeAdmin/fondatoreNO/{id}','DashAdminController@fondatoreNO')->name('HomeAdminFNDN');//Verbalizzazione fondatore Negativa
+Route::get('/HomeAdmin/fondatoreSI/{id}','DashAdminController@fondatoreSI')->name('HomeAdminFNDS');//Verbalizzazione fondatore Positiva
 Route::get('/HomeAdmin/aggiornatsr/{id}','DashAdminController@aggtess')->name('HomeAdminAGTS');//aggiornamento tessera socio
+Route::get('/HomeAdmin/aggmedcertf/{id}','DashAdminController@aggmedcertf')->name('HomeAdminAGCM');//aggiornamento certificato medico socio
 Route::get('/HomeAdmin/aggmedcertf/{id}','DashAdminController@aggmedcertf')->name('HomeAdminAGCM');//aggiornamento tessera socio
 /*Route::get('/CreazioneSale/',function (){
     return \App\Sala::all();

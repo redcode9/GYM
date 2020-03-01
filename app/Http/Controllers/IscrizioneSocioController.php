@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Associazione;
 use App\DatiFiscali;
 use App\Iscritto;
+use App\Partecipazione;
 use App\Sala;
 use App\Socio;
 use App\Transazione;
@@ -150,25 +151,37 @@ class IscrizioneSocioController extends Controller
         }
     }
 
+
     public function registrazione4($id, Request $request)
     {
 
-            $socio = Socio::find($id);
-            $sale = Sala::all();
+        $socio = Socio::find($id);
+        $sale = Sala::all();
 
-            $years = Carbon::parse($socio->data_nasc)->age; //calcola l'età dell'iscritto
+        $years = Carbon::parse($socio->data_nasc)->age; //calcola l'età dell'iscritto
 
-            if ($request->isMethod("POST")){
-                return redirect()->route('HomeAdmin');
-            } else {
+        if ($request->isMethod("POST")) {
 
-                return view("iscrizionesocio4", [
-                    "errore" => "",
-                    "sale" => $sale,
-                    "socio" => $socio,
-                    "years" => $years
-                ]);
-            }
+            if ($request->has('group')){
+                $selezione = $request->post("group");
+                foreach ($selezione as $sel){
+                    $part = new Partecipazione();
+                    $part->allievo = $id;
+                    $part->corso = $sel;
+                    $part->save();
+                }
+}
+            return redirect()->route('HomeAdmin');
+        } else {
+
+            return view("iscrizionesocio4", [
+                "errore" => "",
+                "sale" => $sale,
+                "socio" => $socio,
+                "years" => $years
+            ]);
+        }
+
     }
 
 

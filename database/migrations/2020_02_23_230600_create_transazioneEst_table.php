@@ -19,6 +19,7 @@ class CreateTransazioneEstTable extends Migration
             $table->text('note')->nullable();
             $table->bigInteger('esterno')->unsigned();
             $table->foreign('esterno')->on('esterno')->references('id')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

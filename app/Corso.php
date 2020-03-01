@@ -22,6 +22,7 @@ class Corso extends Model
         return $this->belongsTo(Socio::class,"insegnante");
     }
 
+
     public function partecipa()
     {
         return $this->belongsToMany(Socio::class,"partecipazione","corso","allievo");

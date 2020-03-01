@@ -9,7 +9,7 @@ class TransazioneEst extends Model
     protected $table = 'transazioneest';
     protected $primaryKey = 'id';
     public $incrementing = true;
-    public $timestamps = false;
+    public $timestamps = true;
 
 
     public function effettuataEst()
