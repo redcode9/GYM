@@ -19,7 +19,7 @@
         <tr>
             <td class="text-right">
                 <input type="image" src="{{asset('img/matita.png')}}" width="25" height="25"
-                       onclick="window.location.href='{{ route("corsomodifica", ["id"=>$corsidisc->corso->id]) }}';">
+                       onclick="window.location.href='{{ route("corsomodifica", ["id"=>$corsidisc->id]) }}';">
                 {{----}}
             </td>
             <td>
