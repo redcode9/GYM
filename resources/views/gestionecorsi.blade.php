@@ -1,46 +1,53 @@
-@extends('templates.base', ['menu' => "on"])
-@section('corpo')
-    <div class="row mt-4">
+@component('templates.entityTables',['SearchBox' => "OFF"])  <!-- Cambiare in OFF se la searchbox non serve in questa tabella-->
+<!-- ciao-->
+@slot('title_upper_view','Gestione Corsi')
+@slot('title_upper_table','Tutti i Corsi')   <!-- Se si vuole inserire un dato interattivo, seguire il seguente form-->
 
-        <div class="col-12 col-lg-12">
-            <div class="mx-4 text-center">
-                <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black"
-                    id="fornitore">GESTIONE CORSI</h1>
-            </div>
-        </div>
-        <div class="col-12 col-lg-12 mt-4"></div>
+    @slot('table_header')
 
-        <div class="col-0 col-lg-2"></div>
-        <div class="col-12 col-lg-8">
-            @foreach($sale as $sala)
-                @foreach($sala->disciplina as $disciplina)
-                    <div class="col-12 ml-n2"
-                         style="font-weight: bold; background-color: #f4f7fa; width: 40%; border-radius: 10px; text-align: center; text-transform: uppercase">
-                        <h4 style="margin: 0;padding-bottom: 0.05rem;font-size: 1.5rem;">
-                            {{$disciplina->nome}}
-                        </h4>
-                    </div>
-                    <div class="jumbotron" style="margin-top: -2.2rem;background-color: #cdf5de">
+        <th scope="col" class="text-right" style="cursor: pointer">Modifica</th>
+        <th scope="col" style="cursor: pointer">Elimina</th>
+        <th scope="col" style="cursor: pointer">Associa</th>
+        <th scope="col" style="cursor: pointer">NomeCorso</th>
+        <th scope="col" style="cursor: pointer">Nome Disciplina</th>
+        <th scope="col" style="cursor: pointer">Costo</th>
 
-                        <div class="row">
-                            @foreach($disciplina->corsi as $corso)
-                                <div class="col-12 col-md-6 col-xl-4">
 
-                                    <div class="jumbotron mr-1 text-center mb-n1"
-                                         style="background-color: #13ce66; text-transform: uppercase; cursor: pointer"
-                                         onclick="window.location.href='{{route('corso',["id"=>$corso->id])}}'">
-                                        <h5 class="py-3">
-                                            {{$corso->nome}}
-                                        </h5>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                @endforeach
+    @endslot
+    @slot('table_content')
+    @foreach($all as $corsidisc)
+        <tr>
+            <td class="text-right">
+                <input type="image" src="{{asset('img/matita.png')}}" width="25" height="25"
+                       onclick="window.location.href='{{ route("corsomodifica", ["id"=>$corsidisc->id]) }}';">
+                {{----}}
+            </td>
+            <td>
+                <input type="image" src="{{asset('img/cestino.png')}}" width="25" height="25"
+                       onclick="window.location.href='{{ route("corsodelete", ["id"=>$corsidisc->id]) }}';">
+            </td>
+            <td>
+                <input type="image" src="{{asset('img/user.png')}}" width="25" height="25"
+                       onclick="window.location.href='{{ route("corsoupdate", ["id"=>$corsidisc->id]) }}';">
+            </td>
+
+            <td>{{$corsidisc->corsonm}}</td>
+
+            <td>{{$corsidisc->nome}}</td>
+
+            <td>{{$corsidisc->costo}}</td>
+
+            </tr>
             @endforeach
-        </div>
-        <div class="col-0 col-lg-2"></div>
-    </div>
-@endsection
+            @endslot
+
+            <script>
+                $(document).ready(function () {
+                    $('#tabellaUtenti').DataTable();
+                });
+            </script>
+
+        @endcomponent
+
+
 

@@ -11,9 +11,11 @@
                     alt="Logo">
         </div>
 
-
+        @if (Auth::user()->ruolo === 'admin')
         <a class="nav-link my-4 btn btn-dark" href="{{route('HomeAdmin')}}">Dashboard</a>
-
+            @elseif(Auth::user()->ruolo === 'segreteria')
+            <a class="nav-link my-4 btn btn-dark" href="{{route('HomeUser')}}">Dashboard</a>
+        @endif
         {{--        <div class="form-group">--}}
         {{--            <input class="form-control text-dark" style="border: 2px solid #353a40" type="text" name="search"--}}
         {{--                   id="search" placeholder="Search">--}}
