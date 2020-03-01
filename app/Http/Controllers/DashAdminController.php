@@ -5,12 +5,15 @@ use App\DatiFiscali;
 use App\Iscritto;
 use App\Tessera;
 use App\Socio;
+use App\Transazione;
+use App\TransazioneEst;
 use App\Esterno;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use phpDocumentor\Reflection\Types\Void_;
 
 
 class DashAdminController extends Controller
@@ -25,12 +28,29 @@ class DashAdminController extends Controller
             ->select('socio.nome', 'socio.cognome', 'socio.tipo', 'socio.verbalizzato', 'socio.tessera', 'tessera.scad_tess', 'dati_fiscali.data_iscriz', 'tessera.data_tess', 'socio.id as socioid')
             ->get();
 
-        $today = date("Y-m-d");
+        $today = date('Y-m-d');
+
+        $datemes = date_create();
+        date_sub($datemes, date_interval_create_from_date_string('30 days'));
+
+
+        $dateann = date_create();
+        date_sub($dateann, date_interval_create_from_date_string('365 days'));
+
+die(date_default_timezone_get());
         $Sociozz = Socio::all();
         $Datifis = DatiFiscali::all();
         $tess = Tessera::all();
         $iscr = Iscritto::all();
-        return view('templates.Dashboard', ['socioz' => $SocioDB, 'allsoci' => $Sociozz, 'oggi' => $today, 'datifs' => $Datifis, 'TESS' => $tess, 'ISCR' => $iscr]);
+        $alltransS = Transazione::all()->whereBetween('created_at',[$datemes,$today])
+            ->where('tipo', '=', "Uscita")
+            ->sum('importo');
+
+        $alltransE = TransazioneEst::all()->whereBetween('created_at',[$datemes,$today])->sum('importo');
+        $sumtransSST= Transazione::whereBetween('created_at',[$datemes,$today])->where('tipo', '=', "Entrata")->sum('importo');
+        $sumtransSAN= Transazione::whereBetween('created_at',[$dateann,$today])->where('tipo', '=', "Entrata")->sum('importo');
+        return view('templates.Dashboard', ['socioz' => $SocioDB, 'allsoci' => $Sociozz, 'oggi' => $today,
+            'datifs' => $Datifis, 'TESS' => $tess, 'ISCR' => $iscr, 'transzs'=>$alltransS+$alltransE,'sumtra'=>$sumtransSST,'sumtrann'=>$sumtransSAN]);
     }
 
     public function verbalizzoNO($id)
@@ -38,7 +58,8 @@ class DashAdminController extends Controller
 
         $socio = Socio::find($id);
         $socio->delete();
-        return view('HomeAdmin');
+
+        return redirect()->route("HomeAdmin");
     }
 
     public function verbalizzoSI($id)
@@ -48,15 +69,40 @@ class DashAdminController extends Controller
         $socio->verbalizzato = 1;
         $socio->save();
 
-
+        return redirect()->route("HomeAdmin");
     }
+
+
+
+
+    public function fondatoreNO($id)
+    {
+
+        $socio = Socio::find($id);
+        $socio->fondatore=0;
+        $socio->save();
+
+        return redirect()->route("HomeAdmin");
+    }
+
+    public function fondatoreSI($id)
+    {
+
+        $socio = Socio::find($id);
+        $socio->fondatore=1;
+        $socio->save();
+
+        return redirect()->route("HomeAdmin");
+    }
+
+
 
     public function aggtess($id)
     {
         DB::table('tessera')->where('id', $id)
             ->update(['scad_tess' => DB::raw("scad_tess + INTERVAL 1 YEAR")]);
 
-        return view('HomeAdmin');
+        return redirect()->route("HomeAdmin");
     }
 
     public function aggmedcertf($id)
@@ -68,7 +114,7 @@ class DashAdminController extends Controller
              DB::table('iscritto')->where('id', $id)
             ->update(['cert_med_scadenza' => DB::raw( "cert_med_scadenza + INTERVAL 3 YEAR")]);
 
-        return view('HomeAdmin');
+        return redirect()->route("HomeAdmin");
 
     }
 }

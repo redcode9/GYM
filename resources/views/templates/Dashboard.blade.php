@@ -23,59 +23,38 @@
                                 <div class="col-md-6 col-xl-4">
                                     <div class="card daily-sales">
                                         <div class="card-block">
-                                            <!--TODO FARE LA MEDIA ENTRATE E USCITE MA CAPIRE DA DOVE VENGONO PRESE -->
                                             <h6 class="mb-4">Entrate Mensili</h6>
                                             <div class="row d-flex align-items-center">
                                                 <div class="col-9">
-                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0"><i class="feather icon-arrow-up text-c-green f-30 m-r-10"></i>€ 249.95</h3>
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0"><i class="feather icon-arrow-up text-c-green f-30 m-r-10"></i>
+                                                        € {{$sumtra}}</h3>
                                                 </div>
-
-                                                <div class="col-3 text-right">
-                                                    <p class="m-b-0">67%</p>
-                                                </div>
-                                            </div>
-                                            <div class="progress m-t-30" style="height: 7px;">
-                                                <div class="progress-bar theme-bg" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--[ daily sales section ] end-->
-                                <!--[ Monthly  sales section ] starts-->
+                                <!--[ Uscite mensili ] starts-->
                                 <div class="col-md-6 col-xl-4">
                                     <div class="card Monthly-sales">
                                         <div class="card-block">
                                             <h6 class="mb-4">Uscite Mensili</h6>
                                             <div class="row d-flex align-items-center">
                                                 <div class="col-9">
-                                                    <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i class="feather icon-arrow-down text-c-red f-30 m-r-10"></i>€ 2.942.32</h3>
+                                                    <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i class="feather icon-arrow-down text-c-red f-30 m-r-10"></i>€{{$transzs}}</h3>
                                                 </div>
-                                                <div class="col-3 text-right">
-                                                    <p class="m-b-0">36%</p>
-                                                </div>
-                                            </div>
-                                            <div class="progress m-t-30" style="height: 7px;">
-                                                <div class="progress-bar theme-bg2" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div><!--Prima stava progress-c-theme-->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--[ Monthly  sales section ] end-->
-                                <!--[ year  sales section ] starts-->
+                                <!--[ Entrate totali] end-->
                                 <div class="col-md-12 col-xl-4">
                                     <div class="card yearly-sales">
                                         <div class="card-block">
                                             <h6 class="mb-4">Entrate Annuali</h6>
                                             <div class="row d-flex align-items-center">
                                                 <div class="col-9">
-                                                    <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i class="feather icon-arrow-up text-c-green f-30 m-r-10"></i>€ 8.638.32</h3>
+                                                    <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i class="feather icon-arrow-up text-c-green f-30 m-r-10"></i>€{{$sumtrann}}</h3>
                                                 </div>
-                                                <div class="col-3 text-right">
-                                                    <p class="m-b-0">80%</p>
-                                                </div>
-                                            </div>
-                                            <div class="progress m-t-30" style="height: 7px;">
-                                                <div class="progress-bar theme-bg" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -101,7 +80,7 @@
                                                                      ></td>
                                                             <td>
 
-                                                                <h6 class="mb-1">{{$Socio->nome}},{{$Socio->cognome}}</h6>
+                                                                <h6 class="mb-1">{{$Socio->nome}} {{$Socio->cognome}}</h6>
                                                                 <p class="m-0"></p>
                                                             </td>
                                                             <td>
@@ -112,8 +91,8 @@
                                                                     @endif
                                                                     @endforeach
                                                             </td>
-                                                            <td><a onclick="window.location.href='{{ (route('HomeAdminVRBN',[$Socio->id]))}}'" class="label theme-bg2 text-white f-12">Rifiuta</a><a
-                                                                    onclick="window.location.href='{{ (route('HomeAdminVRBS',[$Socio->id]))}}'" class="label theme-bg text-white f-12">Verbalizza</a>
+                                                            <td><a onclick="window.location.href='{{ (route('HomeAdminVRBN',[$Socio->id]))}}'" style="cursor: pointer" class="label theme-bg2 text-white f-12">Rifiuta</a><a
+                                                                    onclick="window.location.href='{{ (route('HomeAdminVRBS',[$Socio->id]))}}'" style="cursor: pointer" class="label theme-bg text-white f-12">Verbalizza</a>
                                                             </td>
                                                         </tr>
                                                         @endif
@@ -126,6 +105,49 @@
                                     </div>
                                 </div>
                                 <!--[ Recent Users ] end-->
+
+                                <!--[ Richiesta fondatore] start-->
+
+                                    <div class="card Richiesta-Fondatore ml-3">
+                                        <div class="card-header">
+                                            <h5>Richiesta Socio Fondatore</h5>
+                                        </div>
+                                        <div class="card-block px-0 py-0">
+                                            <div class="table-responsive scroll">
+                                                <table class="table table-hover">
+                                                    <tbody>
+
+                                                    @foreach($allsoci as $Socio)
+                                                        @if($Socio->fondatore==2)
+
+                                                            <tr class="unread">
+                                                                <td><img class="rounded-circle" style="width:40px;"
+                                                                         src="@if($Socio->tipo=='allievo') {{asset('img/Allievo.jpg')}} @else {{asset('img/Docente.jpg')}} @endif"
+                                                                    ></td>
+                                                                <td>
+
+                                                                    <h6 class="mb-1">{{$Socio->nome}} {{$Socio->cognome}}</h6>
+                                                                    <p class="m-0"></p>
+                                                                </td>
+                                                                <td>
+
+                                                                    <h6 class="text-right">{{$Socio->tipo}}</h6>
+
+                                                                </td>
+                                                                <td><a onclick="window.location.href='{{ (route('HomeAdminFNDN',[$Socio->id]))}}'" style="cursor: pointer" class="label theme-bg2 text-white f-12">Rifiuta</a><a
+                                                                        onclick="window.location.href='{{ (route('HomeAdminFNDS',[$Socio->id]))}}'" style="cursor: pointer" class="label theme-bg text-white f-12">Accetta</a>
+                                                                </td>
+                                                            </tr>
+                                                        @endif
+                                                    @endforeach
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <!--[ Richiesta Fondatore ] end-->
 
 
 
@@ -160,7 +182,7 @@
                                                         <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:30px;"
                                                                              src="@if($Socio->tipo=='allievo') {{asset('img/Allievo.jpg')}}
                                                                              @else {{asset('img/Docente.jpg')}} @endif"
-                                                                             alt="activity-user">{{$Socio->nome}},{{$Socio->cognome}}</h6>
+                                                                             alt="activity-user">{{$Socio->nome}} {{$Socio->cognome}}</h6>
                                                     </td>
                                                     <td>
                                                         <h6 class="m-0">{{$Socio->tessera}}</h6>
@@ -178,7 +200,7 @@
 
                                                     </td>
                                                     <td class="text-right">
-                                                        <a onclick="window.location.href='{{ (route('HomeAdminAGTS',[$tessera->id]))}}'" class="label theme-bg2 text-white f-12">Aggiorna</a>
+                                                        <a onclick="window.location.href='{{ (route('HomeAdminAGTS',[$tessera->id]))}}'" style="cursor: pointer"  class="label theme-bg2 text-white f-12">Aggiorna</a>
                                                     </td>
                                                 </tr>
                                                         @endif
@@ -208,7 +230,7 @@
                                                 <tr>
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:30px;" src="@if($Socio->tipo=='allievo') {{asset('img/Allievo.jpg')}}
-                                                            @else {{asset('img/Docente.jpg')}} @endif" alt="activity-user">{{$Socio->nome}},{{$Socio->cognome}}</h6>
+                                                            @else {{asset('img/Docente.jpg')}} @endif" alt="activity-user">{{$Socio->nome}} {{$Socio->cognome}}</h6>
                                                     </td>
                                                     <td>
                                                         <h6 class="text-muted">{{$iscritto->cert_med_rilascio}}</h6>
@@ -220,7 +242,7 @@
                                                         <h6 class="m-0 text-c-red">Scaduto</h6>
                                                     </td>
                                                     <td class="text-right">
-                                                        <a  onclick="window.location.href='{{ (route('HomeAdminAGCM',[$iscritto->id]))}}'" class="label theme-bg2 text-white f-12">Aggiorna</a>
+                                                        <a  onclick="window.location.href='{{ (route('HomeAdminAGCM',[$iscritto->id]))}}'"style="cursor: pointer"  class="label theme-bg2 text-white f-12">Aggiorna</a>
                                                     </td>
                                                             @endif
                                                         @endif
