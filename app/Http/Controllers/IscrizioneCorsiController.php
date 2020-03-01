@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Associazione;
 use App\Corso;
 use App\Disciplina;
 use App\Sala;
 use App\Socio;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Helpers;
 
 class IscrizioneCorsiController extends Controller
 {
@@ -20,12 +22,19 @@ class IscrizioneCorsiController extends Controller
     }
 
     public function creazionecorso(){
+        //$ass = Associazione::all()->first();
         $sale = Sala::all();
         $insegnanti = Socio::tipo("insegnante")->get();
+        $orari = Helpers::orari();
+        $giorni = Helpers::giorni();
+        //$orari = Helpers::arrayExcept($orari, $ass->giorno_ap, $ass->giorno_chius);
+        //$giorni = Helpers::arrayExcept($giorni, $ass->orario_ap, $ass->orario_chius);
         return view('creazionecorso',[
             "errore" => "",
             "sale" => $sale,
-            "insegnanti" => $insegnanti
+            "insegnanti" => $insegnanti,
+            "orari" =>$orari,
+            "giorni"=>$giorni
         ]);
     }
 
@@ -44,6 +53,7 @@ class IscrizioneCorsiController extends Controller
             $corso->data_inizio = $request->post("data_inizio");
             $corso->data_fine = $request->post("data_fine");
             $corso->costo = $request->post("costo");
+            $corso->orari = json_encode($request->post("orari"));
             if ($request->has("insegnante")){
                 $corso->insegnante = $request->post("insegnante");
             }

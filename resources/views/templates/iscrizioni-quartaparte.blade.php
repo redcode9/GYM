@@ -26,6 +26,7 @@
                        name="flagCorso" id="flagCorso" value="" checked>
                 <span class="lable"></span></label>
         </div>
+
     </div>
     <div class="col-11 col-lg-6"></div>
     <div id="divSconto" class="col-12 col-lg-3" style="margin-top: -0.5rem; padding-right: 6.75rem; opacity: 0;">

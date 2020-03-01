@@ -19,7 +19,7 @@
                     style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: #f4f7fa; font-weight: normal">
                     DETTAGLI
                 </h5></div>
-            <form action="" method="post">
+            <form id="form_corso" name="form_corso" action="" method="post">
                 <div class="row mx-4 mb-5">
                     <div class="col-12 col-lg-12"
                          style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
@@ -101,107 +101,21 @@
                             <table class="table table-hover table-bordered table-striped js-sort-table text-center">
                                 <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col" style="cursor: pointer">Lunedì</th>
-                                    <th scope="col" style="cursor: pointer">Martedì</th>
-                                    <th scope="col" style="cursor: pointer">Mercoledì</th>
-                                    <th scope="col" style="cursor: pointer">Giovedì</th>
-                                    <th scope="col" style="cursor: pointer">Venerdì</th>
-                                    <th scope="col" style="cursor: pointer">Sabato</th>
-                                    <th scope="col" style="cursor: pointer">Domenica</th>
+                                    <th scope="col" style="cursor: pointer">Ora</th>
+                                    @foreach($giorni as $giorno)
+                                        <th scope="col" style="cursor: pointer">{{ $giorno }}</th>
+                                    @endforeach
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>7:00 - 8:00</td>
-                                    <td>7:00 - 8:00</td>
-                                    <td>7:00 - 8:00</td>
-                                    <td>7:00 - 8:00</td>
-                                    <td>7:00 - 8:00</td>
-                                    <td>7:00 - 8:00</td>
-                                    <td>7:00 - 8:00</td>
-                                </tr>
-                                <tr>
-                                    <td>8:00 - 9:00</td>
-                                    <td>8:00 - 9:00</td>
-                                    <td>8:00 - 9:00</td>
-                                    <td>8:00 - 9:00</td>
-                                    <td>8:00 - 9:00</td>
-                                    <td>8:00 - 9:00</td>
-                                    <td>8:00 - 9:00</td>
-                                </tr>
-                                <tr>
-                                    <td>9:00 - 10:00</td>
-                                    <td>9:00 - 10:00</td>
-                                    <td>9:00 - 10:00</td>
-                                    <td>9:00 - 10:00</td>
-                                    <td>9:00 - 10:00</td>
-                                    <td>9:00 - 10:00</td>
-                                    <td>9:00 - 10:00</td>
-                                </tr>
-                                <tr>
-                                    <td>10:00 - 11:00</td>
-                                    <td>10:00 - 11:00</td>
-                                    <td>10:00 - 11:00</td>
-                                    <td>10:00 - 11:00</td>
-                                    <td>10:00 - 11:00</td>
-                                    <td>10:00 - 11:00</td>
-                                    <td>10:00 - 11:00</td>
-                                </tr>
-                                <tr>
-                                    <td>11:00 - 12:00</td>
-                                    <td>11:00 - 12:00</td>
-                                    <td>11:00 - 12:00</td>
-                                    <td>11:00 - 12:00</td>
-                                    <td>11:00 - 12:00</td>
-                                    <td>11:00 - 12:00</td>
-                                    <td>11:00 - 12:00</td>
-                                </tr>
-                                <tr>
-                                    <td>12:00 - 13:00</td>
-                                    <td>12:00 - 13:00</td>
-                                    <td>12:00 - 13:00</td>
-                                    <td>12:00 - 13:00</td>
-                                    <td>12:00 - 13:00</td>
-                                    <td>12:00 - 13:00</td>
-                                    <td>12:00 - 13:00</td>
-                                </tr>
-                                <tr>
-                                    <td>13:00 - 14:00</td>
-                                    <td>13:00 - 14:00</td>
-                                    <td>13:00 - 14:00</td>
-                                    <td>13:00 - 14:00</td>
-                                    <td>13:00 - 14:00</td>
-                                    <td>13:00 - 14:00</td>
-                                    <td>13:00 - 14:00</td>
-                                </tr>
-                                <tr>
-                                    <td>14:00 - 15:00</td>
-                                    <td>14:00 - 15:00</td>
-                                    <td>14:00 - 15:00</td>
-                                    <td>14:00 - 15:00</td>
-                                    <td>14:00 - 15:00</td>
-                                    <td>14:00 - 15:00</td>
-                                    <td>14:00 - 15:00</td>
-                                </tr>
-                                <tr>
-                                    <td>15:00 - 16:00</td>
-                                    <td>15:00 - 16:00</td>
-                                    <td>15:00 - 16:00</td>
-                                    <td>15:00 - 16:00</td>
-                                    <td>15:00 - 16:00</td>
-                                    <td>15:00 - 16:00</td>
-                                    <td>15:00 - 16:00</td>
-                                </tr>
-                                <tr>
-                                    <td>16:00 - 17:00</td>
-                                    <td>16:00 - 17:00</td>
-                                    <td>16:00 - 17:00</td>
-                                    <td>16:00 - 17:00</td>
-                                    <td>16:00 - 17:00</td>
-                                    <td>16:00 - 17:00</td>
-                                    <td>16:00 - 17:00</td>
-                                </tr>
-
+                                @foreach($orari as $orario)
+                                    <tr>
+                                        <td>{{ $orario }}</td>
+                                        @foreach($giorni as $keyg => $giorno)
+                                            <td><input form="form_corso" type="checkbox" name="{{ 'orari'.'['.$keyg.']'.'['.$orario.']' }}" value="true"></td>
+                                        @endforeach
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
