@@ -36,9 +36,9 @@
                                 </div>
                             @endforeach
                         </div>
-                        @endforeach
                     </div>
                 @endforeach
+            @endforeach
         </div>
         <div class="col-0 col-lg-2"></div>
     </div>

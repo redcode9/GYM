@@ -61,9 +61,9 @@
 
                         </div>
                     </div>
-                    @endforeach
                 </div>
             @endforeach
+        @endforeach
     </div>
     <div class="col-0 col-lg-2"></div>
     <div class="col-12 col-lg-12 mt-4 ml-n4">
