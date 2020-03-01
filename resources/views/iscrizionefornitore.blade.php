@@ -49,7 +49,7 @@
                                         <option value="Ca">Cancelleria</option>
                                         <option value="At">Assistenza</option>
                                         <option value="Cm">Commercialista</option>
-                                        <option value="As">Assicurazione</option>
+                                        <option value="Ass">Assicurazione</option>
                                         <option value="Pl">Pulizie</option>
                                         <option value="Al">Altro</option>
                                     </select>

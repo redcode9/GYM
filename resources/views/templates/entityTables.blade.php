@@ -1,4 +1,8 @@
 @extends('templates.base', ['menu' => "on"])
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url('css/editableItems.css') }}">
+    <script type="text/javascript" src="{{ url('js/EditableTableRecords.js') }}"></script>
+</head>
 @section('corpo')
     <div class="row mt-4">
 
@@ -23,7 +27,7 @@
                         @endif
 
                         <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                            <table class="table table-hover table-bordered table-striped js-sort-table ">
+                            <table class="table table-hover table-bordered table-striped js-sort-table " id="tabellaUtenti">
                                 <thead class="thead-dark">
                                 <!--js-sort-asc: ascending sort
                                     js-sort-desc: descending sort
@@ -39,7 +43,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    {{ $table_content }}
+                                {{ $table_content }}
                                 </tbody>
                             </table>
                         </div>
@@ -48,4 +52,16 @@
             </div>
         </div>
     </div>
+
+
+        <div class="container pl-5 pb-5">
+            <div class="row">
+                <div>
+                    <a href="{{ route('GestioneUtenti') }}" style="cursor:pointer" class="btn btn-dark">Indietro</a>
+                </div>
+            </div>
+        </div>
+
 @endsection
+
+

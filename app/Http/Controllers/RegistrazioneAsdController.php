@@ -72,7 +72,7 @@ class RegistrazioneAsdController extends Controller
             $segr = new User;
             $segr->username = $request->input("username");
             $segr->password = Hash::make(request('password'));
-            $segr->ruolo = "Segreteria";
+            $segr->ruolo = "segreteria";
             $segr->save();
 
             return redirect()->route("login");

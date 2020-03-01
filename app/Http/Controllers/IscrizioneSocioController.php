@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Associazione;
 use App\DatiFiscali;
 use App\Iscritto;
+use App\Partecipazione;
 use App\Sala;
 use App\Socio;
+use App\Transazione;
 use Carbon\Carbon;
 use App\Tessera;
 use DateTime;
@@ -104,16 +106,22 @@ class IscrizioneSocioController extends Controller
             //dati fiscali
             //return redirect()->route();
             //echo $request->get("importo");
-            $datidiscali = new DatiFiscali;
-            $datidiscali->pagamento = $request->get("pagamento");
-            $datidiscali->descrizione = $request->get("descrizione");
+            $datifiscali = new DatiFiscali;
+            $datifiscali->pagamento = $request->get("pagamento");
+            $datifiscali->descrizione = $request->get("descrizione");
                 //$datidiscali->importo = $request->get("importo");
-                $datidiscali->tipo_doc = $request->get("tipoDocumento");
-                $datidiscali->data_iscriz = date("Y-m-d");
-            $datidiscali->socio = $socio->id;
-            $datidiscali->save();
-            $socio->dati_fiscali = $datidiscali->id;
+                $datifiscali->tipo_doc = $request->get("tipoDocumento");
+                $datifiscali->data_iscriz = date("Y-m-d");
+            $datifiscali->socio = $socio->id;
+            $datifiscali->save();
+            $socio->dati_fiscali = $datifiscali->id;
+            $socio->fondatore = 0;
             $socio->save();
+            $trans = new Transazione();
+            $trans->importo = $request->get("importo");
+            $trans->tipo = "Entrata";
+            $trans->socio = $id;
+            $trans->save();
             return redirect()->route('socio4', ["id" => $id]);
 
 
@@ -143,25 +151,37 @@ class IscrizioneSocioController extends Controller
         }
     }
 
+
     public function registrazione4($id, Request $request)
     {
 
-            $socio = Socio::find($id);
-            $sale = Sala::all();
+        $socio = Socio::find($id);
+        $sale = Sala::all();
 
-            $years = Carbon::parse($socio->data_nasc)->age; //calcola l'età dell'iscritto
+        $years = Carbon::parse($socio->data_nasc)->age; //calcola l'età dell'iscritto
 
-            if ($request->isMethod("POST")){
-                return redirect()->route('HomeAdmin');
-            } else {
+        if ($request->isMethod("POST")) {
 
-                return view("iscrizionesocio4", [
-                    "errore" => "",
-                    "sale" => $sale,
-                    "socio" => $socio,
-                    "years" => $years
-                ]);
-            }
+            if ($request->has('group')){
+                $selezione = $request->post("group");
+                foreach ($selezione as $sel){
+                    $part = new Partecipazione();
+                    $part->allievo = $id;
+                    $part->corso = $sel;
+                    $part->save();
+                }
+}
+            return redirect()->route('HomeAdmin');
+        } else {
+
+            return view("iscrizionesocio4", [
+                "errore" => "",
+                "sale" => $sale,
+                "socio" => $socio,
+                "years" => $years
+            ]);
+        }
+
     }
 
 
@@ -198,20 +218,13 @@ class IscrizioneSocioController extends Controller
 //ciao
 
 
-        public function stampaModuloMagg()
+        public function stampaModuloIscr()
+
         {
 
-            $path = '..\resources\modulistica\moduli_maggiorenne.pdf';
+            $path = '..\resources\modulistica\Modulo iscrizione min-magg.pdf';
             return response()->download($path);
-
         }
 
-        public function stampaModuloMin()
-        {
-
-            $path = '..\resources\modulistica\moduli_minorenne.pdf';
-            return response()->download($path);
-
-        }
 
 }

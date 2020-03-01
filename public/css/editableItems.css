@@ -1,0 +1,9 @@
+td input[disabled] {
+    background-color: inherit;
+    border: none;
+}
+
+td input[type=checkbox] {
+    width: 100%;
+    height: 1.5rem;
+}
