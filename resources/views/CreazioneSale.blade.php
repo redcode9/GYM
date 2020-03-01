@@ -26,7 +26,9 @@
                     style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: #f4f7fa; font-weight: normal">
                     GIORNI APERTURA
                 </h5></div>
-             <!-- Il problema dovrebbe essere qui <form action="" method="post"> -->
+             <form action="/CreazioneSale/{{$associazione->id}}" method="post">
+                 @csrf
+                 @method('PATCH')
 
                 <div class="row mx-4 mb-5">
                     <div class="col-12 col-lg-12"
@@ -154,6 +156,77 @@
                     </div>
                 </div>
 
+                 <div class="col-12 col-lg-12">
+                     <div class="row mt-5">
+                         <h5 class="px-2"
+                             style="margin-top: -0.75rem; margin-left: 2rem; color: gray; position:absolute; z-index: 2; background-color: #f4f7fa; font-weight: normal">
+                             SELEZIONE SCONTO PER PACCHETTO CORSI
+                         </h5></div>
+                     <div class="row mx-2 mb-5">
+                         <div class="col-12 col-lg-12"
+                              style="padding: 2rem; border: 0.1rem solid lightgray; border-radius: 5px;">
+                             <div class="row mt-2">
+                                 <div class="col-12 col-lg-6">
+                                     <div class="form-group">
+                                         <label for="sconto_dal" class="mb-0"><h5>Dal corso selezionato numero</h5></label>
+                                         <select class="custom-select" name="sconto_dal" id="sconto_dal"
+                                                 required>
+                                             <option value="" disabled selected hidden>Scegli un'opzione</option>
+
+                                             <option value="1">Nessuno</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                             <option value="5">5</option>
+                                             <option value="6">6</option>
+                                             <option value="7">7</option>
+                                             <option value="8">8</option>
+                                             <option value="9">9</option>
+                                             <option value="10">10</option>
+                                             <option value="11">11</option>
+                                             <option value="12">12</option>
+                                             <option value="13">13</option>
+                                             <option value="14">14</option>
+                                             <option value="15">15</option>
+                                             <option value="16">16</option>
+                                             <option value="27">17</option>
+                                             <option value="18">18</option>
+                                             <option value="19">19</option>
+                                             <option value="20">20</option>
+                                             <option value="21">21</option>
+
+                                         </select>
+                                     </div>
+                                 </div>
+                                 <div class="col-12 col-lg-6">
+                                     <div class="form-group">
+                                         <label for="sconto" class="mb-0"><h5>Sconto</h5></label>
+                                         <select class="custom-select" name="sconto" id="sconto"
+                                                 required>
+                                             <option value="" disabled selected hidden>Scegli un'opzione</option>
+
+                                             <option value="1">Nessuno</option>
+                                             <option value="2">2 %</option>
+                                             <option value="5">5 %</option>
+                                             <option value="8">8 %</option>
+                                             <option value="10">10 %</option>
+                                             <option value="15">15 %</option>
+                                             <option value="20">20 %</option>
+                                             <option value="25">25 %</option>
+                                             <option value="30">30 %</option>
+                                             <option value="35">35 %</option>
+                                             <option value="40">40 %</option>
+                                             <option value="45">45 %</option>
+                                             <option value="50">50 %</option>
+
+                                         </select>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+
                 <div class="col-12 col-lg-12">
                     <div class="row mt-5">
                         <h5 class="px-2"
@@ -241,7 +314,7 @@
                     </div>
                 </div>
 
-            <!-- </form> -->
+             </form>
         </div>
     </div>
 @endsection

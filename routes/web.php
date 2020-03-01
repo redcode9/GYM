@@ -137,11 +137,12 @@ Route::get('/HomeUser/aggmedcertf/{id}','DashUserController@aggmedcertf')->name(
     return \App\Sala::all();
 }); //ci mostra per ora tutte le sale*/
 
-Route::get('/CreazioneSale','SalaController@index')->name('CreazioneSale');
+Route::any('/CreazioneSale','SalaController@index')->name('CreazioneSale');
 Route::get('/CreazioneSale/{id}/delete','SalaController@delete');
 Route::get('/CreazioneSale/{id}/edit','SalaController@edit');
 Route::get('/CreazioneSale/create','SalaController@create')->name('sala.create');
 Route::post('/CreazioneSale','SalaController@save')->name('sala.save');
+Route::patch('CreazioneSale/{id}','SalaController@store');
 //Route::post('CreazioneAssociazione/create','RegistrazioneAsdController@create')->name('ASDPT2.create');
 //Route::post('/CreazioneSale/{id}','RegistrazioneAsdController@save')->name('ASDPT2.save');
 //Route::get('/CreazioneSale/{id}','RegistrazioneAsdController@store');

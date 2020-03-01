@@ -11,13 +11,16 @@ class SalaController extends Controller
     public function index( Request $request){
         //return \App\Sala::all(); escono tutti i campi nella tabella Sala
         $sql = 'select * from Sala';
+        $sql2 = 'select * from Associazione'; //qui facciamo la selezione di tutte le associazioni
         if($request->has('id')){
             $sql .= ' where id='.(int)$request->get('id'); //Da qui leggiamo l'ID dell'URL
         }
         //return dd($sql);
         //return DB::select($sql); //questo ci ritorna un array di record e ogni record
+        $associazione = DB::select($sql2);
         $sala = DB::select($sql); //qui dentro sono contenute le nostre sale che passiamo nella view
-        return view("CreazioneSale",['sala' => $sala]); //sto passando i dati nella view della CreazioneSale
+        //dd($associazione);
+        return view("CreazioneSale",['sala' => $sala, 'associazione' => $associazione[0]]); //sto passando i dati nella view della CreazioneSale
     }
 
     public function delete($id){
@@ -30,10 +33,24 @@ class SalaController extends Controller
     }
 
     public function edit($id){
-        $sql = 'select sala,id from sala where id=:id';
+        $sql = 'select nome,id from sala where id=:id';
         $sala =DB::select($sql,['id' => $id]);
         //da fare eventualmente il return se serve
+        $sql2 = 'select id, giorno_ap,giorno_chius,orario_ap,orario_chius,sconto_dal,sconto from Associazione';
+        $associazione = DB::select($sql2);
+        return view('CreazioneSale',['sala' => $sala, 'associazione' => $associazione[0]]);
 
+    }
+
+    public function store(Request $req, $id){
+        //dd($req);
+        $data = request()->only(['giorni_dal','giorni_al','orario_dal','orario_al','sconto_dal','sconto']); //questi sono i dati della view, non del DB
+        $data['id'] = $id;
+        //dd($data);
+        $sql = 'UPDATE Associazione SET giorno_ap =:giorni_dal, giorno_chius =:giorni_al, orario_ap =:orario_dal, orario_chius=:orario_al ,sconto_dal =:sconto_dal, sconto =:sconto WHERE id =:id';
+        DB::update($sql,$data);
+        //dd($res);
+        return redirect()->route('HomeAdmin');
     }
 
     public function create(){

@@ -103,14 +103,14 @@
                         <div class="col-12 col-lg-6 mt-3">
                             <div class="form-group">
                                 <label for="emissione" class="mb-0"><h5>Data di Emissione*</h5></label>
-                                <input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control" name="emissione"
+                                <input type="date" pattern="\d{4}/\d{1,2}/\d{1,2}" class="form-control" name="emissione"
                                        id="emissione" value="" required>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 mt-3 mb-n2">
                             <div class="form-group">
                                 <label for="scadenza" class="mb-0"><h5>Data di Scadenza*</h5></label>
-                                <input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control" name="scadenza"
+                                <input type="date" pattern="\d{4}/\d{1,2}/\d{1,2}" class="form-control" name="scadenza"
                                        id="scadenza" value="" required>
                             </div>
                         </div>
