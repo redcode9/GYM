@@ -129,9 +129,9 @@
                     <div class="row">
                         <div class="col-12 col-lg-3 mt-2">
                             <div class="form-group">
-                                <label for="importo" class="mb-0"><h5>Importo iscrizione</h5></label>
+                                <label for="importo" class="mb-0"><h5>Importo iscrizione (€)</h5></label>
                                 <input type="text" pattern="^\$?(([1-9](\d*|\d{0,2}(,\d{3})*))|0)(\.\d{1,2})?$"
-                                       class="form-control" name="importo" id="importo" value="{{$importo}}€"
+                                       class="form-control" name="importo" id="importo" value="{{$importo}}"
                                        readonly>
                             </div>
                         </div>

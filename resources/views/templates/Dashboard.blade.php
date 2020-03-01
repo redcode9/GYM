@@ -8,7 +8,7 @@
             </div>
         </div>
     <!-- [ Main Content ] start -->
-    <div class="pcoded-main-container">
+    <div class="pcoded-main-container ml-4">
         <div class="pcoded-wrapper">
             <div class="pcoded-content">
                 <div class="pcoded-inner-content">
@@ -61,7 +61,7 @@
                                 </div>
                                 <!--[ year  sales section ] end-->
                                 <!--[ Recent Users ] start-->
-                                <div class="col-xl-8 col-md-6">
+                                <div class="col-xl-6 col-md-6">
                                     <div class="card Recent-Users">
                                         <div class="card-header">
                                             <h5>Iscrizioni Recenti</h5>
@@ -107,7 +107,7 @@
                                 <!--[ Recent Users ] end-->
 
                                 <!--[ Richiesta fondatore] start-->
-
+                                <div class="col-xl-6 col-md-6">
                                     <div class="card Richiesta-Fondatore ml-3">
                                         <div class="card-header">
                                             <h5>Richiesta Socio Fondatore</h5>
@@ -146,6 +146,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
                                 <!--[ Richiesta Fondatore ] end-->
 

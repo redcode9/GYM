@@ -10,6 +10,8 @@
         <th scope="col" style="cursor: pointer">Cognome</th>
         <th scope="col" style="cursor: pointer">Ruolo</th>
         <th scope="col" style="cursor: pointer">Fondatore</th>
+
+
     @endslot
     @slot('table_content')
         @foreach($soci as $socio)
@@ -36,6 +38,7 @@
                             <b>In attesa</b></button>
                         @endif
                 </td>
+
             </tr>
 
 

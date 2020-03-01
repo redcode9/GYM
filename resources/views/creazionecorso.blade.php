@@ -72,8 +72,7 @@
                             <div class="col-3 col-lg-6"></div>
                             <div class="col-12 col-lg-12 mt-1" id="divInsegnante">
                                 <div class="form-group">
-                                    <select class="custom-select" name="insegnante" id="insegnante"
-                                            required>
+                                    <select class="custom-select" name="insegnante" id="insegnante">
                                         <option value="" disabled selected hidden>Scegli un insegnante</option>
                                             @foreach($insegnanti as $ins)
                                                 <option value="{{ $ins->id }}">{{ $ins->nome . " " . $ins->cognome }}</option>

@@ -172,40 +172,6 @@ class GestioniController extends Controller
     }
 
 
-    //VISUALIZZA TUTTI
-
-    public function editTutti($id, Request $request){
-
-        if ($request->isMethod('POST')){
-            $iscritto = Iscritto::find($id);
-
-            $iscritto->nome = $request->input('nome');
-            $iscritto->cognome = $request->input('cognome');
-
-            $iscritto->save();
-
-            return redirect()->route('VisualizzaTutti');
-
-        }else {
-
-            return view('editTuttiView', [
-
-                "errore" => "",
-                "id" => $id,
-                $iscritto = Iscritto::find($id),
-                "tutti" => $iscritto
-            ]);
-        }
-
-
-    }
-
-    public function deleteTutti($id){
-
-        Iscritto::destroy($id);
-        return redirect()->route('VisualizzaTutti');
-    }
-
 
 
 

@@ -51,6 +51,6 @@ class IscrizioneStagController extends Controller
 
         $iscritto->save();
 
-        return redirect()->route("iscrizioni");
+        return redirect()->route("HomeAdmin");
     }
 }

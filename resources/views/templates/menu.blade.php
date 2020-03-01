@@ -39,7 +39,7 @@
             </div>
 
             <div style="padding: 1.5rem 0.6rem">
-                @if (Auth::user()->ruolo=='Admin'or'admin')
+                @if (Auth::user()->ruolo==="admin")
                     <a class="nav-link mt-1 btn btn-dark" href="{{route('modificaasd')}}" id="modifica_asd">Modifica
                         dati ASD</a>
                 @endif

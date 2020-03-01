@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 //use Illuminate\Support\Facades\Hash;
 
-class RegistrazioneAsdController extends Controller
+class   RegistrazioneAsdController extends Controller
 {
 
     public function registraAsd(Request $request)
@@ -48,7 +48,7 @@ class RegistrazioneAsdController extends Controller
             $admin = new User;
             $admin->username = $request->input("username");
             $admin->password = Hash::make(request('password'));
-            $admin->ruolo = "Admin";
+            $admin->ruolo = "admin";
             $admin->save();
 
 

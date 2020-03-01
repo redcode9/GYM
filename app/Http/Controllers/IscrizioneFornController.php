@@ -40,7 +40,7 @@ class IscrizioneFornController extends Controller
 
             $forn->save();
 
-            return redirect()->route("iscrizione");
+            return redirect()->route("HomeAdmin");
 
         } else {
             return view("iscrizionefornitore", [

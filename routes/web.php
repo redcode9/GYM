@@ -56,6 +56,17 @@ Route::prefix('gestione')->middleware('auth')->group(function () {
     Route::get('corsi', 'GestioneCorsiController@carica')->name('gestionecorsi');
     Route::get('corso/{id}', 'GestioneCorsiController@caricaCorso')->name('corso');
 
+
+
+    //--Routes per gestione partecipanti a corso--//
+    Route::post('corsoAll/{id}', 'GestioneCorsiController@aggiungiAllievo')->name('addAllievo');
+    Route::post('corsoIns/{id}', 'GestioneCorsiController@aggiungiInsegnante')->name('addInsegnante');
+    Route::post('corsoStag/{id}', 'GestioneCorsiController@aggiungiStagista')->name('addStagista');
+    Route::any('corsoCancAllievo/{id}', 'GestioneCorsiController@eliminaPartecipante')->name('deletePartecipante');
+    Route::any('corsoCancIns/{id}', 'GestioneCorsiController@eliminaInsegnCorso')->name('deleteInsegnante');
+    Route::any('corsoStagIns/{id}', 'GestioneCorsiController@eliminaStagistaCorso')->name('deleteStagCorso');
+    //--------------------------------------------//
+
     //--Routes per la gestione utenti--//
     Route::any('/editSocio/{id}','GestioniController@editSocio')->name('editSocio');
     Route::any('richiediFondatore/{id}', 'GestioniController@richiediFondatore')->name('richiediFondatore');
