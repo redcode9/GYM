@@ -8,6 +8,7 @@ use App\DatiFiscali;
 use App\Esterno;
 use App\Iscritto;
 use App\Sala;
+use App\Corso;
 use App\Socio;
 use App\Tessera;
 use Carbon\Carbon;
@@ -127,7 +128,13 @@ class IscrizioneCollaboratoreController extends Controller
             $collab->save();
             $datidiscali->socio = $socio->id;
             $datidiscali->save();
-            return redirect()->route('collaboratore4', ["id" => $socio->id]);
+
+            $corso = Corso::find($id);
+            if($corso > 0){
+                return redirect()->route('collaboratore4', ["id" => $socio->id]);
+            } else {
+                return redirect()->route('HomeAdmin');
+            }
 
 
         } else {
