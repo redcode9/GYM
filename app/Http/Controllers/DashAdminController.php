@@ -32,7 +32,8 @@ class DashAdminController extends Controller
 
         $datemes = date_create();
         date_sub($datemes, date_interval_create_from_date_string('30 days'));
-
+        $datemesU = date_create();
+        date_sub($datemesU, date_interval_create_from_date_string('30 days'));
 
         $dateann = date_create();
         date_sub($dateann, date_interval_create_from_date_string('365 days'));
@@ -40,15 +41,16 @@ class DashAdminController extends Controller
         $Datifis = DatiFiscali::all();
         $tess = Tessera::all();
         $iscr = Iscritto::all();
-        $alltransS = Transazione::all()->whereBetween('created_at',[$datemes,$today])
+        $alltransS = Transazione::whereBetween('created_at',[$datemesU,$today])
             ->where('tipo', '=', "Uscita")
             ->sum('importo');
 
-        $alltransE = TransazioneEst::all()->whereBetween('created_at',[$datemes,$today])->sum('importo');
+        $alltransE = TransazioneEst::whereBetween('created_at',[$datemesU,$today])->sum('importo');
         $sumtransSST= Transazione::whereBetween('created_at',[$datemes,$today])->where('tipo', '=', "Entrata")->sum('importo');
         $sumtransSAN= Transazione::whereBetween('created_at',[$dateann,$today])->where('tipo', '=', "Entrata")->sum('importo');
         return view('templates.Dashboard', ['socioz' => $SocioDB, 'allsoci' => $Sociozz, 'oggi' => $today,
             'datifs' => $Datifis, 'TESS' => $tess, 'ISCR' => $iscr, 'transzs'=>$alltransS+$alltransE,'sumtra'=>$sumtransSST,'sumtrann'=>$sumtransSAN]);
+        //
     }
 
     public function verbalizzoNO($id)

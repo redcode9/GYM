@@ -34,7 +34,7 @@
                             </div>
                             <div class="col-4 col-lg-2">
                                 <div class="form-group">
-                                    <label for="costo" class="mb-0"><h5>Costo Orario*</h5></label>
+                                    <label for="costo" class="mb-0"><h5>Costo Corso*</h5></label>
                                     <input type="number" min="0" step="any" class="form-control" name="costo" id="costo"
                                            value="" placeholder="">
                                 </div>
