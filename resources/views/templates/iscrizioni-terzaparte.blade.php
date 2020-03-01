@@ -37,7 +37,7 @@
 
         <div class="col-12 col-lg-12" style="margin-top:33%"></div>
         <div class="col-12 col-lg-12 mt-3 ml-n4">
-            <form id="FormNoTess" action="" method="post">
+            <form id="FormNoTess" action="{{route('login')}}" method="get">
                 @csrf
                 <div class="form-group">
                     <input type="button" class="btn btn-dark ml-5 mt-5"
