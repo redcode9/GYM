@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="col-11 col-lg-6"></div>
-    <div id="divSconto" class="col-12 col-lg-3" style="margin-top: -0.5rem; padding-right: 6.75rem;">
+    <div id="divSconto" class="col-12 col-lg-3" style="margin-top: -0.5rem; padding-right: 6.75rem; opacity: 0;">
         <h4 class="pl-2" style="border: 2px dashed black; border-radius: 5px;font-size: 1.5rem;">Sconto del
             XX%<?php //TODO inserire sconto pacchetti ?>!</h4>
     </div>
@@ -74,15 +74,15 @@
                        id="indietroCorso" value="Indietro" formnovalidate
                        onclick="window.location.href='{{route("$nomeroute", ["$idBack"])}}';">
 
+                <input type="submit" class="btn btn-dark mt-3 float-right"
+                       style="font-size: 22px; cursor: pointer; margin-left: 2.05rem;" name="terminaCorso"
+                       id="terminaCorso" value="Termina" disabled>
+
                 <input type="button" class="btn btn-dark mt-3 float-right"
-                       style="font-size: 22px; cursor: pointer; position: relative; z-index: 2; margin-left: 2.05rem;"
-                       onclick="enableButton2();"
+                       style="font-size: 22px; cursor: pointer; position: relative; z-index: 2;"
+                       onclick="enableButton();"
                        name="modulo"
                        id="modulo" value="Stampa modulo iscrizione" formnovalidate>
-
-                <input type="submit" class="btn btn-dark mt-3 float-right"
-                       style="font-size: 22px; cursor: pointer;" name="terminaCorso"
-                       id="terminaCorso1" value="Termina" disabled>
             </div>
             @csrf
         </form>
@@ -91,8 +91,8 @@
 <div class="col-12 col-lg-2"></div>
 <script>
 
-    function enableButton2() {
-        document.getElementById("terminaCorso1").disabled = false;
+    function enableButton() {
+        document.getElementById("terminaCorso").disabled = false;
         window.open('{{route('moduloIscr')}}');
     }
 

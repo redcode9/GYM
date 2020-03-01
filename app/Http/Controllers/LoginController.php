@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use DB;
+use App\Sala;
 //use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
@@ -18,7 +20,13 @@ class LoginController extends Controller
                 //echo Hash::make("password");
                 if (Auth::attempt($credentials)) {
                     // Authentication passed...
-                    return redirect()->intended('HomeAdmin');
+                    if(DB::table('Sala')->count()==0){
+                        return redirect()->intended('CreazioneSale');
+                    }else{
+                        return redirect()->intended('HomeAdmin');
+                    }
+
+
                 } else {
                     return view("login",[
                         "errore" => "errore"

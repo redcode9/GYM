@@ -22,7 +22,7 @@
         <div class="col-12 col-lg-12">
             <div class="row mt-5">
                 <h5 class="px-2"
-                    style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: white; font-weight: normal">
+                    style="margin-top: -0.75rem; margin-left: 3rem; color: gray; position:absolute; z-index: 2; background-color: #f4f7fa; font-weight: normal">
                     ANAGRAFICA
                 </h5></div>
             <form action="" method="post">
@@ -84,7 +84,7 @@
                 <div class="col-12 col-lg-12">
                     <div class="row mt-5">
                         <h5 class="px-2"
-                            style="margin-top: -0.75rem; margin-left: 2rem; color: gray; position:absolute; z-index: 2; background-color: white; font-weight: normal">
+                            style="margin-top: -0.75rem; margin-left: 2rem; color: gray; position:absolute; z-index: 2; background-color: #f4f7fa; font-weight: normal">
                             DETTAGLI
                         </h5></div>
                     <div class="row mx-2 mb-5">

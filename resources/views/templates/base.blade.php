@@ -57,4 +57,5 @@
 </div>
 
 </body>
+<script src="{{asset('js/Inserimento.js')}}"></script> <!-- Script che serve per l'inserimento dei dati in tabella-->
 </html>

@@ -22,7 +22,11 @@ class CreateAssociazioneTable extends Migration
             $table->string('cap',10);
             $table->string('telefono',20)->nullable();
             $table->string('iban',27);
-            $table->integer('p_iva');
+            $table->string('p_iva',11);
+            $table->integer('giorno_ap')->nullable(); //create dopo
+            $table->integer('giorno_chius')->nullable(); //create dopo
+            $table->integer('orario_ap')->nullable(); //create dopo
+            $table->integer('orario_chius')->nullable(); //create dopo
         });
     }
 
