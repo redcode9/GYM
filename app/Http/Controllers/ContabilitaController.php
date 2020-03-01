@@ -30,7 +30,7 @@ class ContabilitaController extends Controller
         $importoE = DB::table('transazioneest')->where('importo')->get();
         $nomecognomeE = DB::table('esterno')
             ->join('transazioneest','esterno.id','=','transazioneest.esterno')
-            ->select('esterno.nome','esterno.cognome','transazioneest.importo')
+            ->select('esterno.nome','esterno.cognome','transazioneest.importo','esterno.tipo','p_iva')
             ->get();
 
 

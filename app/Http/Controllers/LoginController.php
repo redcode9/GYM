@@ -13,7 +13,7 @@ class LoginController extends Controller
     //
     public function Accedi(Request $request){
         if(Auth::check()){
-            return redirect()->intended('HomeAdmin');
+            return redirect()->intended('dashboard');
         } else {
             if ($request->has('username')) {
                 $credentials = $request->only('username', 'password');

@@ -100,4 +100,3 @@
 </script>
 </body>
 
-<?php //TODO collegare questa view al database ?>
