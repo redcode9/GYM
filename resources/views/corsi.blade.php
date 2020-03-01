@@ -48,7 +48,7 @@
                 @endforeach
             @endforeach
 
-            @if(Auth::user()->ruolo === "Admin")
+            @if(Auth::user()->ruolo === "admin")
                     <div class="jumbotron mt-3" style="border: 2px dashed #777; cursor: pointer;" onclick="window.location.href='{{route('creazionedisciplina')}}'">
                         <h1 class="my-n4" style="text-align: center; color: #777">+</h1>
                     </div>

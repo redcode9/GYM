@@ -1,10 +1,11 @@
 @extends('templates.base', ['menu' => "on"])
 @section('corpo')
+
     <div class="row mt-4">
 
         <div class="col-12 col-lg-12">
             <div class="mx-4 text-center">
-                <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black">DASHBOARD</h1>
+                <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black">DASHBOARD ADMIN</h1>
             </div>
         </div>
     <!-- [ Main Content ] start -->

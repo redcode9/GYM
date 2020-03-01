@@ -22,8 +22,10 @@ class LoginController extends Controller
                     // Authentication passed...
                     if(DB::table('Sala')->count()==0){
                         return redirect()->intended('CreazioneSale');
-                    }else{
-                        return redirect()->intended('HomeAdmin');
+                    }if(Auth::user()->ruolo === 'admin'){
+                        return redirect()->route('HomeAdmin');
+                    }elseif(Auth::user()->ruolo === 'segreteria'){
+                       return redirect()->route('HomeUser');
                     }
 
 

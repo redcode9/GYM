@@ -4,7 +4,7 @@
 
     <div class="col-12 col-lg-12">
         <div class="mx-4 text-center">
-            <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black">DASHBOARD Segreteria</h1>
+            <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black">DASHBOARD USER</h1>
         </div>
     </div>
     <!-- [ Main Content ] start -->
@@ -194,7 +194,7 @@
 
                                                 </td>
                                                 <td class="text-right">
-                                                    <a onclick="window.location.href='{{ (route('HomeSegretariaAGTS',[$tessera->id]))}}'" style="cursor: pointer"  class="label theme-bg2 text-white f-12">Aggiorna</a>
+                                                    <a onclick="window.location.href='{{ (route('HomeUserAGTS',[$tessera->id]))}}'" style="cursor: pointer"  class="label theme-bg2 text-white f-12">Aggiorna</a>
                                                 </td>
                                                 </tr>
                                                 @endif
@@ -236,7 +236,7 @@
                                                         <h6 class="m-0 text-c-red">Scaduto</h6>
                                                     </td>
                                                     <td class="text-right">
-                                                        <a  onclick="window.location.href='{{ (route('HomeSegretariaAGCM',[$iscritto->id]))}}'"style="cursor: pointer"  class="label theme-bg2 text-white f-12">Aggiorna</a>
+                                                        <a  onclick="window.location.href='{{ (route('HomeUserAGCM',[$iscritto->id]))}}'"style="cursor: pointer"  class="label theme-bg2 text-white f-12">Aggiorna</a>
                                                     </td>
                                                     @endif
                                                     @endif

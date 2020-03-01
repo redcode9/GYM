@@ -17,7 +17,6 @@
     @slot('table_content')
         @foreach($alliscr as $iscritto)
             <tr>
-
                 @foreach($sociest['soci'] as $socio)
                     @if($iscritto->id==$socio->iscrizione)
                  <td class="text-right">
@@ -44,7 +43,8 @@
                         <td class="text-right">
                             <input type="image" src="{{asset('img/matita.png')}}" width="25" height="25"
                                    @if($esterno->tipo=="stagista") onclick="window.location.href='{{ route("editStagista", ["id"=>$esterno->id]) }}';"
-                                   @elseif($esterno->tipo=="collaboratore")onclick="window.location.href='{{ route("editCollab", ["id"=>$esterno->id]) }}';"@endif
+                                   @elseif($esterno->tipo=="collaboratore")onclick="window.location.href='{{ route("editCollab", ["id"=>$esterno->id]) }}';">
+                            @endif
                         </td>
                         <td>
                             <input type="image" src="{{asset('img/cestino.png')}}" width="25" height="25"
