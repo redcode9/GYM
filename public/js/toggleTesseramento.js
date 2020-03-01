@@ -19,8 +19,6 @@ function toggleTesseramento() {
         $("#FormNoTess").hide();
         $("#termina").hide();
         $("#indietro").hide();
-        document.getElementById("option1").required = true;
-        document.getElementById("option2").required = true;
         document.getElementById("emissione").required = true;
         document.getElementById("scadenza").required = true;
         document.getElementById("pagamento").required = true;
@@ -33,8 +31,6 @@ function toggleTesseramento() {
         $("#FormNoTess").show();
         $("#termina").show();
         $("#indietro").show();
-        document.getElementById("option1").required = false;
-        document.getElementById("option2").required = false;
         document.getElementById("emissione").required = false;
         document.getElementById("scadenza").required = false;
         document.getElementById("pagamento").required = false;
