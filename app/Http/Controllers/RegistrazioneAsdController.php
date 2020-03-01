@@ -104,6 +104,11 @@ class RegistrazioneAsdController extends Controller
         return view('CreazioneSale');
     }
 
+    public function edit($id){
+       /* $sql = 'select giorno_ap,giorno_chius,orario_ap,orario_chius from Associazione';
+        $associazione = DB::select($sql, ['id'=>$id]);*/
+    }
+
     public function store(Request $req){
         //dd($req); SI OSTINA A NON FUNZIONARE PER VIA DEL METHOD PATCH CHE NON VIENE RILEVATO
 

@@ -89,7 +89,7 @@
                         <div class="col-12 col-lg-6 mt-3 mb-n2">
                             <div class="form-group">
                                 <label for="data" class="mb-0"><h5>Data di nascita*</h5></label>
-                                <input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control" name="data"
+                                <input type="date" pattern="\d{4}/\d{1,2}/\d{1,2}" class="form-control" name="data"
                                        id="data" value="" required>
                             </div>
                         </div>
