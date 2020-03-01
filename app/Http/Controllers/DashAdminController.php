@@ -36,8 +36,6 @@ class DashAdminController extends Controller
 
         $dateann = date_create();
         date_sub($dateann, date_interval_create_from_date_string('365 days'));
-
-die(date_default_timezone_get());
         $Sociozz = Socio::all();
         $Datifis = DatiFiscali::all();
         $tess = Tessera::all();
