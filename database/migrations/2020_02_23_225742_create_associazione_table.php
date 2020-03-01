@@ -27,6 +27,8 @@ class CreateAssociazioneTable extends Migration
             $table->integer('giorno_chius')->nullable(); //create dopo
             $table->integer('orario_ap')->nullable(); //create dopo
             $table->integer('orario_chius')->nullable(); //create dopo
+            $table->integer('sconto_dal')->nullable(); //create dopo
+            $table->integer('sconto')->nullable(); //create dopo
         });
     }
 

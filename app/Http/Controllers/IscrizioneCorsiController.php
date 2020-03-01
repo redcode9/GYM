@@ -7,6 +7,7 @@ use App\Corso;
 use App\Disciplina;
 use App\Sala;
 use App\Socio;
+use App\Associazione;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Helpers;

@@ -27,6 +27,12 @@ class ModificaAsdController extends Controller
         $asd -> provincia = $request->post('prov');
         $asd -> p_iva = $request->post('piva');
         $asd -> telefono = $request->post('tel');
+        $asd -> giorno_ap = $request->post('giorno_ap'); //nuovo ma non usate ancora
+        $asd -> giorno_chius = $request->post('giorno_chius');
+        $asd -> orario_ap = $request->post('orario_ap');
+        $asd -> orario_chius = $request->post('orario_chius');
+        $asd -> sconto_dal = $request->post('sconto_dal');
+        $asd -> sconto = $request->post('sconto'); //nuovo fin qui
         $asd->save();
 
 
