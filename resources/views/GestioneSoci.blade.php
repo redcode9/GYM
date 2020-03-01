@@ -32,7 +32,7 @@
                     @elseif ($socio->fondatore == 1)
                         <?php echo "Si" ?>
                         @elseif ($socio->fondatore == 2)
-                        <button type="button" class="btn btn-danger" id="attesa" name="attesa" value="" disabled>
+                        <button type="button" class="btn btn-warning text-dark" id="attesa" name="attesa" value="" disabled>
                             <b>In attesa</b></button>
                         @endif
                 </td>
