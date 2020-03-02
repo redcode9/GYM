@@ -22,7 +22,7 @@
                         <div class="form-group">
                             <input class="form-control text-dark" style="border: 2px solid #353a40" type="text"
                                    name="search"
-                                   id="search_table" placeholder="Search">
+                                   id="search_table" placeholder="Search" onkeyup="myFunction()">
                         </div>
                         @endif
 

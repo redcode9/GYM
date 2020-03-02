@@ -90,8 +90,8 @@ class IscrizioneCollaboratoreController extends Controller
             $collab = Esterno::find($id);
             $socio = new Socio;
             $tessera = new Tessera;
-            $tessera->data_tess = $request->post("emissione");
-            $tessera->scad_tess = $request->post("scadenza");
+            $tessera->data_tess = $request->post("emissione" ?? '');
+            $tessera->scad_tess = $request->post("scadenza" ?? '');
             $tessera->save();
             $collab->tessera = $tessera->id;
 

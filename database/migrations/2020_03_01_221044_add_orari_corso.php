@@ -14,7 +14,7 @@ class AddOrariCorso extends Migration
     public function up()
     {
         Schema::table('Corso', function (Blueprint $table) {
-            $table->json('orari')->nullable();
+            $table->longText('orari')->nullable();
         });
     }
 

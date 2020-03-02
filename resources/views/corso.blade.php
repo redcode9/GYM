@@ -2,6 +2,8 @@
 @section('corpo')
     <div class="row mt-4">
 
+
+
         <div class="col-12 col-lg-12">
             <div class="mx-4 text-center">
                 <h1 style="padding: 1rem; border: 3px solid black; border-right: none; border-left: none; color: black; text-transform: uppercase">
@@ -9,52 +11,120 @@
             </div>
         </div>
 
-        <div class="col-0 col-lg-4"></div>
-        <div class="col-12 col-lg-7 mt-3">
-            <button class="btn btn-dark float-right mt-3 ml-3">Rimuovi Insegnante</button>
-            <button class="btn btn-dark float-right mt-3 mx-3">Aggiungi Insegnante</button>
-        </div>
-        <div class="col-0 col-lg-1"></div>
+        <div class="row mt-3">
+        <div class="col-12 col-lg-3 my-4  ml-auto mr-auto">
 
-        <div class="col-0 col-lg-2"></div>
-        <div class="col-12 col-lg-5 my-4 ml-3">
+            <form action="{{route('addAllievo', ["id"=>$corso->id])}}" method="POST">
+                @csrf
+                <?php $soci = \App\Socio::all()?>
+
+                <select class="custom-select" name="selAllievo" id="selAllievo">
+                        <option value="" disabled selected hidden>Seleziona un allievo</option>
+                        @foreach($soci as $socio)
+                            @if ($socio->tipo=='allievo')
+                                <option value="{{$socio->id}}">{{$socio->nome}} {{$socio->cognome}}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                <input type="submit" class="btn btn-dark float-right mr-3 mt-1" value="Aggiungi Allievo">
+            </form>
+
+        </div>
+
+        <div class="col-12 col-lg-3 mt-4 ml-auto mr-auto">
+
+            <form action="{{route('addInsegnante', ["id"=>$corso->id])}}" method="POST">
+                @csrf
+                <select class="custom-select" name="selInsegnante" id="selInsegnante">
+                    <option value="" disabled selected hidden>Seleziona un insegnante</option>
+                    @foreach($soci as $socio)
+                        @if ($socio->tipo=='insegnante')
+                    <option value="{{$socio->id}}">{{$socio->nome}} {{$socio->cognome}}</option>
+                        @endif
+                    @endforeach
+                </select>
+                    <input type="submit" class="btn btn-dark float-right mt-1 mx-3" value="Aggiungi Insegnante">
+
+            </form>
+
+
+        </div>
+            <div class="col-12 col-lg-3 mt-4 ml-auto mr-auto">
+
+                <form action="{{route('addStagista', ["id"=>$corso->id])}}" method="POST">
+                    <?php $stagisti = \App\Esterno::all()->where('tipo', '=', 'stagista')?>
+                    @csrf
+                    <select class="custom-select" name="selStagista" id="selStagista">
+                        <option value="" disabled selected hidden>Seleziona uno stagista</option>
+                        @foreach($stagisti as $stagista)
+                                <option value="{{$stagista->id}}">{{$stagista->nome}} {{$stagista->cognome}}</option>
+                        @endforeach
+                    </select>
+                    <input type="submit" class="btn btn-dark float-right mt-1 mx-3" value="Aggiungi Stagista">
+
+                </form>
+
+
+            </div>
+
+        <div class="col-12 col-lg-5 my-4 ml-auto mr-auto">
             <div class="form-group">
                 <input class="form-control" type="text" id="myInput" onkeyup="myFunction()"
-                       placeholder="Filtra per Nome">
+                       placeholder="Filtra per Cognome">
             </div>
         </div>
-        <div class="col-12 col-lg-4 my-4 ml-n3">
-            <button class="btn btn-dark float-right ml-3">Rimuovi Iscritto</button>
-            <button class="btn btn-dark float-right mr-5">Aggiungi Iscritto</button>
-        </div>
-        <div class="col-0 col-lg-1"></div>
+
 
         <div class="col-0 col-lg-1"></div>
-        <div class="col-12 col-lg-10">
+        <div class="col-12 col-lg-10 ml-auto mr-auto-">
             <table class="table" id="myTable">
                 <thead class="thead-dark">
-                <th># Tessera</th>
+
                 <th>Nome</th>
                 <th>Cognome</th>
                 <th>Tipologia</th>
                 <th>Entrata</th>
+                <th style="text-align:center;">Rimuovi partecipazione</th>
                 </thead>
                 <tbody>
-                <tr>
 
-                    <td>{{$corso->insegnato->dati_tessera->numero ?? ""}}</td>
+                <tr>
+                    {{--<td>{{$corso->insegnato->dati_tessera->numero ?? ""}}</td>--}}
+
+                    @if ($corso->insegnante !== null)
                     <td>{{$corso->insegnato->nome ?? ""}}</td>
                     <td>{{$corso->insegnato->cognome ?? ""}}</td>
                     <td>Insegnante</td>
-                    <td>0</td>
+                    <td></td>
+                    <td align="center"><button class="btn btn-danger"
+                     onclick="window.location.href='{{route('deleteInsegnante', ["id"=>$corso->id])}}'">Rimuovi</button></td>
+                        @endif
                 </tr>
+
+
+                <tr>
+                    {{--<td>{{$corso->insegnato->dati_tessera->numero ?? ""}}</td>--}}
+                    @foreach($stagisti->where('corso','=',$corso->id) as $stag)
+                    <td>{{$stag->nome ?? ""}}</td>
+                    <td>{{$stag->cognome ?? ""}}</td>
+                    <td>Stagista</td>
+                    <td></td>
+                    <td align="center">
+                        <button class="btn btn-danger"
+                    onclick="window.location.href='{{route('deleteStagCorso', ["id"=>$stag->id])}}'">Rimuovi</button></td>
+
+                </tr>
+                @endforeach
+
                 @foreach($corso->partecipa as $partecipante)
                     <tr>
-                        <td>{{$partecipante->dati_tessera->numero}}</td>
+                        {{--<td>{{$partecipante->dati_tessera->numero}}</td>--}}
                         <td>{{$partecipante->nome}}</td>
                         <td>{{$partecipante->cognome}}</td>
-                        <td>Allievo</td>
-                        <td>10</td>
+                        <td>{{$partecipante->tipo}}</td>
+                        <td>{{$corso->costo}}</td>
+                        <td align="center"><input type="button" class="btn btn-danger" value="Rimuovi"
+                            onclick="window.location.href='{{route('deletePartecipante', ["id"=>$partecipante->id])}}'"></td>
                     </tr>
                 @endforeach
 
@@ -63,6 +133,7 @@
 
         </div>
         <div class="col-0 col-lg-1"></div>
+    </div>
     </div>
     <script>
         function myFunction() {

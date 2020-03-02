@@ -22,6 +22,11 @@ class Corso extends Model
         return $this->belongsTo(Socio::class,"insegnante");
     }
 
+    public function insegnatoStagista()
+    {
+        return $this->belongsTo(Esterno::class,"stagista");
+    }
+
 
     public function partecipa()
     {

@@ -20,4 +20,11 @@ class Partecipazione extends Model
     {
         return $this->hasMany(Corso::class,"disciplina");
     }
+
+
+    protected $fillable = [
+        'allievo', 'corso'
+    ];
+
+
 }
