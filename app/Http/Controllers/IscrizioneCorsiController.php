@@ -28,7 +28,7 @@ class IscrizioneCorsiController extends Controller
         $orari = Helpers::orari();
         $giorni = Helpers::giorni();
 
-        if (is_null($ass->giorno_ap) or is_null($ass->giorno_chius)){
+        /*if (is_null($ass->giorno_ap) or is_null($ass->giorno_chius)){
             $orari = Helpers::orari();
         } else {
             $orari = Helpers::arrayExcept($orari, $ass->giorno_ap, $ass->giorno_chius);
@@ -37,7 +37,7 @@ class IscrizioneCorsiController extends Controller
             $giorni = Helpers::giorni();
         } else {
             $giorni = Helpers::arrayExcept($giorni, $ass->orario_ap, $ass->orario_chius);
-        }
+        }*/
 
         return view('creazionecorso',[
             "errore" => "",
