@@ -170,6 +170,8 @@ class IscrizioneSocioController extends Controller
 
         $socio = Socio::find($id);
         $sale = Sala::all();
+        $asd = Associazione::all();
+        //dd($asd);
 
         $years = Carbon::parse($socio->data_nasc)->age; //calcola l'età dell'iscritto
 
@@ -191,7 +193,8 @@ class IscrizioneSocioController extends Controller
                 "errore" => "",
                 "sale" => $sale,
                 "socio" => $socio,
-                "years" => $years
+                "years" => $years,
+                "asd" => $asd
             ]);
         }
 

@@ -46,7 +46,7 @@
                             <div class="col-6 col-lg-6 mt-3">
                                 <div class="form-group">
                                     <label for="data_inizio" class="mb-0"><h5>Data di Inizio Corso*</h5></label>
-                                    <input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control"
+                                    <input type="date" pattern="\d{4}/\d{1,2}/\d{1,2}" class="form-control"
                                            name="data_inizio"
                                            id="data_inizio" value="" required>
                                 </div>
@@ -54,7 +54,7 @@
                             <div class="col-6 col-lg-6 mt-3 mb-n2">
                                 <div class="form-group">
                                     <label for="data_fine" class="mb-0"><h5>Data di Fine Corso*</h5></label>
-                                    <input type="date" pattern="\d{1,2}/\d{1,2}/\d{4}" class="form-control"
+                                    <input type="date" pattern="\d{4}/\d{1,2}/\d{1,2}" class="form-control"
                                            name="data_fine"
                                            id="data_fine" value="">
                                 </div>

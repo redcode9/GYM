@@ -30,8 +30,9 @@
     </div>
     <div class="col-11 col-lg-6"></div>
     <div id="divSconto" class="col-12 col-lg-3" style="margin-top: -0.5rem; padding-right: 6.75rem; opacity: 0;">
-        <h4 class="pl-2" style="border: 2px dashed black; border-radius: 5px;font-size: 1.5rem;">Sconto del
-            XX%<?php //TODO inserire sconto pacchetti ?>!</h4>
+        <input type="hidden" id="sconto_dal" name="sconto_dal" value="{{$asd[0]->sconto_dal}}">
+        <h4 class="pl-2" style="border: 2px dashed black; border-radius: 5px;font-size: 1.5rem;">Sconto del</h4>
+        <h4 class="pl-2" style="border: 2px dashed black; border-radius: 5px;font-size: 1.5rem;" id="sconto">{{$asd[0]->sconto}} %</h4>
     </div>
     <div class="col-12 col-lg-2"></div>
     <div id="BodyIscrizioneCorso" class="col-12 col-lg-8 mt-5">

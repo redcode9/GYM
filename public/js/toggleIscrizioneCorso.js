@@ -18,8 +18,9 @@ function toggleIscrizioneCorso() {
 }
 
 function checkedCorsi() {
+    var numCorsi = document.getElementById('sconto_dal').value;
     var checkedNum = $('input[name="group[]"]:checked').length;
-    if (checkedNum > 1) {
+    if (checkedNum >= numCorsi) {
         document.getElementById('divSconto').style.opacity = "1";
     } else {
         document.getElementById('divSconto').style.opacity = "0";
