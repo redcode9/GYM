@@ -3,6 +3,7 @@
 @slot('title_upper_view','Gestione Corsi')
 @slot('title_upper_table','Tutti i Corsi')   <!-- Se si vuole inserire un dato interattivo, seguire il seguente form-->
 
+
     @slot('table_header')
 
         <th scope="col" class="text-right" style="cursor: pointer">Modifica</th>
@@ -19,7 +20,7 @@
         <tr>
             <td class="text-right">
                 <input type="image" src="{{asset('img/matita.png')}}" width="25" height="25"
-                       onclick="window.location.href='{{ route("corsomodifica", ["id"=>$corsidisc->id]) }}';">
+                       onclick="window.location.href='{{ route("corsomodifica", ["id"=>$corsidisc->id,'iddisc'=>$corsidisc->discid])}}';">
                 {{----}}
             </td>
             <td>
@@ -39,7 +40,15 @@
 
             </tr>
             @endforeach
-            @endslot
+
+    <div class="alert alert-warning" role="alert">
+        <p style="text-align: center"><b>Nota: </b>Non puoi eliminare un corso con allievo/i associato/i</p>
+    </div>
+
+@endslot
+
+
+
 
             <script>
                 $(document).ready(function () {
@@ -48,6 +57,7 @@
             </script>
 
         @endcomponent
+
 
 
 

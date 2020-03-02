@@ -39,7 +39,7 @@ class GestioneCorsiController extends Controller
 
         $part = Partecipazione::firstOrNew(['allievo'=>$allievo->id, 'corso'=>$id]);
          $part->save();
-        return redirect()->route('corso', ["id" => $id]);
+        return redirect()->route('corsoupdate', ["id" => $id]);
 
     }
 
@@ -50,7 +50,7 @@ class GestioneCorsiController extends Controller
         $corso = $part->corso;
         $part->delete();
 
-        return redirect()->route('corso', ["id" => $corso]);
+        return redirect()->route('corsoupdate', ["id" => $corso]);
 
     }
 
@@ -76,7 +76,7 @@ class GestioneCorsiController extends Controller
         $trans->importo = ((($corso->costo)*$n_partecipanti)*30)/100; //Dell'incasso totale di un corso, il 30% va di stipendio all'insegnante
         $trans->save();
 
-        return redirect()->route('corso', ["id" => $id]);
+        return redirect()->route('corsoupdate', ["id" => $id]);
 
     }
 
@@ -88,7 +88,7 @@ class GestioneCorsiController extends Controller
         $corso->insegnante = null;
         $corso->save();
 
-        return redirect()->route('corso', ["id" => $id]);
+        return redirect()->route('corsoupdate', ["id" => $id]);
 
     }
 
@@ -101,7 +101,7 @@ class GestioneCorsiController extends Controller
         $stag = Esterno::find($request->post('selStagista'));
 
         $corso = Corso::find($id);
-        $part = Partecipazione::all()->where('corso', '=', $corso->id);
+        $part = Partecipazione::all()->where('corsoupdate', '=', $corso->id);
 
         $n_partecipanti = $part->count();
         $stag->corso = $corso->id;
@@ -112,7 +112,7 @@ class GestioneCorsiController extends Controller
         $trans->importo = ((($corso->costo)*$n_partecipanti)*30)/100; //Dell'incasso totale di un corso, il 30% va di stipendio all'insegnante
         $trans->save();
 
-        return redirect()->route('corso', ['stag'=>$stag,"id" => $id]);
+        return redirect()->route('corsoupdate', ['stag'=>$stag,"id" => $id]);
     }
 
 
@@ -127,7 +127,7 @@ class GestioneCorsiController extends Controller
         $stag->corso = null;
         $stag->save();
 
-        return redirect()->route('corso', ["id" => $corso]);
+        return redirect()->route('corsoupdate', ["id" => $corso]);
 
     }
 
