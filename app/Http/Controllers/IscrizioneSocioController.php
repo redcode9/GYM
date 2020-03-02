@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Associazione;
+use App\Corso;
 use App\DatiFiscali;
 use App\Iscritto;
 use App\Partecipazione;
@@ -122,7 +123,19 @@ class IscrizioneSocioController extends Controller
             $trans->tipo = "Entrata";
             $trans->socio = $id;
             $trans->save();
-            return redirect()->route('socio4', ["id" => $id]);
+
+
+
+            if($id > 0){
+                return redirect()->route('socio4', ["id" => $id]);
+            } else {
+
+                if (Auth::user()->ruolo=='admin' or 'Admin') {
+                    return redirect()->route('HomeAdmin');
+                } else  return redirect()->route('HomeUser');
+            }
+
+
 
 
         } else {
