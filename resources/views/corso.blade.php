@@ -134,6 +134,13 @@
         </div>
         <div class="col-0 col-lg-1"></div>
     </div>
+        <div class="container pl-5 pb-5 mt-5">
+            <div class="row">
+                <div>
+                    <a href="http://ppw/gestione/corsi" style="cursor:pointer" class="btn btn-dark">Indietro</a>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
         function myFunction() {

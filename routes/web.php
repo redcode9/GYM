@@ -56,8 +56,8 @@ Route::prefix('gestione')->middleware('auth')->group(function () {
     Route::get('corsi', 'JoinTuttiController@tabellaTuttiCorsi')->name('gestionecorsi');
 
     //--Routes Gestione Corsi--//
-    Route::get('corso/modifica/{id}', 'GestioneCorsiController@caricaCorso')->name('corsomodifica');
-    Route::get('corso/delete/{id}', 'GestioneCorsiController@caricaCorso')->name('corsodelete');
+    Route::any('corso/modifica/{id}{iddisc}','JoinTuttiController@modificaCorso')->name('corsomodifica');
+    Route::get('corso/delete/{id}', 'JoinTuttiController@deleteCorso')->name('corsodelete');
     Route::get('corso/upgrade/{id}', 'GestioneCorsiController@caricaCorso')->name('corsoupdate');
 
 
