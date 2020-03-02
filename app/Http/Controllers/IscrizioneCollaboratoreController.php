@@ -130,7 +130,7 @@ class IscrizioneCollaboratoreController extends Controller
             $datidiscali->save();
 
             $corso = Corso::find($id);
-            if($corso > 0){
+            if($corso->id > 0){
                 return redirect()->route('collaboratore4', ["id" => $socio->id]);
             } else {
                 return redirect()->route('HomeAdmin');
